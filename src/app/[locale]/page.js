@@ -1,8 +1,8 @@
 "use client";
 import Navbar from "@/components/Navbar/Navbar";
-import styles from "./page.module.css";
+import styles from "../page.module.css";
 import HomeContent from "@/components/Home/HomeContent";
-import Footer from "../components/Footer/Footer"
+import Footer from "../../components/Footer/Footer"
 
 export default function Home() {
   return (
@@ -13,3 +13,4 @@ export default function Home() {
     </div>
   );
 }
+

@@ -1,8 +1,13 @@
+"use client";
 import styles from './footer.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useTranslations, useLocale } from 'next-intl';
 
 export default function Footer() {
+  const t = useTranslations('footer');
+  const locale = useLocale();
+  
   return (
     <footer className={styles.footer}>
       <div className={styles.content}>
@@ -12,17 +17,17 @@ export default function Footer() {
             <Image src="/logo.svg" alt="Logo" width={120} height={40} />
           </div>
           <p className={styles.copyright}>
-            © {new Date().getFullYear()} Mithrabyte Tüm hakları saklıdır.
+            © {new Date().getFullYear()} {t('copyright')}
           </p>
         </div>
 
         {/* Menü linkleri */}
         <div className={styles.links}>
-          <Link href="/" className={styles.link}>Ana Sayfa</Link>
-                    <Link className={styles.link} href="packages" >Paketler</Link>
-          <Link href="/aboutus" className={styles.link}>Hakkımızda</Link>
-          <Link href="/services" className={styles.link}>Hizmetler</Link>
-          <Link href="/contact" className={styles.link}>İletişim</Link>
+          <Link href={`/${locale}`} className={styles.link}>{t('home')}</Link>
+          <Link className={styles.link} href={`/${locale}/packages`} >{t('packages')}</Link>
+          <Link href={`/${locale}/aboutus`} className={styles.link}>{t('about')}</Link>
+          <Link href={`/${locale}/services`} className={styles.link}>{t('services')}</Link>
+          <Link href={`/${locale}/contact`} className={styles.link}>{t('contact')}</Link>
         </div>
       </div>
     </footer>

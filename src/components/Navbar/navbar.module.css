@@ -125,6 +125,37 @@
     display: none;
 }
 
+.languageSwitcher {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-left: 16px;
+}
+
+.languageSwitcher button {
+    background: transparent;
+    border: none;
+    color: var(--foreground);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 4px 8px;
+    transition: color 0.3s ease;
+}
+
+.languageSwitcher button:hover {
+    color: var(--main-color);
+}
+
+.languageSwitcher .activeLanguage {
+    color: var(--main-color);
+}
+
+.languageSeparator {
+    color: var(--foreground-2);
+    font-size: 14px;
+}
+
 @media screen and (max-width: 768px) {
     .emptydiv {
         display: none;
@@ -144,4 +175,7 @@
         width: 100%;
     }
 
+    .languageSwitcher {
+        margin-left: 8px;
+    }
 }

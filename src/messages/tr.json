@@ -1,0 +1,100 @@
+{
+  "nav": {
+    "packages": "Paketler",
+    "services": "Hizmetlerimiz",
+    "about": "Hakkımızda",
+    "contact": "İletişim"
+  },
+  "home": {
+    "title": "Daha Akıllı Uygulamalarla Rakiplerinizin Önüne Geçin",
+    "packages": "Paketler",
+    "textSlider": {
+      "text1": "Kurumlarınızın geleceğine yapay zeka ile şekil verin",
+      "text2": "Güçlü dinamik ve ekibinize uygun YZ uygulamaları"
+    },
+    "products": {
+      "socialMedia": {
+        "title": "Sosyal Medya Panelleri",
+        "description": "Tüm hesaplarını tek yerden kontrol et, paylaşımlarını planla, etkileşimini takip et. Zamanını raporlarla değil, markanı büyütmekle harca. Biz paneli kolaylaştırdık, sen sadece yaratıcı ol!",
+        "cta": "Teklif Al"
+      },
+      "mobile": {
+        "title": "Mobil Uygulamalar",
+        "description": "iOS ve Android uyumlu çözümlerimizle markaların dijital gücünü artırıyoruz. Kişiselleştirilmiş deneyim, güçlü altyapı ve modern tasarım anlayışıyla kullanıcıların beklentilerini bir adım öteye taşıyoruz.",
+        "cta": "Teklif Al"
+      },
+      "web": {
+        "title": "Web Uygulamaları",
+        "description": "SEO dostu, hızlı ve erişilebilir altyapımızla markanızı dijital dünyada öne çıkarıyoruz. Ölçeklenebilir mimarimizle işletmenizin büyümesine güç katıyor, dijital dönüşümünüzü bir adım öteye taşıyoruz.",
+        "cta": "Teklif Al"
+      }
+    },
+    "whyUs": {
+      "title": "Neden Biz?",
+      "description": "Her projeye kendi işimiz gibi yaklaşır, sade ve güçlü çözümler üretiriz. Mobil uygulamalardan yapay zeka destekli sistemlere kadar, yüksek performanslı yazılımlar geliştiririz. Küçük ama çevik ekibimizle hızlı, esnek ve size özel çözümler sunar, teslim sonrası destekle uzun vadeli iş ortaklıkları kurarız.",
+      "cta": "Detaylı Bilgi"
+    },
+    "jobs": {
+      "title": "Kariyer Fırsatları",
+      "subtitle": "Bizimle birlikte büyüyelim",
+      "card1": {
+        "title": "Yazılım Geliştirici",
+        "description": "Next.js, React ve modern web teknolojileri ile çalışmak isteyen yetenekli geliştiriciler arıyoruz.",
+        "cta": "Başvur"
+      },
+      "card2": {
+        "title": "Mobil Geliştirici",
+        "description": "iOS ve Android platformlarında native ve cross-platform uygulamalar geliştirecek uzmanlar arıyoruz.",
+        "cta": "Başvur"
+      },
+      "card3": {
+        "title": "UI/UX Tasarımcı",
+        "description": "Kullanıcı deneyimini ön planda tutan, yaratıcı ve modern tasarımlar yapabilen tasarımcılar arıyoruz.",
+        "cta": "Başvur"
+      },
+      "card4": {
+        "title": "Yapay Zeka Uzmanı",
+        "description": "AI ve makine öğrenmesi projelerinde çalışmak isteyen uzmanlar arıyoruz.",
+        "cta": "Başvur"
+      }
+    },
+    "company": {
+      "title": "Mithrabyte Hakkında",
+      "subtitle": "Teknolojinin gücüyle işinizi büyütün",
+      "card1": {
+        "title": "Vizyonumuz",
+        "description": "Yapay zeka ve modern teknolojilerle işletmelerin dijital dönüşümüne öncülük etmek, yenilikçi çözümler sunmak.",
+        "icon": "🎯"
+      },
+      "card2": {
+        "title": "Misyonumuz",
+        "description": "Müşterilerimize en iyi teknoloji çözümlerini sunarak, onların başarısına ortak olmak ve uzun vadeli iş ortaklıkları kurmak.",
+        "icon": "🚀"
+      },
+      "card3": {
+        "title": "Değerlerimiz",
+        "description": "İnovasyon, müşteri odaklılık, şeffaflık ve sürekli öğrenme ilkeleriyle çalışıyoruz.",
+        "icon": "💎"
+      },
+      "card4": {
+        "title": "Ekibimiz",
+        "description": "Küçük ama çevik ekibimizle hızlı karar alma, esnek çalışma ve yüksek kaliteli çözümler sunuyoruz.",
+        "icon": "👥"
+      }
+    }
+  },
+  "footer": {
+    "home": "Ana Sayfa",
+    "packages": "Paketler",
+    "about": "Hakkımızda",
+    "services": "Hizmetler",
+    "contact": "İletişim",
+    "copyright": "Mithrabyte Tüm hakları saklıdır."
+  },
+  "common": {
+    "learnMore": "Daha Fazla Bilgi",
+    "getStarted": "Başlayın",
+    "contactUs": "İletişime Geçin"
+  }
+}
+

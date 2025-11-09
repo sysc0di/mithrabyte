@@ -1,14 +1,20 @@
+"use client";
 import styles from './sidebarmenu.module.css';
 import {  Instagram, Github } from 'lucide-react';
 import ThemeSwticher from './ThemeSwticher';
+import LanguageSwitcher from './LanguageSwitcher';
+import { useTranslations, useLocale } from 'next-intl';
+import Link from 'next/link';
 
 export default function SidebarMenu({ open, onClose }) {
+    const t = useTranslations('nav');
+    const locale = useLocale();
     const links = [
-        { href: '/', label: 'Ana Sayfa' },
-        { href: '/aboutus', label: 'Hakkımızda' },
-        { href: '/packages', label: 'Paketlerimiz' },
-        { href: '/services', label: 'Hizmetlerimiz' },
-        { href: '/contact', label: 'İletişim' },
+        { href: `/${locale}`, label: locale === 'tr' ? 'Ana Sayfa' : 'Home' },
+        { href: `/${locale}/aboutus`, label: t('about') },
+        { href: `/${locale}/packages`, label: t('packages') },
+        { href: `/${locale}/services`, label: t('services') },
+        { href: `/${locale}/contact`, label: t('contact') },
     ];
 
     const socialLinks = [
@@ -22,7 +28,7 @@ export default function SidebarMenu({ open, onClose }) {
                 <ul>
                     {links.map(({ href, label }) => (
                         <li key={href}>
-                            <a href={href} onClick={onClose}>{label}</a>
+                            <Link href={href} onClick={onClose}>{label}</Link>
                         </li>
                     ))}
                 </ul>
@@ -41,6 +47,7 @@ export default function SidebarMenu({ open, onClose }) {
                             {icon}
                         </a>
                     ))}
+                    <LanguageSwitcher />
                     <ThemeSwticher/>
                 </div>
             </nav>

@@ -1,0 +1,100 @@
+{
+  "nav": {
+    "packages": "Packages",
+    "services": "Services",
+    "about": "About Us",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Stay Ahead of Your Competitors with Smarter Applications",
+    "packages": "Packages",
+    "textSlider": {
+      "text1": "Shape the future of your organizations with artificial intelligence",
+      "text2": "Powerful, dynamic and team-friendly AI applications"
+    },
+    "products": {
+      "socialMedia": {
+        "title": "Social Media Panels",
+        "description": "Control all your accounts from one place, plan your posts, track your engagement. Spend your time growing your brand, not on reports. We've simplified the panel, you just be creative!",
+        "cta": "Get Quote"
+      },
+      "mobile": {
+        "title": "Mobile Applications",
+        "description": "We enhance brands' digital power with our iOS and Android compatible solutions. We take user expectations one step further with personalized experience, robust infrastructure and modern design approach.",
+        "cta": "Get Quote"
+      },
+      "web": {
+        "title": "Web Applications",
+        "description": "We make your brand stand out in the digital world with our SEO-friendly, fast and accessible infrastructure. We power your business growth with our scalable architecture and take your digital transformation one step further.",
+        "cta": "Get Quote"
+      }
+    },
+    "whyUs": {
+      "title": "Why Us?",
+      "description": "We approach every project as if it were our own business, producing simple and powerful solutions. We develop high-performance software from mobile applications to AI-supported systems. With our small but agile team, we offer fast, flexible and custom solutions and establish long-term business partnerships with post-delivery support.",
+      "cta": "Learn More"
+    },
+    "jobs": {
+      "title": "Career Opportunities",
+      "subtitle": "Grow with us",
+      "card1": {
+        "title": "Software Developer",
+        "description": "We are looking for talented developers who want to work with Next.js, React and modern web technologies.",
+        "cta": "Apply"
+      },
+      "card2": {
+        "title": "Mobile Developer",
+        "description": "We are looking for experts to develop native and cross-platform applications on iOS and Android platforms.",
+        "cta": "Apply"
+      },
+      "card3": {
+        "title": "UI/UX Designer",
+        "description": "We are looking for designers who can create creative and modern designs that prioritize user experience.",
+        "cta": "Apply"
+      },
+      "card4": {
+        "title": "AI Specialist",
+        "description": "We are looking for specialists who want to work on AI and machine learning projects.",
+        "cta": "Apply"
+      }
+    },
+    "company": {
+      "title": "About Mithrabyte",
+      "subtitle": "Grow your business with the power of technology",
+      "card1": {
+        "title": "Our Vision",
+        "description": "To lead the digital transformation of businesses with artificial intelligence and modern technologies, providing innovative solutions.",
+        "icon": "🎯"
+      },
+      "card2": {
+        "title": "Our Mission",
+        "description": "To become a partner in our customers' success and establish long-term business partnerships by offering them the best technology solutions.",
+        "icon": "🚀"
+      },
+      "card3": {
+        "title": "Our Values",
+        "description": "We work with the principles of innovation, customer focus, transparency and continuous learning.",
+        "icon": "💎"
+      },
+      "card4": {
+        "title": "Our Team",
+        "description": "With our small but agile team, we offer fast decision-making, flexible work and high-quality solutions.",
+        "icon": "👥"
+      }
+    }
+  },
+  "footer": {
+    "home": "Home",
+    "packages": "Packages",
+    "about": "About Us",
+    "services": "Services",
+    "contact": "Contact",
+    "copyright": "Mithrabyte All rights reserved."
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "contactUs": "Contact Us"
+  }
+}
+

@@ -1,10 +1,14 @@
+"use client";
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./homeproductlist.module.css";
 import Link from "next/link";
 import Arrowrigth from "../../assets/arrow-right.svg";
 import Image from "next/image";
+import { useTranslations, useLocale } from 'next-intl';
 
 function ProductsOnHomeCards() {
+  const t = useTranslations('home.products');
+  const locale = useLocale();
   const shadowRef = useRef(null);
   const handleMouseMove = (e) => {
     const wrapper = e.currentTarget;
@@ -60,15 +64,12 @@ function ProductsOnHomeCards() {
           >
             <rect x="0.25" y="0.25" width="99.5" height="99.5" rx="4" ry="2" />
           </svg>
-          <span className={styles.cardtitle}>Sosyal Medya Panelleri</span>
+          <span className={styles.cardtitle}>{t('socialMedia.title')}</span>
           <span className={styles.cardtext}>
-            {" "}
-            Tüm hesaplarını tek yerden kontrol et, paylaşımlarını planla,
-            etkileşimini takip et. Zamanını raporlarla değil, markanı büyütmekle
-            harca. Biz paneli kolaylaştırdık, sen sadece yaratıcı ol!
+            {t('socialMedia.description')}
           </span>
           <Link className="cardlink" href="https://bionluk.com/coderingewer">
-            Teklif Al
+            {t('socialMedia.cta')}
           </Link>
         </div>
         <div
@@ -83,16 +84,12 @@ function ProductsOnHomeCards() {
           >
             <rect x="0.25" y="0.25" width="99.5" height="99.5" rx="4" ry="4" />
           </svg>
-          <span className={styles.cardtitle}>Mobil Uygulamalar</span>
+          <span className={styles.cardtitle}>{t('mobile.title')}</span>
           <span className={styles.cardtext}>
-            {" "}
-            iOS ve Android uyumlu çözümlerimizle markaların dijital gücünü
-            artırıyoruz. Kişiselleştirilmiş deneyim, güçlü altyapı ve modern
-            tasarım anlayışıyla kullanıcıların beklentilerini bir adım öteye
-            taşıyoruz.
+            {t('mobile.description')}
           </span>
           <Link className="cardlink" href="https://bionluk.com/coderingewer">
-            Teklif Al
+            {t('mobile.cta')}
           </Link>
         </div>
         <div
@@ -107,16 +104,12 @@ function ProductsOnHomeCards() {
           >
             <rect x="0.25" y="0.25" width="99.5" height="99.5" rx="4" ry="4" />
           </svg>
-          <span className={styles.cardtitle}>Web Uygulamaları</span>
+          <span className={styles.cardtitle}>{t('web.title')}</span>
           <span className={styles.cardtext}>
-            {" "}
-            SEO dostu, hızlı ve erişilebilir altyapımızla markanızı dijital
-            dünyada öne çıkarıyoruz. Ölçeklenebilir mimarimizle işletmenizin
-            büyümesine güç katıyor, dijital dönüşümünüzü bir adım öteye
-            taşıyoruz.
+            {t('web.description')}
           </span>
           <Link className="cardlink" href="https://bionluk.com/coderingewer">
-            Teklif Al
+            {t('web.cta')}
           </Link>
         </div>
       </div>

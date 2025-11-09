@@ -2,15 +2,17 @@
 
 import { useEffect, useState } from "react";
 import styles from './textfade.module.css';
-
-const texts = [
-  "Kurumlarınızın geleceğine yapay zeka ile şekil verin",
-  "Güçlü dinamik ve ekibinize uygun YZ uygulamaları",
-];
+import { useTranslations } from 'next-intl';
 
 export default function TextSlider() {
+  const t = useTranslations('home.textSlider');
   const [index, setIndex] = useState(0);
   const [animate, setAnimate] = useState(false);
+
+  const texts = [
+    t('text1'),
+    t('text2'),
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -22,7 +24,7 @@ export default function TextSlider() {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [texts.length]);
 
   return (
     <div className={styles.container}>

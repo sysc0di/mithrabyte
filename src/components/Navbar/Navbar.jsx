@@ -2,13 +2,16 @@
 import React, { useEffect, useState } from 'react'
 import styles from "./navbar.module.css";
 import Link from 'next/link';
-import { MdNightlightRound, MdSunny } from "react-icons/md";
+import { useTranslations, useLocale } from 'next-intl';
 import { Logs } from 'lucide-react';
 import SidebarMenu from './SidebarMenu';
 import ThemeSwticher from './ThemeSwticher';
-function Navbar() {
+import LanguageSwitcher from './LanguageSwitcher';
 
+function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const t = useTranslations('nav');
+    const locale = useLocale();
 
   return (
     <div className={styles.navbarcontanier} >
@@ -16,7 +19,7 @@ function Navbar() {
       <div className={`${styles.emptydiv} ${styles.emptydivleft}`} ></div>
       <div className={styles.navbar} >
         <div className={styles.logo}>
-          <Link href="/">
+          <Link href={`/${locale}`}>
             <img
               src="/logo.svg"
               alt="mithrabyte"
@@ -25,12 +28,12 @@ function Navbar() {
           </Link>
         </div>
         <div className={styles.navlinks}>
-          <Link className={styles.navlink} href="packages" >Paketler</Link>
-          <Link className={styles.navlink} href="services" >Hizmetlerimiz</Link>
-          <Link className={styles.navlink} href="aboutus" >Hakkımızda</Link>
-          <Link className={styles.navlink} href="contact" >İletişim</Link>
-
-       <ThemeSwticher/>
+          <Link className={styles.navlink} href={`/${locale}/packages`} >{t('packages')}</Link>
+          <Link className={styles.navlink} href={`/${locale}/services`} >{t('services')}</Link>
+          <Link className={styles.navlink} href={`/${locale}/aboutus`} >{t('about')}</Link>
+          <Link className={styles.navlink} href={`/${locale}/contact`} >{t('contact')}</Link>
+          <LanguageSwitcher />
+          <ThemeSwticher/>
         </div>
               <button className={styles.navmenubutton} onClick={() => setMenuOpen(!menuOpen)}  ><Logs/> </button>
       </div>

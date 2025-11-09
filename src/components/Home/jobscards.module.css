@@ -1,0 +1,204 @@
+.wrapper {
+  position: relative;
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 0;
+  background-color: var(--background);
+}
+
+.container {
+  width: 80%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--foreground);
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--foreground-2);
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.card {
+  position: relative;
+  backdrop-filter: blur(10px);
+  background-color: var(--background25op);
+  border-radius: 16px;
+  padding: 36px 34px;
+  transition: background-color 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  z-index: 3;
+  gap: 24px;
+  min-height: 280px;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  filter: blur(50px);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: -2;
+}
+
+.card:hover::after {
+  opacity: 0.5;
+}
+
+.card1::after {
+  background-image: url('../../assets/squareblur.svg');
+}
+
+.card2::after {
+  background-image: url('../../assets/triangleblur.svg');
+}
+
+.card3::after {
+  background-image: url('../../assets/trapezoidblur.svg');
+}
+
+.card4::after {
+  background-image: url('../../assets/squareblur.svg');
+}
+
+.borderAnim {
+  position: absolute;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  stroke: var(--foreground);
+  stroke-width: 0.25;
+  left: -2px;
+  top: -2px;
+  fill: none;
+  pointer-events: none;
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  transition: stroke-dashoffset 1s ease;
+  z-index: 3;
+  stroke-linecap: round;
+}
+
+.card:hover .borderAnim {
+  stroke-dashoffset: 0;
+}
+
+.card:hover {
+  background-color: var(--background50op);
+}
+
+.cardtitle {
+  font-size: 1.75rem;
+  font-weight: 600;
+  width: 100%;
+  color: var(--foreground);
+}
+
+.cardtext {
+  font-size: 1rem;
+  width: 100%;
+  color: var(--foreground);
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+.cardlink {
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  color: var(--foreground);
+  background-color: var(--foreground);
+  clip-path: var(--clip-bottom-right);
+  z-index: 0;
+  position: relative;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cardlink::before {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  background: var(--background);
+  z-index: -1;
+  clip-path: var(--clip-bottom-right);
+}
+
+.cardlink:hover {
+  color: var(--main-color);
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 48px 0;
+    min-height: auto;
+  }
+
+  .container {
+    width: 90%;
+    gap: 32px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .cardsGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .card {
+    min-height: auto;
+    padding: 32px 24px;
+  }
+
+  .borderAnim {
+    display: none;
+  }
+
+  .cardactive::after {
+    opacity: 0.8;
+  }
+
+  .cardtitle {
+    font-size: 1.5rem;
+  }
+
+  .cardtext {
+    font-size: 0.95rem;
+  }
+}
+
