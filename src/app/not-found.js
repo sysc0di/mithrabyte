@@ -56,7 +56,7 @@ export default function NotFound() {
             <body>
                 <h1>404</h1>
                 <p>Aradığın sayfa bulunamadı.</p>
-                <a href="/">Ana Sayfa</a>
+                <a href="/en">Ana Sayfa</a>
             </body>
         </html>
     );

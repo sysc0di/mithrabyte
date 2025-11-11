@@ -144,11 +144,11 @@
 }
 
 .languageSwitcher button:hover {
-    color: var(--main-color);
+    color: var(--foreground-2);
 }
 
 .languageSwitcher .activeLanguage {
-    color: var(--main-color);
+    color: var(--foreground-2);
 }
 
 .languageSeparator {

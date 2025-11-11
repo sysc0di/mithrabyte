@@ -2,13 +2,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./homeproductlist.module.css";
 import Link from "next/link";
-import Arrowrigth from "../../assets/arrow-right.svg";
-import Image from "next/image";
 import { useTranslations, useLocale } from 'next-intl';
 
 function ProductsOnHomeCards() {
   const t = useTranslations('home.products');
-  const locale = useLocale();
   const shadowRef = useRef(null);
   const handleMouseMove = (e) => {
     const wrapper = e.currentTarget;

@@ -81,6 +81,74 @@
         "description": "Küçük ama çevik ekibimizle hızlı karar alma, esnek çalışma ve yüksek kaliteli çözümler sunuyoruz.",
         "icon": "👥"
       }
+    },
+    "pricing": {
+      "title": "Paketlerimiz",
+      "cta": "Teklif Al",
+      "subtitle": "İşletmenize en uygun çözümü seçin",
+      "packages": [
+        {
+          "title": "Web Platformları",
+          "price": "₺5000+",
+          "url": "https://bionluk.com/coderingewer",
+          "description": "Yüksek hızlı, yapay zeka destekli, SEO odaklı modern web platformları.",
+          "features": [
+            "Next.js mimarisi",
+            "OpenAI veya özel yapay zeka entegrasyonu",
+            "Akıllı öneri sistemleri",
+            "Kurumsal arayüz tasarımı",
+            "Mobil uyum ve erişilebilirlik",
+            "Lighthouse skoru optimizasyonu",
+            "Gelişmiş yönetim paneli ve API altyapısı"
+          ]
+        },
+        {
+          "title": "Sosyal Medya Yönetim Paneli",
+          "price": "Yakında!",
+          "url": "https://bionluk.com/coderingewer",
+          "description": "Sosyal medya hesaplarınızda otomatik paylaşım yapın ve her şeyi tek bir yerden yönetin.",
+          "features": [
+            "Modern kullanıcı deneyimi",
+            "Yapay zeka (GPT, LLaMA) entegrasyonu",
+            "İşletmenize özel içerik önerileri",
+            "Veri güvenliği önceliği"
+          ]
+        },
+        {
+          "title": "Gerçek Zamanlı Analiz Paneli",
+          "price": "Yakında",
+          "url": "https://bionluk.com/coderingewer",
+          "description": "Gerçek zamanlı veri takibi, yapay zeka öngörüleri ve özel paneller tek platformda.",
+          "features": [
+            "Canlı veri görselleştirme",
+            "Makine öğrenimi tabanlı tahmin ve analiz",
+            "Özel metrik ve KPI izleme",
+            "Yetki bazlı kullanıcı erişimi",
+            "Plotly.js / Grafana destekli grafikler",
+            "PDF / Excel raporlama",
+            "Filtreleme ve segmentasyon özellikleri"
+          ]
+        }
+      ]
+    }
+  },
+  "aboutus": {
+    "title": "Hakkımızda",
+    "description": "Biz, teknolojiyi sadece bir araç değil, insanlara değer katan bir deneyim olarak gören bir ekibiz. Yenilikçi fikirlerle, modern ve kullanıcı odaklı çözümler geliştiriyor; her projede sadelik, erişilebilirlik ve performansı ön planda tutuyoruz. Farklı alanlardan gelen geliştiriciler, tasarımcılar ve fikir üreticilerinden oluşan küçük ama tutkulu bir ekibiz. Kod yazarken de tasarım yaparken de tek bir hedefimiz var: gerçek bir etki yaratmak. Her markayı, kendi hikâyesine ve hedeflerine göre ele alıyor; onları dijital dünyada daha görünür, daha güçlü ve daha kendine özgü hâle getiriyoruz. Bizim için her proje, birlikte öğrenilen ve birlikte büyünülen bir yolculuk. 🚀 Kısacası; biz sadece projeler yapmıyoruz, markalarla birlikte hayal kuruyoruz. ✨",
+    "values": {
+      "title": "Değerlerimiz",
+      "collaboration": {
+        "title": "İşbirliği",
+        "description": "Takım ruhunu önemseriz. Başarı birlikte çalışınca gelir."
+      },
+      "innovation": {
+        "title": "İnovasyon",
+        "description": "Sürekli yenileniriz. Geleceği bugünden inşa ederiz."
+      },
+      "focus": {
+        "title": "Odak",
+        "description": "Müşteri deneyimini merkeze alır, sonuç odaklı çalışırız."
+      }
     }
   },
   "footer": {
@@ -97,4 +165,3 @@
     "contactUs": "İletişime Geçin"
   }
 }
-
