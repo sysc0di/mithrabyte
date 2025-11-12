@@ -57,7 +57,7 @@ function JobsCards() {
   ];
 
   return (
-    <div className={styles.wrapper}>
+    <div style={{display:"none"}} className={styles.wrapper}>
       <div ref={contentRef} className={styles.container}>
         <div className={styles.header}>
           <h2 className={styles.title}>{t('title')}</h2>
