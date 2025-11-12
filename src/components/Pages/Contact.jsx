@@ -1,4 +1,5 @@
 "use client";
+import { useTranslations } from "next-intl";
 import styles from "./contact.module.css";
 import { MdLocationOn, MdPhone, MdEmail, MdAccessTime } from "react-icons/md";
 export default function Contact() {
@@ -24,6 +25,9 @@ export default function Contact() {
       resetForm();
     },
   });*/
+
+    const t = useTranslations("contact");
+
 
   return (
     <main className={styles.container}>
@@ -85,25 +89,30 @@ export default function Contact() {
         </form>*/}
       </section>
 
-      <section className={styles.right}>
-        <h2 className={styles.title}>İletişim Bilgileri</h2>
+            <section className={styles.right}>
+        <h2 className={styles.title}>{t("title")}</h2>
+
         <div className={styles.infoItem}>
           <span className={styles.infoIcon}><MdLocationOn/></span>
-          <span>Hakkari, Türkiye</span>
+          <span>{t("address")}</span>
         </div>
+
         <div className={styles.infoItem}>
           <span className={styles.infoIcon}><MdPhone/></span>
-          <span>+90 505 804 4818</span>
+          <span>{t("phone")}</span>
         </div>
+
         <div className={styles.infoItem}>
           <span className={styles.infoIcon}><MdEmail/></span>
-          <span>yatli5645@gmail.com</span>
+          <span>{t("email")}</span>
         </div>
+
         <div className={styles.infoItem}>
           <span className={styles.infoIcon}><MdAccessTime/></span>
-          <span>Pzt-Cum 09:00 - 18:00</span>
+          <span>{t("hours")}</span>
         </div>
       </section>
+
     </main>
   );
 }

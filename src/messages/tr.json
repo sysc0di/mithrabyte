@@ -151,6 +151,92 @@
       }
     }
   },
+  "contact": {
+    "title": "İletişim Bilgileri",
+    "address": "Hakkari, Türkiye",
+    "phone": "+90 505 804 4818",
+    "email": "yatli5645@gmail.com",
+    "hours": "Pzt-Cum 09:00 - 18:00",
+    "locationLabel": "Adres",
+    "phoneLabel": "Telefon",
+    "emailLabel": "E-posta",
+    "hoursLabel": "Çalışma Saatleri"
+  },
+  "services": {
+    "title": "Hizmetlerimiz",
+    "services": [
+      {
+        "title": "Performans Optimizasyonu",
+        "description": "Web sitenizin hızını ve verimliliğini maksimuma çıkarıyoruz."
+      },
+      {
+        "title": "Özel Yazılım Geliştirme",
+        "description": "İhtiyacınıza göre tamamen size özel çözümler sunuyoruz."
+      },
+      {
+        "title": "Uluslararası SEO ve Pazarlama",
+        "description": "Dijital görünürlüğünüzü global ölçekte artırıyoruz."
+      }
+    ]
+  },
+  "packages":{
+  "title": "Paketlerimiz",
+  "button": "Satın Al",
+  "packages": [
+    {
+      "title": "Yapay Zeka Destekli Mobil Uygulama",
+      "price": "₺3000+",
+      "features": [
+        "Modern ve sezgisel kullanıcı deneyimi",
+        "GPT, LLaMA veya özel AI modelleri ile entegre",
+        "Kullanıcı davranışına göre kişiselleştirme",
+        "Offline mod ve veri senkronizasyonu",
+        "iOS & Android uyumlu çapraz platform yapı",
+        "Veri güvenliği ve gizlilik önceliği",
+        "Firebase, Supabase veya özel backend ile tam uyum"
+      ]
+    },
+    {
+      "title": "AI Tabanlı Web Platformları",
+      "price": "₺5000+",
+      "features": [
+        "Next.js mimarisi ile yüksek performans",
+        "OpenAI, Replicate veya kendi modelinizle entegrasyon",
+        "AI destekli öneri motorları ve chatbot sistemleri",
+        "Kurumsal UI/UX odaklı arayüzler",
+        "Tam responsive yapı ve erişilebilirlik",
+        "SEO, hız ve Lighthouse skorlarında maksimum optimizasyon",
+        "Panel, kullanıcı yönetimi ve API altyapısı"
+      ]
+    },
+    {
+      "title": "İşletmelere Özel Veri Analizi Panelleri",
+      "price": "Yakında",
+      "features": [
+        "Gerçek zamanlı veri işleme ve görselleştirme",
+        "Makine öğrenimi tabanlı öngörüler (forecast, anomaly detection)",
+        "Şirketinize özel metrikler & KPI izleme",
+        "Kapsamlı kullanıcı rolleri ve erişim kontrolü",
+        "Grafana/Plotly.js destekli interaktif grafikler",
+        "Raporlama, PDF çıktılar, dışa aktarma seçenekleri",
+        "Gelişmiş filtreleme ve segmentasyon"
+      ]
+    },
+    {
+      "title": "CLI & Terminal Tabanlı Geliştirici Araçları",
+      "price": "Proje Bazlı",
+      "features": [
+        "Yüksek performanslı CLI araçları (Rust, Go, Node.js)",
+        "API entegrasyonları ve veri işleme yetenekleri",
+        "İleri düzey hata yönetimi ve logging altyapısı",
+        "Kolay kurulum (npm, brew, curl scriptleri)",
+        "İnteraktif terminal arayüzleri (Inquirer, Blessed)",
+        "Detaylı dokümantasyon ve TypeScript destekli SDK'lar",
+        "Sürekli entegrasyon ve test otomasyonu"
+      ]
+    }
+  ]
+},
   "footer": {
     "home": "Ana Sayfa",
     "packages": "Paketler",

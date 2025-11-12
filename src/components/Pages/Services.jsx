@@ -1,34 +1,24 @@
-import styles from './services.module.css';
-import { Cpu, Code, Globe } from 'lucide-react';
+"use client";
+import styles from "./services.module.css";
+import { Cpu, Code, Globe } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export default function Services() {
-  const services = [
-    {
-      icon: <Cpu className={styles.icon} />,
-      title: "Performans Optimizasyonu",
-      description: "Web sitenizin hızını ve verimliliğini maksimuma çıkarıyoruz.",
-    },
-    {
-      icon: <Code className={styles.icon} />,
-      title: "Özel Yazılım Geliştirme",
-      description: "İhtiyacınıza göre tamamen size özel çözümler sunuyoruz.",
-    },
-    {
-      icon: <Globe className={styles.icon} />,
-      title: "Uluslararası SEO ve Pazarlama",
-      description: "Dijital görünürlüğünüzü global ölçekte artırıyoruz.",
-    },
-  ];
+  const t = useTranslations("services");
+  const services = t.raw("services"); // JSON içindeki array'i direkt alıyoruz
+
+  const icons = [<Cpu key="cpu" className={styles.icon} />, <Code key="code" className={styles.icon} />, <Globe key="globe" className={styles.icon} />];
 
   return (
     <main className={styles.servicesContainer}>
-      <h1 className={styles.title}>Hizmetlerimiz</h1>
+      <h1 className={styles.title}>{t("title")}</h1>
+
       <section className={styles.servicesList}>
-        {services.map(({ icon, title, description }, i) => (
+        {services.map((service, i) => (
           <article key={i} className={styles.serviceCard}>
-            {icon}
-            <h2 className={styles.serviceTitle}>{title}</h2>
-            <p className={styles.serviceDesc}>{description}</p>
+            {icons[i]}
+            <h2 className={styles.serviceTitle}>{service.title}</h2>
+            <p className={styles.serviceDesc}>{service.description}</p>
           </article>
         ))}
       </section>

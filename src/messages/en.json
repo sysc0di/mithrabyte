@@ -133,23 +133,109 @@
     }
   },
   "aboutus": {
-  "title": "About Mithrabyte",
-  "description": "We are a team that sees technology not just as a tool, but as an experience that adds value to people's lives. We develop modern, user-focused solutions with innovative ideas, prioritizing simplicity, accessibility, and performance in every project. We are a small but passionate team of developers, designers, and idea generators from different fields. Whether we're coding or designing, we have one goal: to make a real impact. We approach each brand according to its own story and goals, making them more visible, stronger, and more unique in the digital world. For us, every project is a journey of learning and growing together. 🚀 In short, we don't just create projects, we dream alongside brands. ✨",
-  "values": {
-    "title": "Our Values",
-    "collaboration": {
-      "title": "Collaboration",
-      "description": "We value teamwork. Success comes when we work together."
-    },
-    "innovation": {
-      "title": "Innovation",
-      "description": "We constantly evolve and build the future today."
-    },
-    "focus": {
-      "title": "Focus",
-      "description": "We center the customer experience and work with result-oriented precision."
+    "title": "About Mithrabyte",
+    "description": "We are a team that sees technology not just as a tool, but as an experience that adds value to people's lives. We develop modern, user-focused solutions with innovative ideas, prioritizing simplicity, accessibility, and performance in every project. We are a small but passionate team of developers, designers, and idea generators from different fields. Whether we're coding or designing, we have one goal: to make a real impact. We approach each brand according to its own story and goals, making them more visible, stronger, and more unique in the digital world. For us, every project is a journey of learning and growing together. 🚀 In short, we don't just create projects, we dream alongside brands. ✨",
+    "values": {
+      "title": "Our Values",
+      "collaboration": {
+        "title": "Collaboration",
+        "description": "We value teamwork. Success comes when we work together."
+      },
+      "innovation": {
+        "title": "Innovation",
+        "description": "We constantly evolve and build the future today."
+      },
+      "focus": {
+        "title": "Focus",
+        "description": "We center the customer experience and work with result-oriented precision."
+      }
     }
-  }
+  },
+  "contact": {
+    "title": "Contact Information",
+    "address": "Hakkari, Turkey",
+    "phone": "+90 505 804 4818",
+    "email": "yatli5645@gmail.com",
+    "hours": "Mon-Fri 09:00 - 18:00",
+    "locationLabel": "Address",
+    "phoneLabel": "Phone",
+    "emailLabel": "Email",
+    "hoursLabel": "Working Hours"
+  },
+  "services": {
+    "title": "Our Services",
+    "services": [
+      {
+        "title": "Performance Optimization",
+        "description": "We maximize your website's speed and efficiency."
+      },
+      {
+        "title": "Custom Software Development",
+        "description": "We provide fully tailored solutions for your specific needs."
+      },
+      {
+        "title": "International SEO and Marketing",
+        "description": "We boost your digital visibility on a global scale."
+      }
+    ]
+  },
+  "packages":{
+  "title": "Our Packages",
+  "button": "Purchase",
+  "packages": [
+    {
+      "title": "AI-Powered Mobile Application",
+      "price": "₺3000+",
+      "features": [
+        "Modern and intuitive user experience",
+        "Integrated with GPT, LLaMA, or custom AI models",
+        "Personalized based on user behavior",
+        "Offline mode and data synchronization",
+        "Cross-platform support for iOS & Android",
+        "Data security and privacy as a priority",
+        "Full compatibility with Firebase, Supabase, or custom backends"
+      ]
+    },
+    {
+      "title": "AI-Based Web Platforms",
+      "price": "₺5000+",
+      "features": [
+        "High performance with Next.js architecture",
+        "Integration with OpenAI, Replicate, or your own models",
+        "AI-powered recommendation engines and chatbot systems",
+        "Enterprise-grade UI/UX focused interfaces",
+        "Fully responsive and accessible design",
+        "Top SEO, speed, and Lighthouse performance",
+        "Admin panel, user management, and API infrastructure"
+      ]
+    },
+    {
+      "title": "Custom Data Analytics Dashboards",
+      "price": "Coming Soon",
+      "features": [
+        "Real-time data processing and visualization",
+        "Machine learning-based insights (forecasting, anomaly detection)",
+        "Custom KPIs and company-specific metrics",
+        "Comprehensive user roles and access control",
+        "Interactive charts powered by Grafana/Plotly.js",
+        "Reporting, PDF export, and data exporting options",
+        "Advanced filtering and segmentation"
+      ]
+    },
+    {
+      "title": "CLI & Terminal Developer Tools",
+      "price": "Project-Based",
+      "features": [
+        "High-performance CLI tools (Rust, Go, Node.js)",
+        "API integrations and data processing capabilities",
+        "Advanced error handling and logging system",
+        "Easy setup (npm, brew, or curl scripts)",
+        "Interactive terminal interfaces (Inquirer, Blessed)",
+        "Detailed documentation and TypeScript SDKs",
+        "Continuous integration and automated testing"
+      ]
+    }
+  ]
 },
   "footer": {
     "home": "Home",
