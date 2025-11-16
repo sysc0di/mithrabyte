@@ -11,9 +11,11 @@ function PricingListAthome() {
 
   return (
     <main className={styles.container}>
-      <h1 className={styles.title}>{t("title")}</h1>
-      <p className={styles.subtitle}>{t("subtitle")}</p>
+      <div className={styles.titlecontainer} >
 
+      <span className={styles.title}>{t("title")}</span>
+      <span className={styles.subtitle}>{t("subtitle")}</span>
+      </div>
       <div className={styles.cardContainer}>
         {packages.map((pkg, i) => (
           <div key={i} className={styles.card}>

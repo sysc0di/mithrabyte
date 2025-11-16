@@ -37,7 +37,6 @@ function HomeContent() {
         </div>
       </div>
       <ProductsOnHomeCards />
-      <WhyUs/>
       <JobsCards />
       <CompanyCards />
       <PricingListAthome/>

@@ -1,32 +1,41 @@
+/* ────────────────────────────────
+   WRAPPER
+────────────────────────────────── */
 .wrapper {
   position: relative;
   min-height: 100vh;
   width: 100vw;
+  padding: 5rem 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 80px 0;
-  background-color: var(--background);
+  background: var(--background);
 }
 
+/* ────────────────────────────────
+   CONTAINER
+────────────────────────────────── */
 .container {
   width: 80%;
   max-width: 1200px;
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 3rem;
 }
 
+/* ────────────────────────────────
+   HEADER AREA
+────────────────────────────────── */
 .header {
   text-align: center;
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
 }
 
 .title {
   font-size: 3rem;
   font-weight: 700;
   color: var(--foreground);
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
 }
 
 .subtitle {
@@ -34,45 +43,52 @@
   color: var(--foreground-2);
 }
 
+/* ────────────────────────────────
+   GRID LAYOUT
+────────────────────────────────── */
 .cardsGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  gap: 1.5rem;
 }
 
+/* ────────────────────────────────
+   CARD BASE
+────────────────────────────────── */
 .card {
   position: relative;
+  padding: 2.25rem 2rem;
+  background: var(--background25op);
   backdrop-filter: blur(10px);
-  background-color: var(--background25op);
-  border-radius: 16px;
-  padding: 36px 34px;
-  transition: background-color 0.4s ease;
+  border-radius: 1rem;
   display: flex;
   flex-direction: column;
-  align-items: start;
+  gap: 1.5rem;
   justify-content: flex-start;
+  align-items: flex-start;
+  min-height: 20rem;
+  transition: background-color .4s ease, transform .3s ease;
   z-index: 3;
-  gap: 24px;
-  min-height: 320px;
 }
 
+/* Hover blur background */
 .card::after {
   content: "";
   position: absolute;
   inset: 0;
   filter: blur(50px);
-  background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  background-size: cover;
   opacity: 0;
-  transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease;
   z-index: -2;
 }
 
 .card:hover::after {
-  opacity: 0.5;
+  opacity: .5;
 }
 
+/* Blur variants */
 .card1::after {
   background-image: url('../../assets/squareblur.svg');
 }
@@ -89,42 +105,46 @@
   background-image: url('../../assets/squareblur.svg');
 }
 
+/* Border animation */
 .borderAnim {
   position: absolute;
   width: calc(100% + 4px);
   height: calc(100% + 4px);
-  stroke: var(--foreground);
-  stroke-width: 0.25;
   left: -2px;
   top: -2px;
   fill: none;
-  pointer-events: none;
+  stroke: var(--foreground);
+  stroke-width: .25;
+  stroke-linecap: round;
   stroke-dasharray: 400;
   stroke-dashoffset: 400;
   transition: stroke-dashoffset 1s ease;
+  pointer-events: none;
   z-index: 3;
-  stroke-linecap: round;
 }
 
 .card:hover .borderAnim {
   stroke-dashoffset: 0;
 }
 
+/* Hover state */
 .card:hover {
-  background-color: var(--background50op);
+  background: var(--background50op);
   transform: translateY(-4px);
-  transition: transform 0.3s ease;
 }
 
+/* ────────────────────────────────
+   ICON + TEXT
+────────────────────────────────── */
 .iconContainer {
-  width: 64px;
-  height: 64px;
+  width: 4rem;
+  height: 4rem;
+  border-radius: .75rem;
+  background: var(--background50op);
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--background50op);
-  border-radius: 12px;
-  margin-bottom: 8px;
+  margin-bottom: .5rem;
 }
 
 .icon {
@@ -133,30 +153,32 @@
 }
 
 .cardtitle {
+  width: 100%;
   font-size: 1.75rem;
   font-weight: 600;
-  width: 100%;
   color: var(--foreground);
-  margin-top: 8px;
 }
 
 .cardtext {
-  font-size: 1rem;
   width: 100%;
-  color: var(--foreground);
+  font-size: 1rem;
   line-height: 1.6;
+  color: var(--foreground);
   flex-grow: 1;
 }
 
+/* ────────────────────────────────
+   MOBILE RESPONSIVE
+────────────────────────────────── */
 @media (max-width: 768px) {
   .wrapper {
-    padding: 48px 0;
+    padding: 3rem 0;
     min-height: auto;
   }
 
   .container {
     width: 90%;
-    gap: 32px;
+    gap: 2rem;
   }
 
   .title {
@@ -169,12 +191,12 @@
 
   .cardsGrid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 1.25rem;
   }
 
   .card {
+    padding: 2rem 1.5rem;
     min-height: auto;
-    padding: 32px 24px;
   }
 
   .borderAnim {
@@ -182,7 +204,7 @@
   }
 
   .cardactive::after {
-    opacity: 0.8;
+    opacity: .8;
   }
 
   .cardtitle {
@@ -190,16 +212,18 @@
   }
 
   .cardtext {
-    font-size: 0.95rem;
+    font-size: .95rem;
   }
 
   .iconContainer {
-    width: 56px;
-    height: 56px;
+    width: 3.5rem;
+    height: 3.5rem;
   }
 
   .icon {
-    font-size: 2rem;
+    width: 60px;
+    height: 60px;
+    color: var(--foreground);
   }
-}
 
+}

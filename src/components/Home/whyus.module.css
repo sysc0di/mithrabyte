@@ -1,56 +1,117 @@
+/* ────────────────────────────────────────── */
+/*  WHY US SECTION — MODERN + MOBILE FIRST   */
+/* ────────────────────────────────────────── */
+
 .whyuscontainer {
-  position: relative;
-  min-height: 100vh;
-  height: auto; /* fit-content yerine auto kullan */
   width: 100vw;
+  min-height: 100vh;
   display: flex;
-  background-color: var(--background);
   align-items: center;
   justify-content: center;
+  background: var(--background);
+  position: relative;
 }
 
+/* Base content card */
 .whyuscontent {
-  width: 50%;
-  min-height: 200px; /* iOS Safari için minimum bir yükseklik tanımla */
-  position: absolute;
+  width: 85%;
+  min-height: 12.5rem;
   display: flex;
   flex-direction: column;
-  align-items: start;
   justify-content: center;
-  backdrop-filter: blur(5px);
-  padding: 24px;
-  background-color: var(--background25op);
-  transition: all 0.5s ease;
-  overflow: visible;
+  padding: 3rem 2rem;
+  background: var(--background25op);
+  backdrop-filter: blur(0.3rem);
+  position: relative;
   box-sizing: border-box;
+  transition: all 0.4s ease;
+  overflow: visible;
 }
 
-.whyuscontent::before {
-  content: "";
-  position: absolute;
-  width: 1px;
-  height: 0;
-  left: 12px;
-  top: 0;
-  transition: height 1s ease-in-out;
-  background-color: var(--foreground-2);
-  z-index: 10;
-}
-
+/* Minimal border animation */
+.whyuscontent::before,
 .whyuscontent::after {
   content: "";
   position: absolute;
+  background: var(--foreground-2);
+  transition: all 0.9s ease;
+}
+
+.whyuscontent::before {
+  width: 1px;
+  height: 0;
+  left: 0.75rem;
+  top: 0;
+}
+
+.whyuscontent::after {
   width: 0;
   height: 1px;
   left: 0;
-  top: 12px;
-  transition: width 1s ease-in-out;
-  background-color: var(--foreground-2);
-  z-index: 10;
+  top: 0.75rem;
 }
 
-/* Masaüstü hover */
+/* Activated on scroll (mobile) */
+.whyuscontent.active::before {
+  height: 50%;
+}
+
+.whyuscontent.active::after {
+  width: 50%;
+}
+
+/* TEXT AREA */
+.whyustexts {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2.5rem 2rem;
+  box-sizing: border-box;
+}
+
+/* Blur BG */
+.whyustexts::after {
+  content: "";
+  position: absolute;
+  inset: 1rem;
+  background-image: url("../../assets/trapezoidblur.svg");
+  background-size: 140%;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(1.25rem);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.8s ease;
+}
+
+/* TYPOGRAPHY */
+.whyustexts h1 {
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+  color: var(--foreground);
+}
+
+.whyustexts p {
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
+  font-weight: 400;
+  line-height: 1.55;
+  margin: 0;
+  color: var(--foreground);
+}
+
+/* ───────────────────────── */
+/*      DESKTOP EFFECTS      */
+/* ───────────────────────── */
 @media (min-width: 769px) {
+  .whyuscontent {
+    width: 50%;
+    padding: 3rem 3.5rem;
+  }
+
   .whyuscontent:hover::before {
     height: 50%;
   }
@@ -58,135 +119,71 @@
   .whyuscontent:hover::after {
     width: 50%;
   }
-}
 
-/* whyustexts ve blur arka plan efekti */
-.whyustexts {
-  position: relative;
-  width: calc(100% - 32px);
-  min-height: 100px; /* iOS için minimum içerik yüksekliği */
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: start;
-  gap: 24px;
-  padding: 48px;
-  box-sizing: border-box;
-}
+  .whyustexts::after {
+    background-size: 110%;
+  }
 
-.whyustexts::after {
-  content: "";
-  top: 0;
-  left: 0;
-  position: absolute;
-  height: calc(100% - 32px);
-  width: calc(100% - 32px);
-  filter: blur(20px);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-  z-index: -2;
-  background-image: url("../../assets/trapezoidblur.svg");
-}
-
-.whyustexts p {
-  font-size: 20px;
-  font-weight: 400;
-}
-
-/* Masaüstü hover blur */
-@media (min-width: 769px) {
   .whyustexts:hover::after {
-    opacity: 0.5;
-  }
-
-
-  .whyustexts h1 {
-    font-size: 48px;
+    opacity: 0.45;
   }
 }
 
-/* Mobil scroll ile aktif */
+/* ───────────────────────── */
+/*        MOBILE LAYOUT      */
+/* ───────────────────────── */
 @media (max-width: 768px) {
   .whyuscontent {
-    width: 80%;
-    min-height: 200px;
-    gap: 48px;
-    padding-block: 48px;
-    position: relative; /* iOS için absolute yerine relative */
+    width: 90%;
+    padding: 3rem 2rem;
+    gap: 2rem;
+    position: relative;
   }
 
   .whyuscontent.active::before {
-    height: 50%;
     left: 0;
-    top: -10px;
+    top: -0.375rem;
   }
 
   .whyuscontent.active::after {
-    width: 50%;
+    left: -0.375rem;
     top: 0;
-    left: -10px;
   }
 
   .whyustexts {
-    width: 100%;
-    padding-inline: 48px;
-    gap: 48px;
-    border-right: solid 1px var(--foreground-2);
-    border-bottom: solid 1px var(--foreground-2);
+    padding: 2.5rem 1.5rem;
+    gap: 2rem;
+    border-right: 1px solid var(--foreground-2);
+    border-bottom: 1px solid var(--foreground-2);
   }
 
   .whyustexts::after {
-    background-size: 150%;
+    background-size: 155%;
   }
 
   .whyustextsopacityactive::after {
-    opacity: 0.5;
-  }
-
-  /* Yazı fontları */
-  .whyustexts h1 {
-    font-size: 28px;
-    margin: 0;
-  }
-
-  .whyustexts p {
-    font-size: 18px;
-    margin: 0;
-    font-weight: 400;
-    line-height: 1.5;
-    color: var(--foreground);
+    opacity: 0.45;
   }
 }
 
-/* ───────────────────── SAFARI iOS FIX ───────────────────── */
+/* ───────────────────────── */
+/*        SAFARI FIXES       */
+/* ───────────────────────── */
 @supports (-webkit-overflow-scrolling: touch) {
   .whyuscontent::before,
   .whyuscontent::after {
     transform-origin: top left;
     transform: scale(0);
-    transition: transform 1s ease-in-out;
+    transition: transform 0.9s ease;
   }
 
-  @media (min-width: 769px) {
-    .whyuscontent:hover::before {
-      transform: scaleY(1);
-    }
-
-    .whyuscontent:hover::after {
-      transform: scaleX(1);
-    }
+  .whyuscontent:hover::before,
+  .whyuscontent.active::before {
+    transform: scaleY(1);
   }
 
-  @media (max-width: 768px) {
-    .whyuscontent.active::before {
-      transform: scaleY(1);
-    }
-
-    .whyuscontent.active::after {
-      transform: scaleX(1);
-    }
+  .whyuscontent:hover::after,
+  .whyuscontent.active::after {
+    transform: scaleX(1);
   }
 }

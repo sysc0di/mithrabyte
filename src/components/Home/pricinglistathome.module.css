@@ -1,66 +1,83 @@
 .container {
+    min-height: 100vh;
     display: flex;
-    align-items: center;
     flex-direction: column;
     justify-content: center;
-    min-height: 100vh;
+    align-items: center;
     background-color: var(--background);
+    padding: 2rem 1rem;
 }
 
+/* Başlık */
 .title {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 700;
     text-align: center;
-    font-size: 2rem;
-    margin-bottom: 5rem;
-    font-weight: bold;
     color: var(--foreground);
 }
 
-.cardContainer {
+.subtitle {
+    font-size: clamp(1.2rem, 2vw, 1.2rem);
+
+}
+
+.titlecontainer {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
-    width: 90%;
+    width: 100%;
+    align-items: center;
+    gap: 24px;
+    padding-bottom: 48px;
+    justify-content: center;
+}
+
+/* Kartlar */
+.cardContainer {
+    width: min(90%, 1200px);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 .card {
+    background-color: var(--background-2);
     border-radius: 1rem;
     padding: 2rem;
-    gap: 12px;
     display: flex;
     flex-direction: column;
-    align-items: end;
+    gap: 1rem;
+    align-items: flex-end;
     justify-content: space-between;
-    min-height: fit-content;
     width: 100%;
-    background-color: var(--background-2);
 }
 
 .cardTitle {
     width: 100%;
-    font-size: 1.5rem;
+    font-size: clamp(1.25rem, 2vw, 1.75rem);
     font-weight: 600;
     color: var(--foreground);
 }
 
 .cardDesc {
-    font-size: 1rem;
     width: 100%;
-    text-align: left;
+    font-size: clamp(1rem, 1.5vw, 1.125rem);
+    line-height: 1.6;
     color: var(--foreground);
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
+/* Özellik listesi */
 .featureList {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 0.1rem 0.2rem;
-    width: 100%;
-    font-size: 0.9rem;
-    gap: 1rem;
+    gap: 0.75rem;
+    padding: 0.25rem;
+    font-size: clamp(0.9rem, 1.3vw, 1rem);
     color: var(--foreground);
-    margin-bottom: 1rem;
 }
 
+/* Fiyat alanı */
 .pricecontainer {
     width: 100%;
     display: flex;
@@ -69,44 +86,41 @@
 }
 
 .price {
-    font-size: 1.2rem;
-    font-weight: bold;
+    font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+    font-weight: 700;
     color: var(--foreground-2);
     text-align: right;
-    margin-bottom: 0.5rem;
 }
 
+/* Button */
 .button {
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
     background-color: var(--button-bg);
     color: var(--button-text);
-    padding: 0.6rem 0rem;
+    padding: 0.6rem 0;
     font-size: 1rem;
     font-weight: 500;
     border: none;
     cursor: pointer;
-    width: fit-content;
-    display: flex;
-    align-items: center;
-    text-align: left;
-    justify-content: start;
-
-    transition: background-color 0.2s ease-in-out;
+    transition: background-color 0.25s ease;
 }
 
 .button::after {
-    position: absolute;
     content: "";
-    width: 10px;
-    height: 2px;
-    bottom: 0;
+    position: absolute;
     left: 0;
-    transition: ease 1s;
+    bottom: 0;
+    width: 0.625rem;
+    /* 10px */
+    height: 2px;
     background-color: var(--foreground);
+    transition: width 0.8s ease;
 }
 
 .button:hover::after {
-    position: absolute;
     width: 100%;
 }
 
@@ -114,15 +128,11 @@
     background-color: var(--button-hover);
 }
 
+/* Desktop düzeni */
 @media (min-width: 768px) {
     .cardContainer {
         flex-direction: row;
         justify-content: center;
-        width: 60%;
+        gap: 2rem;
     }
-   .card{
-    padding: 2rem;
-   }
-
-    
 }

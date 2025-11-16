@@ -2,11 +2,14 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./companycards.module.css";
 import { useTranslations } from 'next-intl';
+import { Code, Cpu, Globe, Users } from "lucide-react";
+
 
 function CompanyCards() {
   const t = useTranslations('home.company');
   const contentRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  const icons = [<Cpu key="cpu" className={styles.icon} />, <Code key="code" className={styles.icon} />, <Globe key="globe" className={styles.icon} />, <Users key="users" className={styles.icon} />];
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -32,25 +35,25 @@ function CompanyCards() {
     {
       title: t('card1.title'),
       description: t('card1.description'),
-      icon: t('card1.icon'),
+      icon:icons[0],
       className: styles.card1
     },
     {
       title: t('card2.title'),
       description: t('card2.description'),
-      icon: t('card2.icon'),
+      icon: icons[1],
       className: styles.card2
     },
     {
       title: t('card3.title'),
       description: t('card3.description'),
-      icon: t('card3.icon'),
+      icon: icons[2],
       className: styles.card3
     },
     {
       title: t('card4.title'),
       description: t('card4.description'),
-      icon: t('card4.icon'),
+      icon: icons[3],
       className: styles.card4
     }
   ];

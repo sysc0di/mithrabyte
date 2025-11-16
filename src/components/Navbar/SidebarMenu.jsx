@@ -19,7 +19,7 @@ export default function SidebarMenu({ open, onClose }) {
 
     const socialLinks = [
         { href: 'https://instagram.com/mithrabyte', icon: <Instagram className={styles.socialIcon} />, label: 'Instagram' },
-        { href: 'https://github.com/codingewer', icon: <Github className={styles.socialIcon} />, label: 'Github' },
+        { href: 'https://github.com/sysc0di', icon: <Github className={styles.socialIcon} />, label: 'Github' },
     ];
 
     return (
