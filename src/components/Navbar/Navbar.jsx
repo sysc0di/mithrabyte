@@ -11,8 +11,7 @@ import LanguageSwitcher from './LanguageSwitcher';
 function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
     const t = useTranslations('nav');
-    const locale = localStorage.getItem("locale");
-
+const locale = typeof window !== "undefined" ? localStorage.getItem("locale") : null;
   return (
     <div className={styles.navbarcontanier} >
             <SidebarMenu open={menuOpen} onClose={() => setMenuOpen(false)} />

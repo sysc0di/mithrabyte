@@ -6,7 +6,7 @@ import { useTranslations } from 'next-intl';
 
 export default function Footer() {
   const t = useTranslations('footer');
-  const locale = localStorage.getItem("locale");
+const locale = typeof window !== "undefined" ? localStorage.getItem("locale") : null;
   console.log(locale)
   return (
     <footer className={styles.footer}>
