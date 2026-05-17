@@ -1,8 +1,8 @@
 import "./globals.css";
-import { Space_Grotesk, Space_Mono } from "next/font/google";
+import { Kode_Mono, Space_Mono } from "next/font/google";
 import Script from "next/script";
 
-const spaceGrotesk = Space_Grotesk({
+const spaceGrotesk = Kode_Mono({
   variable: "--font-space-grotesk-sans",
   subsets: ["latin"],
   weight: ["400", "700"],

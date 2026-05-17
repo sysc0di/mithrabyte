@@ -49,8 +49,7 @@ body {
   background: var(--background);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: var(--font-space-grotesk-sans);
-}
+  font-family: "Kode Mono", monospace;}
 
 * {
   transition:

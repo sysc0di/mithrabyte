@@ -4,8 +4,8 @@
 .wrapper {
   position: relative;
   min-height: 100vh;
-  width: 100vw;
-  padding: 5rem 0;
+  width: 100%; /* 100vw yatay taşma (scrollbar bug) yapmaması için %100'e çekildi */
+  padding: 4rem 1.5rem; /* Mobil/Masaüstü arası dengeli padding */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,11 +16,11 @@
    CONTAINER
 ────────────────────────────────── */
 .container {
-  width: 80%;
-  max-width: 1200px;
+  width: 100%;
+  max-width: 1140px; /* Standart profesyonel grid genişliği */
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2.5rem; /* Compact tasarım için gap optimize edildi */
 }
 
 /* ────────────────────────────────
@@ -28,19 +28,23 @@
 ────────────────────────────────── */
 .header {
   text-align: center;
-  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* Başlık ve alt başlık arası mesafe sabitlendi */
 }
 
 .title {
-  font-size: 3rem;
+  font-size: clamp(2rem, 4vw, 3rem); /* Ekran boyutuna göre dinamik ölçeklenme */
   font-weight: 700;
   color: var(--foreground);
-  margin-bottom: 1rem;
+  letter-spacing: -0.02em; /* Daha premium bir görünüm için */
+  line-height: 1.15;
 }
 
 .subtitle {
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
   color: var(--foreground-2);
+  opacity: 0.85;
 }
 
 /* ────────────────────────────────
@@ -50,6 +54,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
+  width: 100%;
 }
 
 /* ────────────────────────────────
@@ -59,15 +64,17 @@
   position: relative;
   padding: 2.25rem 2rem;
   background: var(--background25op);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px); /* Blur derinliği hafifçe artırıldı */
+  -webkit-backdrop-filter: blur(12px);
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 1.5rem;
-  transition: background-color .4s ease, transform .3s ease;
-  z-index: 3;
-  min-height: 18rem;
+  gap: 1.25rem;
+  transition: background-color 0.3s ease, transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 1; /* Katman hiyerarşisi temizlendi */
+  min-height: 17rem; /* Compact olması adına çok hafif küçültüldü */
+  overflow: hidden; /* Dışarı taşan efektleri yumuşatmak için */
 }
 
 /* Hover blur background */
@@ -75,16 +82,16 @@
   content: "";
   position: absolute;
   inset: 0;
-  filter: blur(48px);
+  filter: blur(40px); /* 48px'den 40px'e çekilerek daha rafine bir parlama sağlandı */
   background-size: cover;
   background-position: center;
   opacity: 0;
-  transition: opacity 1s ease;
-  z-index: -2;
+  transition: opacity 0.6s ease; /* 1s çok hantaldı, daha hızlı ve dinamik */
+  z-index: -1;
 }
 
 .card:hover::after {
-  opacity: .5;
+  opacity: 0.45;
 }
 
 /* Blur variants */
@@ -103,12 +110,12 @@
   fill: none;
   stroke: var(--foreground);
   stroke-linecap: round;
-  stroke-width: .25;
+  stroke-width: 0.25;
   stroke-dasharray: 400;
   stroke-dashoffset: 400;
   pointer-events: none;
-  transition: stroke-dashoffset 1s ease;
-  z-index: 3;
+  transition: stroke-dashoffset 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 2;
 }
 
 .card:hover .borderAnim {
@@ -118,6 +125,7 @@
 /* Hover background */
 .card:hover {
   background: var(--background50op);
+  transform: translateY(-4px); /* Profesyonel kart hissi için hafif yukarı esneme */
 }
 
 /* ────────────────────────────────
@@ -125,16 +133,18 @@
 ────────────────────────────────── */
 .cardtitle {
   width: 100%;
-  font-size: 1.75rem;
+  font-size: clamp(1.35rem, 2vw, 1.65rem);
   font-weight: 600;
   color: var(--foreground);
+  letter-spacing: -0.01em;
 }
 
 .cardtext {
   width: 100%;
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: 0.95rem;
+  line-height: 1.5;
   color: var(--foreground);
+  opacity: 0.9;
   flex-grow: 1;
 }
 
@@ -142,8 +152,9 @@
    BUTTON / LINK
 ────────────────────────────────── */
 .cardlink {
-  font-size: 1rem;
-  padding: .75rem 1.5rem;
+  align-self: flex-start; /* Butonun tüm satırı kaplamasını engeller, compact tutar */
+  font-size: 0.9rem;
+  padding: 0.65rem 1.5rem;
   cursor: pointer;
   border: none;
   position: relative;
@@ -151,7 +162,8 @@
   background: var(--foreground);
   clip-path: var(--clip-bottom-right);
   text-decoration: none;
-  transition: color .3s ease, background .3s ease;
+  font-weight: 500;
+  transition: color 0.25s ease, background 0.25s ease, transform 0.1s ease;
 }
 
 .cardlink::before {
@@ -167,26 +179,21 @@
   color: var(--main-color);
 }
 
+.cardlink:active {
+  transform: scale(0.97); /* Mikro etkileşim tıklama hissi */
+}
+
 /* ────────────────────────────────
-   MOBILE
+   MOBILE / RESPONSIVE
 ────────────────────────────────── */
 @media (max-width: 768px) {
   .wrapper {
-    padding: 3rem 0;
+    padding: 3rem 1rem;
     min-height: auto;
   }
 
   .container {
-    width: 90%;
     gap: 2rem;
-  }
-
-  .title {
-    font-size: 2rem;
-  }
-
-  .subtitle {
-    font-size: 1rem;
   }
 
   .cardsGrid {
@@ -197,21 +204,14 @@
   .card {
     padding: 2rem 1.5rem;
     min-height: auto;
+    gap: 1.15rem;
   }
 
   .borderAnim {
-    display: none;
+    display: none; /* Mobilde stroke animasyonları performansı yormasın diye kapalı */
   }
 
   .cardactive::after {
-    opacity: .8;
-  }
-
-  .cardtitle {
-    font-size: 1.5rem;
-  }
-
-  .cardtext {
-    font-size: .95rem;
+    opacity: 0.7;
   }
 }

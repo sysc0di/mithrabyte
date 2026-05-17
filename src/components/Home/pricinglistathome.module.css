@@ -5,65 +5,69 @@
     justify-content: center;
     align-items: center;
     background-color: var(--background);
-    padding: 2rem 1rem;
+    padding: 3rem 1.5rem; /* Mobil için dikey boşluk biraz artırıldı */
 }
 
-/* Başlık */
-.title {
-    font-size: clamp(1.75rem, 3vw, 2.5rem);
-    font-weight: 700;
-    text-align: center;
-    color: var(--foreground);
-}
-
-.subtitle {
-    font-size: clamp(1.2rem, 2vw, 1.2rem);
-
-}
-
+/* Başlık Alanı */
 .titlecontainer {
     display: flex;
     flex-direction: column;
     width: 100%;
     align-items: center;
-    gap: 24px;
-    padding-bottom: 48px;
+    gap: 0.75rem;       /* Başlık ve alt başlık arası boşluk compact hale getirildi */
+    padding-bottom: 2.5rem; /* Profesyonel durması için padding azaltıldı */
     justify-content: center;
 }
 
-/* Kartlar */
-.cardContainer {
-    width: min(90%, 1200px);
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+.title {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 700;
+    text-align: center;
+    color: var(--foreground);
+    letter-spacing: -0.02em; /* Profesyonel font görünümü için hafif daraltma */
 }
 
+.subtitle {
+    font-size: clamp(1rem, 1.8vw, 1.15rem);
+    color: var(--foreground-muted, #8a8a93); /* Net bir renk atandı */
+    text-align: center;
+}
+
+/* Kartlar Konteyneri */
+.cardContainer {
+    width: min(100%, 1200px); /* 90% yerine tam ekran esnekliği sağlandı */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Boşluklar daha sıkı hale getirildi */
+}
+
+/* Kart Yapısı */
 .card {
     background-color: var(--background-2);
     border-radius: 1rem;
-    padding: 2rem;
+    padding: 2rem 1.75rem; /* Dikey geniş, yatay daha compact padding */
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    align-items: flex-end;
+    gap: 1.25rem; /* İçerik elemanları arasındaki boşluk sabitlendi */
     justify-content: space-between;
     width: 100%;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03); /* Hafif derinlik */
 }
 
 .cardTitle {
     width: 100%;
-    font-size: clamp(1.25rem, 2vw, 1.75rem);
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
     font-weight: 600;
     color: var(--foreground);
+    letter-spacing: -0.01em;
 }
 
 .cardDesc {
     width: 100%;
-    font-size: clamp(1rem, 1.5vw, 1.125rem);
-    line-height: 1.6;
+    font-size: clamp(0.875rem, 1.4vw, 1rem);
+    line-height: 1.5;
     color: var(--foreground);
-    margin-bottom: 0.5rem;
+    opacity: 0.85; /* Okunabilirliği artıran hafif softluk */
 }
 
 /* Özellik listesi */
@@ -71,41 +75,42 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
-    padding: 0.25rem;
-    font-size: clamp(0.9rem, 1.3vw, 1rem);
+    gap: 0.5rem; /* Liste elemanları birbirine daha yakın ve derli toplu */
+    font-size: clamp(0.85rem, 1.3vw, 0.95rem);
     color: var(--foreground);
 }
 
-/* Fiyat alanı */
+/* Fiyat ve Alt Alan */
 .pricecontainer {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-top: 0.75rem; 
+    border-top: 1px solid rgba(255, 255, 255, 0.05); /* İçeriği fiyattan ayıran çok hafif çizgi */
 }
 
 .price {
-    font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+    font-size: clamp(1.15rem, 1.6vw, 1.4rem);
     font-weight: 700;
     color: var(--foreground-2);
-    text-align: right;
 }
 
-/* Button */
+/* Buton */
 .button {
     position: relative;
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     background-color: var(--button-bg);
     color: var(--button-text);
-    padding: 0.6rem 0;
-    font-size: 1rem;
+    padding: 0.5rem 1rem; /* Tamamen sıfır yerine sağdan soldan hafif boşluk daha elit durur */
+    font-size: 0.95rem;
     font-weight: 500;
     border: none;
+    border-radius: 0.375rem; /* Butona çok hafif modern bir kavis */
     cursor: pointer;
-    transition: background-color 0.25s ease;
+    transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
 .button::after {
@@ -113,11 +118,10 @@
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 0.625rem;
-    /* 10px */
+    width: 10px;
     height: 2px;
     background-color: var(--foreground);
-    transition: width 0.8s ease;
+    transition: width 0.4s ease; /* 0.8s çok hantaldı, 0.4s hıza çekildi */
 }
 
 .button:hover::after {
@@ -128,11 +132,20 @@
     background-color: var(--button-hover);
 }
 
-/* Desktop düzeni */
+.button:active {
+    transform: scale(0.98); /* Tıklama hissi veren mikro etkileşim */
+}
+
+/* Desktop Düzeni (Gelişmiş Ekranlar) */
 @media (min-width: 768px) {
     .cardContainer {
         flex-direction: row;
         justify-content: center;
-        gap: 2rem;
+        gap: 1.5rem; /* Masaüstünde de kartlar arası boşluk optimize edildi */
+    }
+    
+    .card {
+        flex: 1; /* Kartların masaüstünde eşit genişlikte dağılmasını sağlar */
+        max-width: 380px; /* Kartların devasa yayılmasını engeller, compact tutar */
     }
 }

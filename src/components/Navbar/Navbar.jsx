@@ -18,7 +18,7 @@ const locale = typeof window !== "undefined" ? localStorage.getItem("locale") : 
       <div className={`${styles.emptydiv} ${styles.emptydivleft}`} ></div>
       <div className={styles.navbar} >
         <div className={styles.logo}>
-          <Link href={`/${locale}`}>
+          <Link href={`/`}>
             <img
               src="/logo.svg"
               alt="mithrabyte"
