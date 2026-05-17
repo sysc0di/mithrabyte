@@ -6,21 +6,7 @@ import { useTranslations, useLocale } from 'next-intl';
 
 function ProductsOnHomeCards() {
   const t = useTranslations('home.products');
-  const shadowRef = useRef(null);
-  const handleMouseMove = (e) => {
-    const wrapper = e.currentTarget;
-    const rect = wrapper.getBoundingClientRect();
-
-    const offsetY = 20; // 20px aşağı
-
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top + offsetY;
-
-    if (shadowRef.current) {
-      shadowRef.current.style.left = `${x}px`;
-      shadowRef.current.style.top = `${y}px`;
-    }
-  };
+ 
 
   const contentRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -40,14 +26,12 @@ function ProductsOnHomeCards() {
       { threshold: 0.3 }
     );
 
-    observer.observe(contentRef.current);
 
     return () => observer.disconnect();
   }, []);
 
   return (
-    <div className={styles.wrapper} onMouseMove={handleMouseMove}>
-      <div ref={shadowRef} className={styles.shadow} />
+    <div className={styles.wrapper}>
       <div ref={contentRef} className={styles.container}>
         <div
           className={`${styles.card} ${styles.card1} ${

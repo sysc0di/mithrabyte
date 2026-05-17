@@ -11,7 +11,7 @@ import LanguageSwitcher from './LanguageSwitcher';
 function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
     const t = useTranslations('nav');
-    const locale = useLocale();
+    const locale = localStorage.getItem("locale");
 
   return (
     <div className={styles.navbarcontanier} >

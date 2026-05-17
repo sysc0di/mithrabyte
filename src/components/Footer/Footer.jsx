@@ -2,12 +2,12 @@
 import styles from './footer.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useTranslations, useLocale } from 'next-intl';
+import { useTranslations } from 'next-intl';
 
 export default function Footer() {
   const t = useTranslations('footer');
-  const locale = useLocale();
-  
+  const locale = localStorage.getItem("locale");
+  console.log(locale)
   return (
     <footer className={styles.footer}>
       <div className={styles.content}>

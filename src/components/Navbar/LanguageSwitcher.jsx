@@ -6,10 +6,9 @@ export default function LanguageSwitcher() {
   const router = useRouter();
   const pathname = usePathname();
     const locale = pathname.split("/")[1];
-  console.log("locale-----", locale)
   const switchLocale = (newLocale) => {
     if ( "/" + newLocale === locale) return;
-  
+      localStorage.setItem('locale', newLocale);
     // Get current path without locale
     const segments = pathname.split('/').filter(Boolean);
     if (segments[0] === 'tr' || segments[0] === 'en') {

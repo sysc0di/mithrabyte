@@ -14,7 +14,7 @@
     "@react-three/fiber": "^9.2.0",
     "@splinetool/react-spline": "^4.1.0",
     "@splinetool/runtime": "^1.10.38",
-    "cobe": "^0.6.4",
+    "cobe": "^2.0.1",
     "formik": "^2.4.6",
     "framer-motion": "^12.23.6",
     "lucide-react": "^0.535.0",
