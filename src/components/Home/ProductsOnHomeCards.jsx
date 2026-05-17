@@ -49,7 +49,7 @@ function ProductsOnHomeCards() {
           <span className={styles.cardtext}>
             {t('socialMedia.description')}
           </span>
-          <Link className="cardlink" href="https://bionluk.com/coderingewer">
+          <Link className="cardlink"       href="mailto:yatli5645@gmail.com">
             {t('socialMedia.cta')}
           </Link>
         </div>
@@ -69,7 +69,7 @@ function ProductsOnHomeCards() {
           <span className={styles.cardtext}>
             {t('mobile.description')}
           </span>
-          <Link className="cardlink" href="https://bionluk.com/coderingewer">
+          <Link className="cardlink"        href="mailto:yatli5645@gmail.com">
             {t('mobile.cta')}
           </Link>
         </div>
@@ -89,7 +89,7 @@ function ProductsOnHomeCards() {
           <span className={styles.cardtext}>
             {t('web.description')}
           </span>
-          <Link className="cardlink" href="https://bionluk.com/coderingewer">
+          <Link className="cardlink"         href="mailto:yatli5645@gmail.com">
             {t('web.cta')}
           </Link>
         </div>
