@@ -5,6 +5,7 @@ import HomeContent from "@/components/Home/HomeContent";
 import Footer from "../../components/Footer/Footer"
 
 export default function Home() {
+  
   return (
     <div className={styles.page}>
       <Navbar />

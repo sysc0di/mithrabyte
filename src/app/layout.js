@@ -13,7 +13,6 @@ const spaceMono = Space_Mono({
   subsets: ["latin"],
   weight: ["400", "700"],
 });
-
 export default function RootLayout({ children }) {
   return (
     <html suppressHydrationWarning>

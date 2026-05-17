@@ -13,7 +13,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const { locale } = await params;
   const isTurkish = locale === 'tr';
-  
+
   return {
     title: isTurkish 
       ? "Mithrabyte | Yapay Zeka Destekli Çözümler"

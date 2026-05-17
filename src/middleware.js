@@ -1,3 +1,4 @@
+// middleware.js
 import { NextResponse } from 'next/server';
 
 const locales = ['en', 'tr'];
@@ -21,7 +22,6 @@ export function middleware(req) {
   const langHeader = req.headers.get('accept-language');
   const browserLang = langHeader?.split(',')[0]?.split('-')[0];
   const locale = locales.includes(browserLang) ? browserLang : defaultLocale;
-
   const url = req.nextUrl.clone();
   url.pathname = `/${locale}${pathname}`;
   return NextResponse.redirect(url);
