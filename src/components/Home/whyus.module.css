@@ -3,13 +3,15 @@
 /* ────────────────────────────────────────── */
 
 .whyuscontainer {
-  width: 100vw;
+  width: 100%; /* 100vw taşma hatası engellendi, kusursuz ortalama sağlandı */
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--background);
   position: relative;
+  padding: 2rem 1rem; /* Mobil ekran sınırları için emniyet payı */
+  box-sizing: border-box;
 }
 
 /* Base content card */
@@ -19,9 +21,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 3rem 2rem;
+  padding: 2rem 1.5rem; /* Mobilde iç içe geçen padding'ler dengelendi */
   background: var(--background25op);
   backdrop-filter: blur(0.3rem);
+  -webkit-backdrop-filter: blur(0.3rem);
   position: relative;
   box-sizing: border-box;
   transition: all 0.4s ease;
@@ -66,8 +69,8 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding: 2.5rem 2rem;
+  gap: 1.25rem; /* Başlık ve metin arası daha modern ve kompakt */
+  padding: 2rem 1.5rem;
   box-sizing: border-box;
 }
 
@@ -104,6 +107,59 @@
 }
 
 /* ───────────────────────── */
+/*        MOBILE LAYOUT      */
+/* ───────────────────────── */
+@media (max-width: 768px) {
+  .whyuscontainer {
+    padding: 3rem 1rem; /* Dikeyde nefes alması için hafif esnetildi */
+  }
+
+  .whyuscontent {
+    width: 100%;
+    max-width: 450px; /* Mobilde kartın sağa sola amorf şekilde yayılması engellendi */
+    padding: 0; /* İç içe padding karmaşası sıfırlandı, kontrol .whyustexts'e verildi */
+    gap: 0;
+    position: relative;
+  }
+
+  .whyuscontent.active::before {
+    left: 0;
+    top: -0.375rem;
+  }
+
+  .whyuscontent.active::after {
+    left: -0.375rem;
+    top: 0;
+  }
+
+  .whyustexts {
+    padding: 2.25rem 1.75rem; /* Mobil ekranlar için altın oranlı iç boşluk */
+    gap: 1rem;
+    border-right: 1px solid var(--foreground-2);
+    border-bottom: 1px solid var(--foreground-2);
+  }
+
+  /* Mobil için rafine tipografi ölçeklendirmesi */
+  .whyustexts h1 {
+    font-size: 1.85rem; /* Mobilde dengeli, premium büyüklük */
+    line-height: 1.25;
+  }
+
+  .whyustexts p {
+    font-size: 1rem; /* Okunabilirliği yüksek standart akıllı telefon font boyutu */
+    line-height: 1.6; /* Blok metinlerin rahat okunması için ideal satır yüksekliği */
+  }
+
+  .whyustexts::after {
+    background-size: 155%;
+  }
+
+  .whyustextsopacityactive::after {
+    opacity: 0.45;
+  }
+}
+
+/* ───────────────────────── */
 /*      DESKTOP EFFECTS      */
 /* ───────────────────────── */
 @media (min-width: 769px) {
@@ -125,43 +181,6 @@
   }
 
   .whyustexts:hover::after {
-    opacity: 0.45;
-  }
-}
-
-/* ───────────────────────── */
-/*        MOBILE LAYOUT      */
-/* ───────────────────────── */
-@media (max-width: 768px) {
-  .whyuscontent {
-    width: 90%;
-    padding: 3rem 2rem;
-    gap: 2rem;
-    position: relative;
-  }
-
-  .whyuscontent.active::before {
-    left: 0;
-    top: -0.375rem;
-  }
-
-  .whyuscontent.active::after {
-    left: -0.375rem;
-    top: 0;
-  }
-
-  .whyustexts {
-    padding: 2.5rem 1.5rem;
-    gap: 2rem;
-    border-right: 1px solid var(--foreground-2);
-    border-bottom: 1px solid var(--foreground-2);
-  }
-
-  .whyustexts::after {
-    background-size: 155%;
-  }
-
-  .whyustextsopacityactive::after {
     opacity: 0.45;
   }
 }

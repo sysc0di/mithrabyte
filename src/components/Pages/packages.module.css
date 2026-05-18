@@ -1,13 +1,14 @@
 /* ———————————— WRAPPER / CONTAINER ———————————— */
 .wrapper {
   position: relative;
-  width: 100%;
+  width: 100%; /* 100vw taşma bug'ı ve kaymalar engellendi */
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: var(--background);
   padding: 6rem 1.5rem 3rem 1.5rem;
+  box-sizing: border-box;
 }
 
 .container {
@@ -15,6 +16,7 @@
   display: flex;
   flex-direction: column;
   gap: 3rem;
+  box-sizing: border-box;
 }
 
 /* ———————————— HEADER ———————————— */
@@ -146,7 +148,7 @@
   border-bottom: 1px solid var(--foreground-2-alpha, rgba(255, 255, 255, 0.05));
 }
 
-/* ———————————— CARD BUTTON (BORDERSIZ & PREMIUM) ———————————— */
+/* ———————————— CARD BUTTON ———————————— */
 .cardlink {
   align-self: stretch;
   text-align: center;
@@ -154,9 +156,7 @@
   padding: 0.8rem 1.5rem;
   cursor: pointer;
   border: none;
-  border-radius: 0.5rem; /* Çizgiler kalktığı için temiz, hafif oval modern bir köşe */
-  
-  /* Arka plan tamamen buton rengiyle dolduruldu, iç içe border yapısı temizlendi */
+  border-radius: 0.5rem;
   color: var(--button-text, var(--background)); 
   background-color: var(--button-bg, var(--foreground));
   
@@ -166,37 +166,78 @@
 }
 
 .cardlink:hover {
-  /* Hover durumunda senin belirttiğin ana temaya yumuşak geçiş yapar */
   background-color: var(--button-hover, var(--main-color));
   color: #fff; 
 }
 
 .cardlink:active {
-  transform: scale(0.98); /* Tıklama hissi veren mikro etkileşim */
+  transform: scale(0.98);
 }
 
-/* ———————————— MOBILE LAYOUT ———————————— */
+/* ———————————— MOBILE LAYOUT (KUSURSUZ VE DARALTILMIŞ) ———————————— */
 @media (max-width: 768px) {
   .wrapper {
-    padding: 4rem 1rem 2rem 1rem;
-    min-height: auto;
+    padding: 4rem 0; /* Sağ-sol padding sıfırlandı, kontrolü container elemanına verdik */
+    min-height: 100vh;
   }
 
   .container {
-    gap: 2rem;
+    width: 100%;
+    /* İstediğin calc(100% - 48px) etkisini yaratmak için max-width kilitlendi ve ortalandı */
+    max-width: 410px; 
+    padding: 0 1.5rem; /* Kenarlardan tam 24px + 24px = 48px asil bir boşluk bırakır */
+    gap: 2.25rem;
+    box-sizing: border-box;
+  }
+
+  .header {
+    gap: 0.4rem;
+  }
+
+  .title {
+    font-size: 1.85rem; /* Büyük telefonlar için dengeli, patlamayan başlık boyutu */
+    line-height: 1.2;
+  }
+
+  .subtitle {
+    font-size: 0.925rem;
+    line-height: 1.4;
   }
 
   .cardsGrid {
-    grid-template-columns: 1fr; 
-    gap: 1.5rem;
+    grid-template-columns: 1fr; /* Mobilde dikey tekli sıralama */
+    gap: 1.5rem; /* Kartların bir kopuk gibi durmaması için optimize boşluk */
   }
 
   .card {
-    padding: 2.25rem 1.5rem;
+    padding: 2.25rem 1.65rem; /* Daralan kart yapısına uygun rafine iç boşluklar */
+    gap: 3rem; /* Kart içi dikey boşluk sıkılaştırıldı */
     min-height: auto;
+  }
+  
+  .cardTopContent {
+    gap: 1rem; /* Başlık, fiyat ve liste üçlüsü daha kompakt hale getirildi */
+  }
+
+  .cardtitle {
+    font-size: 1.3rem; /* Kart daraldığı için başlık bir tık küçültüldü */
+  }
+
+  .price {
+    font-size: 1.45rem; /* Fiyat alanı hiyerarşiyi bozmayacak şekilde dengelendi */
+  }
+
+  .featureList {
+    font-size: 0.875rem; /* 14px - Maddelerin daha temiz ve tek satıra yakın kalması için */
+    gap: 0.5rem;
+  }
+
+  .cardlink {
+    padding: 0.75rem 1.25rem; /* Mobil ekran buton yüksekliği ergonomisi */
+    font-size: 0.9rem;
   }
 
   .borderAnim {
-    display: none;
+    display: none; /* Dokunmatik kararlılık ve performans için gizli */
   }
 }

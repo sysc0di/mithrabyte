@@ -1,152 +1,189 @@
+/* ———————————— MAIN CONTAINER ———————————— */
 .container {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    background-color: var(--background);
-    padding: 3rem 1.5rem; /* Mobil için dikey boşluk biraz artırıldı */
+  min-height: 100vh;
+  width: 100%; /* Asimetrik taşma yapan calc kodu kaldırılarak tam ortalama sağlandı */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background);
+  padding: 3rem 1.5rem;
+  box-sizing: border-box; /* Padding'in genişliğe dahil edilerek taşma yapması önlendi */
 }
 
-/* Başlık Alanı */
+/* ———————————— BAŞLIK ALANI ———————————— */
 .titlecontainer {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-    gap: 0.75rem;       /* Başlık ve alt başlık arası boşluk compact hale getirildi */
-    padding-bottom: 2.5rem; /* Profesyonel durması için padding azaltıldı */
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px; /* Başlığın mobilde çok geniş satırlara yayılmaması için */
+  align-items: center;
+  gap: 0.75rem;
+  padding-bottom: 2.5rem;
+  justify-content: center;
 }
 
 .title {
-    font-size: clamp(1.75rem, 3vw, 2.5rem);
-    font-weight: 700;
-    text-align: center;
-    color: var(--foreground);
-    letter-spacing: -0.02em; /* Profesyonel font görünümü için hafif daraltma */
+  font-size: 1.85rem; /* Mobilde güçlü ve net bir karşılama boyutu */
+  font-weight: 700;
+  text-align: center;
+  color: var(--foreground);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
 }
 
 .subtitle {
-    font-size: clamp(1rem, 1.8vw, 1.15rem);
-    color: var(--foreground-muted, #8a8a93); /* Net bir renk atandı */
-    text-align: center;
+  font-size: 0.95rem; /* Okunabilirliği yüksek, ana başlığı ezmeyen soft boyut */
+  color: var(--foreground-muted, #8a8a93);
+  text-align: center;
+  line-height: 1.5;
 }
 
-/* Kartlar Konteyneri */
+/* ———————————— KARTLAR KONTEYNERI ———————————— */
 .cardContainer {
-    width: min(100%, 1200px); /* 90% yerine tam ekran esnekliği sağlandı */
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem; /* Boşluklar daha sıkı hale getirildi */
+  width: 100%;
+  max-width: 440px; /* Mobilde kartların sağa sola aşırı esneyip formunu kaybetmesini engeller */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-sizing: border-box;
 }
 
-/* Kart Yapısı */
+/* ———————————— KART YAPISI ———————————— */
 .card {
-    background-color: var(--background-2);
-    border-radius: 1rem;
-    padding: 2rem 1.75rem; /* Dikey geniş, yatay daha compact padding */
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem; /* İçerik elemanları arasındaki boşluk sabitlendi */
-    justify-content: space-between;
-    width: 100%;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03); /* Hafif derinlik */
+  background-color: var(--background-2);
+  border-radius: 1rem;
+  padding: 2.25rem 1.75rem; /* Altın oran uyumlu iç boşluk */
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
 }
 
 .cardTitle {
-    width: 100%;
-    font-size: clamp(1.2rem, 2vw, 1.5rem);
-    font-weight: 600;
-    color: var(--foreground);
-    letter-spacing: -0.01em;
+  width: 100%;
+  font-size: 1.35rem; /* Kart başlığı için ideal mobil ölçek */
+  font-weight: 600;
+  color: var(--foreground);
+  letter-spacing: -0.01em;
+  line-height: 1.3;
 }
 
 .cardDesc {
-    width: 100%;
-    font-size: clamp(0.875rem, 1.4vw, 1rem);
-    line-height: 1.5;
-    color: var(--foreground);
-    opacity: 0.85; /* Okunabilirliği artıran hafif softluk */
+  width: 100%;
+  font-size: 0.925rem; /* ~15px - Mobilde gözü yormayan açıklama metni */
+  line-height: 1.55;
+  color: var(--foreground);
+  opacity: 0.85;
 }
 
 /* Özellik listesi */
 .featureList {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem; /* Liste elemanları birbirine daha yakın ve derli toplu */
-    font-size: clamp(0.85rem, 1.3vw, 0.95rem);
-    color: var(--foreground);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  font-size: 0.875rem; /* 14px - Net ve temiz liste görünümü */
+  color: var(--foreground);
+  line-height: 1.4;
 }
 
 /* Fiyat ve Alt Alan */
 .pricecontainer {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 0.75rem; 
-    border-top: 1px solid rgba(255, 255, 255, 0.05); /* İçeriği fiyattan ayıran çok hafif çizgi */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .price {
-    font-size: clamp(1.15rem, 1.6vw, 1.4rem);
-    font-weight: 700;
-    color: var(--foreground-2);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--foreground-2);
 }
 
 /* Buton */
 .button {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--button-bg);
-    color: var(--button-text);
-    padding: 0.5rem 1rem; /* Tamamen sıfır yerine sağdan soldan hafif boşluk daha elit durur */
-    font-size: 0.95rem;
-    font-weight: 500;
-    border: none;
-    border-radius: 0.375rem; /* Butona çok hafif modern bir kavis */
-    cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.1s ease;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  padding: 0.6rem 1.2rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
 .button::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 10px;
-    height: 2px;
-    background-color: var(--foreground);
-    transition: width 0.4s ease; /* 0.8s çok hantaldı, 0.4s hıza çekildi */
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 10px;
+  height: 2px;
+  background-color: var(--foreground);
+  transition: width 0.4s ease;
 }
 
 .button:hover::after {
-    width: 100%;
+  width: 100%;
 }
 
 .button:hover {
-    background-color: var(--button-hover);
+  background-color: var(--button-hover);
 }
 
 .button:active {
-    transform: scale(0.98); /* Tıklama hissi veren mikro etkileşim */
+  transform: scale(0.98);
 }
 
-/* Desktop Düzeni (Gelişmiş Ekranlar) */
+/* ———————————— DESKTOP LAYOUT (>= 768px) ———————————— */
 @media (min-width: 768px) {
-    .cardContainer {
-        flex-direction: row;
-        justify-content: center;
-        gap: 2rem; /* Masaüstünde de kartlar arası boşluk optimize edildi */
-    }
-    
-    .card {
-        flex: 1; /* Kartların masaüstünde eşit genişlikte dağılmasını sağlar */
-        max-width: 380px; /* Kartların devasa yayılmasını engeller, compact tutar */
-    }
+  .title {
+    font-size: 2.5rem; /* Masaüstünde büyük elit font */
+  }
+
+  .subtitle {
+    font-size: 1.125rem;
+  }
+
+  .cardContainer {
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1200px; /* Büyük ekranlarda orijinal genişliğine kavuşur */
+  }
+
+  .card {
+    flex: 1;
+    max-width: 380px; /* Kartların devasa yayılmasını engeller */
+    padding: 2.5rem 2rem;
+  }
+
+  .cardTitle {
+    font-size: 1.5rem;
+  }
+
+  .cardDesc {
+    font-size: 0.975rem;
+  }
+
+  .featureList {
+    font-size: 0.925rem;
+  }
+
+  .price {
+    font-size: 1.4rem;
+  }
 }
