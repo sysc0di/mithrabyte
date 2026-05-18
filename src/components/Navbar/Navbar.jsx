@@ -12,8 +12,8 @@ function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
     const t = useTranslations('nav');
       const shortLang = navigator.language.split('-')[0];
-   typeof window !== "undefined" ?  localStorage.setItem("locale", shortLang) : null;
-const locale = typeof window !== "undefined" ? localStorage.getItem("locale") : null;
+      const locale = typeof window !== "undefined" ? localStorage.getItem("locale") : null;
+     locale ==  null ? localStorage.setItem("locale", shortLang) : null;
   return (
     <div className={styles.navbarcontanier} >
             <SidebarMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
