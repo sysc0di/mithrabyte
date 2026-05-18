@@ -142,7 +142,7 @@
     .cardContainer {
         flex-direction: row;
         justify-content: center;
-        gap: 1.5rem; /* Masaüstünde de kartlar arası boşluk optimize edildi */
+        gap: 2rem; /* Masaüstünde de kartlar arası boşluk optimize edildi */
     }
     
     .card {

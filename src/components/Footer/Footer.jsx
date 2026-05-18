@@ -34,14 +34,7 @@ export default function Footer() {
         </div>
       </div>
       <div
-        style={{
-          gap: 20,
-          display: "flex",
-          width: "100%",
-          justifyContent: "center",
-          alignItems: "center"
-        }}>
-
+        className={styles.switchersgrid}>
         <ThemeSwticher />
         <LanguageSwitcher />
       </div>

@@ -49,8 +49,17 @@
   color: var(--footer-text);
   text-align: center;
 }
+.switchersgrid{
+ display: none;
+}
+
 
 @media (min-width: 768px) {
+.switchersgrid{
+  display: flex;
+  width: 90%;
+  justify-content: end;
+}
   .content {
     flex-direction: row;
     align-items: center;
