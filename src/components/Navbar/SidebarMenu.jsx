@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 export default function SidebarMenu({ open, onClose }) {
     const t = useTranslations('nav');
-    const locale = useLocale();
+  const locale = typeof window !== "undefined" ? localStorage.getItem("locale") : null;
     const links = [
         { href: `/${locale}`, label: locale === 'tr' ? 'Ana Sayfa' : 'Home' },
         { href: `/${locale}/aboutus`, label: t('about') },

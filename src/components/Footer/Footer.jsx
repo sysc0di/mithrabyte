@@ -3,10 +3,13 @@ import styles from './footer.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
+import LanguageSwitcher from '../Navbar/LanguageSwitcher'
+import ThemeSwticher from '../Navbar/ThemeSwticher'
+
 
 export default function Footer() {
   const t = useTranslations('footer');
-const locale = typeof window !== "undefined" ? localStorage.getItem("locale") : null;
+  const locale = typeof window !== "undefined" ? localStorage.getItem("locale") : null;
   console.log(locale)
   return (
     <footer className={styles.footer}>
@@ -29,6 +32,18 @@ const locale = typeof window !== "undefined" ? localStorage.getItem("locale") : 
           <Link href={`/${locale}/services`} className={styles.link}>{t('services')}</Link>
           <Link href={`/${locale}/contact`} className={styles.link}>{t('contact')}</Link>
         </div>
+      </div>
+      <div
+        style={{
+          gap: 20,
+          display: "flex",
+          width: "100%",
+          justifyContent: "center",
+          alignItems: "center"
+        }}>
+
+        <ThemeSwticher />
+        <LanguageSwitcher />
       </div>
     </footer>
   );

@@ -5,18 +5,15 @@ import Link from 'next/link';
 import { useTranslations, useLocale } from 'next-intl';
 import { Logs } from 'lucide-react';
 import SidebarMenu from './SidebarMenu';
-import ThemeSwticher from './ThemeSwticher';
-import LanguageSwitcher from './LanguageSwitcher';
+
 
 function Navbar() {
-    const [menuOpen, setMenuOpen] = useState(false);
-    const t = useTranslations('nav');
-      const shortLang = navigator.language.split('-')[0];
-      const locale = typeof window !== "undefined" ? localStorage.getItem("locale") : null;
-     locale ==  null ? localStorage.setItem("locale", shortLang) : null;
+  const [menuOpen, setMenuOpen] = useState(false);
+  const t = useTranslations('nav');
+  const locale = typeof window !== "undefined" ? localStorage.getItem("locale") : null;
   return (
     <div className={styles.navbarcontanier} >
-            <SidebarMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
+      <SidebarMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
       <div className={`${styles.emptydiv} ${styles.emptydivleft}`} ></div>
       <div className={styles.navbar} >
         <div className={styles.logo}>
@@ -33,10 +30,8 @@ function Navbar() {
           <Link className={styles.navlink} href={`/${locale}/services`} >{t('services')}</Link>
           <Link className={styles.navlink} href={`/${locale}/aboutus`} >{t('about')}</Link>
           <Link className={styles.navlink} href={`/${locale}/contact`} >{t('contact')}</Link>
-          <LanguageSwitcher />
-          <ThemeSwticher/>
         </div>
-              <button className={styles.navmenubutton} onClick={() => setMenuOpen(!menuOpen)}  ><Logs/> </button>
+        <button className={styles.navmenubutton} onClick={() => setMenuOpen(!menuOpen)}  ><Logs /> </button>
       </div>
       <div className={`${styles.emptydiv} ${styles.emptydivright}`} ></div>
     </div>
