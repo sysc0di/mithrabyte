@@ -177,21 +177,22 @@
   }
 
   .container {
-    width: 90%;
+    width: calc(100% - 48px);
+    margin-right: 16px;
     gap: 2rem;
   }
 
   .title {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .subtitle {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 
   .cardsGrid {
     grid-template-columns: 1fr;
-    gap: 1.25rem;
+    gap: 3rem;
   }
 
   .card {
@@ -204,15 +205,15 @@
   }
 
   .cardactive::after {
-    opacity: .8;
+    opacity: 0.8;
   }
 
   .cardtitle {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 
   .cardtext {
-    font-size: .95rem;
+    font-size: 0.8rem;
   }
 
   .iconContainer {

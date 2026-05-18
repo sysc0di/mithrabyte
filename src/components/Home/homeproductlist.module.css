@@ -151,7 +151,9 @@
 /* ———————————— MOBILE LAYOUT ———————————— */
 @media (max-width: 768px) {
   .wrapper {
-    padding: 2rem 1rem;
+    width: calc(100% - 48px);
+    margin-right: 16px;
+    display: flex;
     height: auto;
   }
 
@@ -166,9 +168,18 @@
 
   .card {
     width: 100%;
+    gap: 36px;
     padding: 4rem 1.5rem 2.5rem 1.5rem; /* Üst boşluk ikonlar veya tasarım için geniş tutuldu */
     min-height: 280px; /* Mobilde çok ezilmemeleri için ideal yükseklik */
   }
+  .cardtext{
+    line-height: 28px;
+    font-size: 12px;
+  }
+  .cardtitle{
+    font-size: 28px;
+  }
+  
 
   .card1,
   .card2,

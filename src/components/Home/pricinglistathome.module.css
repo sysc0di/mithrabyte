@@ -4,6 +4,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     background-color: var(--background);
     padding: 3rem 1.5rem; /* Mobil için dikey boşluk biraz artırıldı */
 }

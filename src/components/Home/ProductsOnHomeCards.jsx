@@ -6,7 +6,7 @@ import { useTranslations, useLocale } from 'next-intl';
 
 function ProductsOnHomeCards() {
   const t = useTranslations('home.products');
- 
+
 
   const contentRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -34,9 +34,8 @@ function ProductsOnHomeCards() {
     <div className={styles.wrapper}>
       <div ref={contentRef} className={styles.container}>
         <div
-          className={`${styles.card} ${styles.card1} ${
-            isVisible ? styles.cardactive : ""
-          }`}
+          className={`${styles.card} ${styles.card1} ${isVisible ? styles.cardactive : ""
+            }`}
         >
           <svg
             className={styles.borderAnim}
@@ -49,14 +48,13 @@ function ProductsOnHomeCards() {
           <span className={styles.cardtext}>
             {t('socialMedia.description')}
           </span>
-          <Link className="cardlink"       href="mailto:yatli5645@gmail.com">
+          <Link className="cardlink" href="mailto:yatli5645@gmail.com">
             {t('socialMedia.cta')}
           </Link>
         </div>
         <div
-          className={`${styles.card} ${styles.card2} ${
-            isVisible ? styles.cardactive : ""
-          }`}
+          className={`${styles.card} ${styles.card2} ${isVisible ? styles.cardactive : ""
+            }`}
         >
           <svg
             className={styles.borderAnim}
@@ -69,14 +67,13 @@ function ProductsOnHomeCards() {
           <span className={styles.cardtext}>
             {t('mobile.description')}
           </span>
-          <Link className="cardlink"        href="mailto:yatli5645@gmail.com">
+          <Link className="cardlink" href="mailto:yatli5645@gmail.com">
             {t('mobile.cta')}
           </Link>
         </div>
         <div
-          className={`${styles.card} ${styles.card3} ${
-            isVisible ? styles.cardactive : ""
-          }`}
+          className={`${styles.card} ${styles.card3} ${isVisible ? styles.cardactive : ""
+            }`}
         >
           <svg
             className={styles.borderAnim}
@@ -89,7 +86,7 @@ function ProductsOnHomeCards() {
           <span className={styles.cardtext}>
             {t('web.description')}
           </span>
-          <Link className="cardlink"         href="mailto:yatli5645@gmail.com">
+          <Link className="cardlink" href="mailto:yatli5645@gmail.com">
             {t('web.cta')}
           </Link>
         </div>

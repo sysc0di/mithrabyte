@@ -119,12 +119,16 @@
 
   .homecardright {
     position: relative;
-    flex-direction: column;
+    flex-direction: column-reverse;
     width: 80%;
     height: auto;
+    gap: 1rem;
   }
 
   .homebannertitle {
+    width: 100%;
+    line-height: 36px;
+    padding: 0.5rem;
     font-size: 1.5rem; /* 24px */
   }
 
@@ -132,26 +136,27 @@
   .homecardtexts {
     width: 100%;
     height: auto;
-    padding: 1rem 0;
+    padding: 0rem 0;
     align-items: center;
     text-align: left;
   }
 
   .homecardtexts {
-    gap: 0;
+    gap: 12px;
     align-items: flex-start;
     justify-content: flex-end;
-    padding: 14rem 0.75rem 0;
+    padding: 0rem 0.25rem 0;
   }
 
   .buttongridcard {
     justify-content: center;
-    padding: 1rem 0;
+    padding: 2rem 0;
   }
 
   .cardlink {
-    font-size: .875rem; /* 14px */
-    padding: .6rem 1.2rem;
+    font-size: 0.875rem; /* 14px */
+    padding: 0.6rem 1.2rem;
+    margin-left: 12px;
   }
 
   .homebanner {

@@ -27,7 +27,10 @@
 /* Mobile */
 @media (max-width: 768px) {
   .container {
-    height: 7rem;
-    padding: 0.5rem 0.75rem;
+    height: 5rem;
+    width: 100%;
   }
+  .text {
+  font-size: 1rem;
+}
 }

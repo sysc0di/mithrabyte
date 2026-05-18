@@ -80,7 +80,7 @@ function JobsCards() {
               </svg>
               <span className={styles.cardtitle}>{job.title}</span>
               <span className={styles.cardtext}>{job.description}</span>
-              <Link className={styles.cardlink} href="https://bionluk.com/coderingewer" target="_blank">
+              <Link className={styles.cardlink} href="mailto:yatli5645@gmail.com" target="_blank">
                 {job.cta}
               </Link>
             </div>
