@@ -28,7 +28,7 @@ function Navbar() {
       <div className={`${styles.emptydiv} ${styles.emptydivleft}`} ></div>
       <div className={styles.navbar} >
         <div className={styles.logo}>
-          <Link href={`/`}>
+          <Link  href={`/${locale}/`}>
             <img
               src="/logo.svg"
               alt="mithrabyte"
