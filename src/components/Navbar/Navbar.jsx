@@ -10,7 +10,18 @@ import SidebarMenu from './SidebarMenu';
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const t = useTranslations('nav');
-  const locale = typeof window !== "undefined" ? localStorage.getItem("locale") : null;
+  const getLocaleFromCookie = () => {
+    if (typeof window === "undefined") return null;
+
+    // Tüm çerezleri al ve parçala
+    const cookies = document.cookie.split('; ');
+    const localeCookie = cookies.find(row => row.startsWith('NEXT_LOCALE='));
+
+    // Eğer çerez bulunduysa değerini döndür, yoksa null
+    return localeCookie ? localeCookie.split('=')[1] : null;
+  };
+
+  const locale = getLocaleFromCookie();
   return (
     <div className={styles.navbarcontanier} >
       <SidebarMenu open={menuOpen} onClose={() => setMenuOpen(false)} />

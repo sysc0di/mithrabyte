@@ -8,7 +8,18 @@ import Link from 'next/link';
 
 export default function SidebarMenu({ open, onClose }) {
     const t = useTranslations('nav');
-  const locale = typeof window !== "undefined" ? localStorage.getItem("locale") : null;
+    const getLocaleFromCookie = () => {
+    if (typeof window === "undefined") return null;
+
+    // Tüm çerezleri al ve parçala
+    const cookies = document.cookie.split('; ');
+    const localeCookie = cookies.find(row => row.startsWith('NEXT_LOCALE='));
+
+    // Eğer çerez bulunduysa değerini döndür, yoksa null
+    return localeCookie ? localeCookie.split('=')[1] : null;
+  };
+
+  const locale = getLocaleFromCookie();
     const links = [
         { href: `/${locale}`, label: locale === 'tr' ? 'Ana Sayfa' : 'Home' },
         { href: `/${locale}/aboutus`, label: t('about') },
