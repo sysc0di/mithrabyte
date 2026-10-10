@@ -8,7 +8,7 @@
   background: var(--background);
   border-radius: 1rem;
   overflow: hidden;
-  font-family: "Turret Road", sans-serif;
+  font-family: inherit;
 }
 
 .left,

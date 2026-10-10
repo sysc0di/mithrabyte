@@ -1,53 +1,56 @@
 "use client";
-import React, { useState } from 'react'
-import styles from "./navbar.module.css";
-import Link from 'next/link';
-import { useTranslations } from 'next-intl';
-import { Logs } from 'lucide-react';
-import SidebarMenu from './SidebarMenu';
+import { useState } from "react";
+import Link from "next/link";
+import { useLocale, useTranslations } from "next-intl";
+import { DoodleIcon } from "@oreo-design/doodle-icons";
+import { Button } from "@/components/ui/button";
+import SidebarMenu from "./SidebarMenu";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const t = useTranslations('nav');
+  const t = useTranslations("nav");
+  const locale = useLocale();
 
-  // Çerez okuma fonksiyonu düzeltildi
-  const getLocaleFromCookie = () => {
-    if (typeof window === "undefined") return 'en'; // SSR sırasında hata vermemesi için varsayılan 'en'
-
-    const cookies = document.cookie.split('; ');
-    const localeCookie = cookies.find(row => row.startsWith('NEXT_LOCALE='));
-
-    // Çerez varsa [1] indisindeki değeri döndürür, yoksa 'en' döndürür
-    return localeCookie ? localeCookie.split('=')[1] : 'en';
-  };
-
-  const locale = getLocaleFromCookie();
+  const links = [
+    { href: `/${locale}/packages`, label: t("packages") },
+    { href: `/${locale}/services`, label: t("services") },
+    { href: `/${locale}/aboutus`, label: t("about") },
+    { href: `/${locale}/contact`, label: t("contact") },
+  ];
 
   return (
-    <div className={styles.navbarcontanier} >
-      <SidebarMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
-      <div className={`${styles.emptydiv} ${styles.emptydivleft}`} ></div>
-      <div className={styles.navbar} >
-        <div className={styles.logo}>
-          <Link href={`/${locale}/`}>
-            <img
-              src="/logo.svg"
-              alt="mithrabyte"
-              className={styles.logoimg}
-            />
-          </Link>
+    <header className="fixed inset-x-0 top-0 z-40 border-b border-border/60 bg-background/70 backdrop-blur-md">
+      <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-4 px-6">
+        <Link href={`/${locale}`} className="flex items-center">
+          <img src="/logo.svg" alt="mithrabyte" className="h-11 w-auto" />
+        </Link>
+
+        <nav className="hidden items-center gap-1 md:flex">
+          {links.map((link) => (
+            <Button key={link.href} asChild variant="ghost" size="sm">
+              <Link href={link.href}>{link.label}</Link>
+            </Button>
+          ))}
+        </nav>
+
+        <div className="flex items-center gap-1">
+          <LanguageSwitcher className="hidden md:inline-flex" />
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden"
+            aria-label="Open menu"
+            onClick={() => setMenuOpen(true)}
+          >
+            <DoodleIcon name="menu" boilId="boil" size={20} />
+          </Button>
         </div>
-        <div className={styles.navlinks}>
-          <Link className={styles.navlink} href={`/${locale}/packages`} >{t('packages')}</Link>
-          <Link className={styles.navlink} href={`/${locale}/services`} >{t('services')}</Link>
-          <Link className={styles.navlink} href={`/${locale}/aboutus`} >{t('about')}</Link>
-          <Link className={styles.navlink} href={`/${locale}/contact`} >{t('contact')}</Link>
-        </div>
-        <button className={styles.navmenubutton} onClick={() => setMenuOpen(!menuOpen)}  ><Logs /> </button>
       </div>
-      <div className={`${styles.emptydiv} ${styles.emptydivright}`} ></div>
-    </div>
-  )
+
+      <SidebarMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
+    </header>
+  );
 }
 
 export default Navbar;

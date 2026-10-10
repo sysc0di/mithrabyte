@@ -4,7 +4,7 @@ export default function Loading() {
       <style>
         body {
           margin: 0;
-          background: #0e0e0e7a;
+          background: #06091A;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -19,7 +19,7 @@ export default function Loading() {
         .loader div {
           width: 12px;
           height: 48px;
-          background: white;
+          background: #D3D5FD;
           animation: bounce 2s infinite ease-in-out;
         }
         .loader div:nth-child(2) {

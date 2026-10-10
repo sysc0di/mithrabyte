@@ -1,118 +1,118 @@
 "use client";
+import { Fragment, useState } from "react";
 import { useTranslations } from "next-intl";
-import styles from "./contact.module.css";
-import { MdLocationOn, MdPhone, MdEmail, MdAccessTime } from "react-icons/md";
+import { DoodleIcon } from "@oreo-design/doodle-icons";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Separator } from "@/components/ui/separator";
+import { Textarea } from "@/components/ui/textarea";
+
 export default function Contact() {
- /* const formik = useFormik({
-    initialValues: {
-      name: "",
-      email: "",
-      message: "",
-    },
-    validationSchema: Yup.object({
-      name: Yup.string()
-        .min(2, "En az 2 karakter olmalı")
-        .required("İsim zorunlu"),
-      email: Yup.string()
-        .email("Geçerli bir e-posta giriniz")
-        .required("E-posta zorunlu"),
-      message: Yup.string()
-        .min(10, "En az 10 karakter olmalı")
-        .required("Mesaj zorunlu"),
-    }),
-    onSubmit: (values, { resetForm }) => {
-      alert(`Mesajınız gönderildi!\n\n${JSON.stringify(values, null, 2)}`);
-      resetForm();
-    },
-  });*/
+  const t = useTranslations("contact");
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
 
-    const t = useTranslations("contact");
+  const info = [
+    { icon: "map-pin", label: t("locationLabel"), value: t("address") },
+    { icon: "phone", label: t("phoneLabel"), value: t("phone") },
+    { icon: "mail", label: t("emailLabel"), value: t("email") },
+    { icon: "calendar", label: t("hoursLabel"), value: t("hours") },
+  ];
 
+  const handleChange = (event) =>
+    setForm((prev) => ({ ...prev, [event.target.name]: event.target.value }));
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const subject = encodeURIComponent(`New message from ${form.name}`);
+    const body = encodeURIComponent(`${form.message}\n\n${form.email}`);
+    window.location.href = `mailto:${t("email")}?subject=${subject}&body=${body}`;
+  };
 
   return (
-    <main className={styles.container}>
-      <section className={styles.left}>
-      {/*  <h2 className={styles.title}>Bize Ulaşın</h2>
-        <form onSubmit={formik.handleSubmit} noValidate>
-          <div className={styles.formGroup}>
-            <label htmlFor="name" className={styles.label}>İsim</label>
-            <input
-              id="name"
-              name="name"
-              type="text"
-              className={styles.input}
-              placeholder="Adınız"
-              {...formik.getFieldProps("name")}
-            />
-            {formik.touched.name && formik.errors.name ? (
-              <div style={{ color: "tomato", marginTop: "0.25rem", fontSize: "0.9rem" }}>
-                {formik.errors.name}
+    <section className="w-full bg-background px-6 py-16 sm:py-20">
+      <div className="mx-auto grid w-full max-w-5xl items-stretch gap-6 lg:grid-cols-2">
+        <Card className="h-full">
+          <CardHeader>
+            <CardTitle>{t("formTitle")}</CardTitle>
+            <CardDescription>{t("formSubtitle")}</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+              <div className="grid gap-2">
+                <Label htmlFor="name">{t("nameLabel")}</Label>
+                <Input
+                  id="name"
+                  name="name"
+                  value={form.name}
+                  onChange={handleChange}
+                  placeholder={t("namePlaceholder")}
+                  required
+                />
               </div>
-            ) : null}
-          </div>
-
-          <div className={styles.formGroup}>
-            <label htmlFor="email" className={styles.label}>E-posta</label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              className={styles.input}
-              placeholder="ornek@mail.com"
-              {...formik.getFieldProps("email")}
-            />
-            {formik.touched.email && formik.errors.email ? (
-              <div style={{ color: "tomato", marginTop: "0.25rem", fontSize: "0.9rem" }}>
-                {formik.errors.email}
+              <div className="grid gap-2">
+                <Label htmlFor="email">{t("emailLabel")}</Label>
+                <Input
+                  id="email"
+                  name="email"
+                  type="email"
+                  value={form.email}
+                  onChange={handleChange}
+                  placeholder={t("email")}
+                  required
+                />
               </div>
-            ) : null}
-          </div>
-
-          <div className={styles.formGroup}>
-            <label htmlFor="message" className={styles.label}>Mesajınız</label>
-            <textarea
-              id="message"
-              name="message"
-              rows="5"
-              className={styles.textarea}
-              placeholder="Mesajınızı yazınız..."
-              {...formik.getFieldProps("message")}
-            />
-            {formik.touched.message && formik.errors.message ? (
-              <div style={{ color: "tomato", marginTop: "0.25rem", fontSize: "0.9rem" }}>
-                {formik.errors.message}
+              <div className="grid gap-2">
+                <Label htmlFor="message">{t("messageLabel")}</Label>
+                <Textarea
+                  id="message"
+                  name="message"
+                  rows={5}
+                  value={form.message}
+                  onChange={handleChange}
+                  placeholder={t("messagePlaceholder")}
+                  required
+                />
               </div>
-            ) : null}
-          </div>
+              <Button type="submit" className="w-fit gap-2">
+                {t("send")}
+                <DoodleIcon name="send" boilId="boil" size={16} />
+              </Button>
+            </form>
+          </CardContent>
+        </Card>
 
-          <button type="submit" className={styles.formbutton}>Gönder</button>
-        </form>*/}
-      </section>
-
-            <section className={styles.right}>
-        <h2 className={styles.title}>{t("title")}</h2>
-
-        <div className={styles.infoItem}>
-          <span className={styles.infoIcon}><MdLocationOn/></span>
-          <span>{t("address")}</span>
-        </div>
-
-        <div className={styles.infoItem}>
-          <span className={styles.infoIcon}><MdPhone/></span>
-          <span>{t("phone")}</span>
-        </div>
-
-        <div className={styles.infoItem}>
-          <span className={styles.infoIcon}><MdEmail/></span>
-          <span>{t("email")}</span>
-        </div>
-
-        <div className={styles.infoItem}>
-          <span className={styles.infoIcon}><MdAccessTime/></span>
-          <span>{t("hours")}</span>
-        </div>
-      </section>
-
-    </main>
+        <Card className="h-full">
+          <CardHeader>
+            <CardTitle>{t("title")}</CardTitle>
+          </CardHeader>
+          <CardContent className="flex flex-col">
+            {info.map(({ icon, label, value }, index) => (
+              <Fragment key={label}>
+                {index > 0 && <Separator className="my-4" />}
+                <div className="flex items-start gap-4">
+                  <span className="grid size-10 shrink-0 place-items-center rounded-full bg-primary/10 text-primary">
+                    <DoodleIcon name={icon} boilId="boil" size={20} />
+                  </span>
+                  <div className="flex flex-col gap-1">
+                    <span className="text-xs uppercase tracking-wider text-muted-foreground">
+                      {label}
+                    </span>
+                    <span className="text-sm font-medium">{value}</span>
+                  </div>
+                </div>
+              </Fragment>
+            ))}
+          </CardContent>
+        </Card>
+      </div>
+    </section>
   );
 }

@@ -1,27 +1,47 @@
 "use client";
-import styles from "./services.module.css";
-import { Cpu, Code, Globe } from "lucide-react";
+import { DoodleIcon } from "@oreo-design/doodle-icons";
 import { useTranslations } from "next-intl";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 export default function Services() {
   const t = useTranslations("services");
-  const services = t.raw("services"); // JSON içindeki array'i direkt alıyoruz
-
-  const icons = [<Cpu key="cpu" className={styles.icon} />, <Code key="code" className={styles.icon} />, <Globe key="globe" className={styles.icon} />];
+  const services = t.raw("services");
+  const icons = ["chip", "code", "globe"];
 
   return (
-    <main className={styles.servicesContainer}>
-      <h1 className={styles.title}>{t("title")}</h1>
+    <section className="w-full bg-background px-6 py-16 sm:py-20">
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-10">
+        <header className="flex flex-col items-center gap-3 text-center">
+          <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
+            {t("title")}
+          </h1>
+        </header>
 
-      <section className={styles.servicesList}>
-        {services.map((service, i) => (
-          <article key={i} className={styles.serviceCard}>
-            {icons[i]}
-            <h2 className={styles.serviceTitle}>{service.title}</h2>
-            <p className={styles.serviceDesc}>{service.description}</p>
-          </article>
-        ))}
-      </section>
-    </main>
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {services.map((service, i) => {
+            const icon = icons[i] ?? "chip";
+            return (
+              <Card key={i} className="h-full">
+                <CardHeader>
+                  <span className="mb-2 grid size-11 place-items-center rounded-xl bg-primary/10 text-primary">
+                    <DoodleIcon name={icon} boilId="boil" size={22} />
+                  </span>
+                  <CardTitle>{service.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription>{service.description}</CardDescription>
+                </CardContent>
+              </Card>
+            );
+          })}
+        </div>
+      </div>
+    </section>
   );
 }

@@ -1,3 +1,91 @@
+@layer theme, base, components, utilities;
+
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* === Global tipografi: footer ile aynı Onest ailesi (tüm uygulama) === */
+@font-face {
+  font-family: "Onest";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("/kage/fonts/onest-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Onest";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("/kage/fonts/onest-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+    U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+    U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/*
+  Tailwind preflight'i bilinçli olarak dahil edilmedi: mevcut tasarım
+  UA varsayılan margin/padding değerlerine dayanıyor. Bunun yerine shadcn
+  bileşenlerinin ihtiyaç duyduğu minimal base sıfırlaması uygulanıyor.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border: 0 solid;
+  }
+
+  button,
+  input,
+  select,
+  textarea,
+  ::file-selector-button {
+    font: inherit;
+    color: inherit;
+  }
+
+  button,
+  [type="button"],
+  [type="reset"],
+  [type="submit"] {
+    background-color: transparent;
+    cursor: pointer;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
 :root {
   --clip-bottom-left: polygon(0% 0%, 100% 0%, 100% 200%, 0% 90%, 0% 10%);
   --clip-top-left: polygon(2.5% 0%, 100% 0%, 100% 200%, 0% 100%, 0% 5%);
@@ -5,37 +93,47 @@
   --clip-top-right: polygon(0 0, 80% 0, 100% 20%, 100% 100%, 0 100%);
   --clip-bottom-right: polygon(0 0, 100% 0, 100% 80%, 90% 100%, 0 100%);
   --clip-bottom-line-right: polygon(0 0, 100% 0, 100% 80%, 90% 100%, 0 100%);
-}
-:root[data-theme='dark'] {
-  /* === Dark Tema Varsayılan Renkler === */
-  --color-white: #F5FEFF;
-  --background: #0b0d10;
-  --background-2: #101216;
-  --background25op: rgba(11, 13, 16, 0.25);
-  --background50op: rgba(11, 13, 16, 0.5);
-  --foreground: #F5FEFF;
-  --main-color: #37b7c3;
-  --second-color: #A9B5DF;
-  --foreground-2: #5d6277;
-  --foreground-2-alpha: rgba(93, 98, 119, 0.5);
-  --hover-foreground-color: #a0b6ce;
-  --hover-color: rgba(206, 215, 247, 0.5);
-}
 
-/* === Light Tema Override === */
-:root[data-theme='light'] {
-  --color-white: #0b0d10;
-  --background: #f6f9fb;
-  --background-2: #eef3f7;
-  --background25op: rgba(230, 234, 240, 0.25);
-  --background50op: rgba(230, 234, 240, 0.5);
-  --foreground: #0b0d10;
-  --main-color: #318ca0;
-  --second-color: #4a597d;
-  --foreground-2: #6e778a;
-  --foreground-2-alpha: rgba(110, 119, 138, 0.5);
-  --hover-foreground-color: #5c7a96;
-  --hover-color: rgba(100, 110, 130, 0.2);
+  /* === Dark Tema Renkleri (tek tema) === */
+  color-scheme: dark;
+  --color-white: #D3D5FD;
+  --background: #06091A;
+  --background-2: #0B1024;
+  --background25op: rgba(6, 9, 26, 0.25);
+  --background50op: rgba(6, 9, 26, 0.5);
+  --foreground: #D3D5FD;
+  --main-color: #927FBF;
+  --second-color: #D3D5FD;
+  --foreground-2: #748B9C;
+  --foreground-2-alpha: rgba(116, 139, 156, 0.5);
+  --hover-foreground-color: #927FBF;
+  --hover-color: rgba(146, 127, 191, 0.5);
+
+  /* === Marka paleti (semantic) === */
+  --brand-primary: #D3D5FD;
+  --brand-secondary: #927FBF;
+  --brand-error: #DD5B82;
+  --brand-success: #748B9C;
+
+  /* === shadcn/ui tasarım tokenları (mevcut palete bağlandı) === */
+  --radius: 0.75rem;
+  --card: var(--background-2);
+  --card-foreground: var(--foreground);
+  --popover: var(--background-2);
+  --popover-foreground: var(--foreground);
+  --primary: #D3D5FD;
+  --primary-foreground: #06091A;
+  --secondary: #927FBF;
+  --secondary-foreground: #06091A;
+  --muted: #0D1330;
+  --muted-foreground: #748B9C;
+  --accent: #151B40;
+  --accent-foreground: #D3D5FD;
+  --destructive: #DD5B82;
+  --success: #748B9C;
+  --border: rgba(211, 213, 253, 0.12);
+  --input: rgba(211, 213, 253, 0.16);
+  --ring: #927FBF;
 }
 
 html,
@@ -45,11 +143,13 @@ body {
 }
 
 body {
+  margin: 0;
   color: var(--foreground);
   background: var(--background);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: "Kode Mono", monospace;}
+  font-family: "Onest", system-ui, -apple-system, "Helvetica Neue", sans-serif;
+}
 
 * {
   transition:
@@ -65,12 +165,6 @@ body {
 
 a {
   text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
 }
 
 *, *::before, *::after {
@@ -99,45 +193,6 @@ a {
   width: 100%;
   transition: ease 1s;
 }
-
-.theme-toggle {
-  width: 60px;
-  height: 28px;
-  background: var(--background-2);
-  border-radius: 999px;
-  border: 2px solid var(--foreground-2);
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  position: relative;
-  transition: background 0.3s ease;
-}
-
-.theme-toggle .toggle-thumb {
-  width: 30px;
-  height: 90%;
-  background: var(--foreground-2);
-  border-radius: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.4s ease;
-  transform: translateX(0);
-}
-
-.icon-sun, .icon-moon{
-  height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--background);
-}
-
-[data-theme="light"] .theme-toggle .toggle-thumb {
-  transform: translateX(18px);
-}
-
 
 .pagewrapped{
   padding-top: 100px;

@@ -1,97 +1,52 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
-import styles from "./homeproductlist.module.css";
 import Link from "next/link";
-import { useTranslations, useLocale } from 'next-intl';
+import { useTranslations } from "next-intl";
+import { DoodleIcon } from "@oreo-design/doodle-icons";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+
+const items = [
+  { key: "socialMedia", icon: "share" },
+  { key: "mobile", icon: "phone" },
+  { key: "web", icon: "browser" },
+];
 
 function ProductsOnHomeCards() {
-  const t = useTranslations('home.products');
-
-
-  const contentRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    if (window.innerWidth > 768) return; // sadece mobilde tetikle
-
-    if (!contentRef.current) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.3 }
-    );
-
-
-    return () => observer.disconnect();
-  }, []);
+  const t = useTranslations("home.products");
 
   return (
-    <div className={styles.wrapper}>
-      <div ref={contentRef} className={styles.container}>
-        <div
-          className={`${styles.card} ${styles.card1} ${isVisible ? styles.cardactive : ""
-            }`}
-        >
-          <svg
-            className={styles.borderAnim}
-            viewBox="0 0 100 100"
-            preserveAspectRatio="none"
-          >
-            <rect x="0.25" y="0.25" width="99.5" height="99.5" rx="4" ry="2" />
-          </svg>
-          <span className={styles.cardtitle}>{t('socialMedia.title')}</span>
-          <span className={styles.cardtext}>
-            {t('socialMedia.description')}
-          </span>
-          <Link className="cardlink" href="mailto:yatli5645@gmail.com">
-            {t('socialMedia.cta')}
-          </Link>
-        </div>
-        <div
-          className={`${styles.card} ${styles.card2} ${isVisible ? styles.cardactive : ""
-            }`}
-        >
-          <svg
-            className={styles.borderAnim}
-            viewBox="0 0 100 100"
-            preserveAspectRatio="none"
-          >
-            <rect x="0.25" y="0.25" width="99.5" height="99.5" rx="4" ry="4" />
-          </svg>
-          <span className={styles.cardtitle}>{t('mobile.title')}</span>
-          <span className={styles.cardtext}>
-            {t('mobile.description')}
-          </span>
-          <Link className="cardlink" href="mailto:yatli5645@gmail.com">
-            {t('mobile.cta')}
-          </Link>
-        </div>
-        <div
-          className={`${styles.card} ${styles.card3} ${isVisible ? styles.cardactive : ""
-            }`}
-        >
-          <svg
-            className={styles.borderAnim}
-            viewBox="0 0 100 100"
-            preserveAspectRatio="none"
-          >
-            <rect x="0.25" y="0.25" width="99.5" height="99.5" rx="4" ry="4" />
-          </svg>
-          <span className={styles.cardtitle}>{t('web.title')}</span>
-          <span className={styles.cardtext}>
-            {t('web.description')}
-          </span>
-          <Link className="cardlink" href="mailto:yatli5645@gmail.com">
-            {t('web.cta')}
-          </Link>
-        </div>
+    <section className="w-full px-6 py-16">
+      <div className="mx-auto grid w-full max-w-6xl gap-5 md:grid-cols-3">
+        {items.map(({ key, icon }) => (
+          <Card key={key} className="flex flex-col">
+            <CardHeader>
+              <span className="mb-2 grid size-11 place-items-center rounded-xl bg-primary/10 text-primary">
+                <DoodleIcon name={icon} boilId="boil" size={22} />
+              </span>
+              <CardTitle>{t(`${key}.title`)}</CardTitle>
+            </CardHeader>
+            <CardContent className="flex-1">
+              <CardDescription>{t(`${key}.description`)}</CardDescription>
+            </CardContent>
+            <CardFooter>
+              <Button asChild variant="outline" size="sm" className="gap-2">
+                <Link href="mailto:yatli5645@gmail.com">
+                  {t(`${key}.cta`)}
+                  <DoodleIcon name="arrow-right" boilId="boil" size={16} />
+                </Link>
+              </Button>
+            </CardFooter>
+          </Card>
+        ))}
       </div>
-    </div>
+    </section>
   );
 }
 

@@ -9,6 +9,7 @@ import WhyUs from "./WhyUs";
 import PricingListAthome from "./PricingListAthome";
 import JobsCards from "./JobsCards";
 import CompanyCards from "./CompanyCards";
+import { Button } from "@/components/ui/button";
 import { useTranslations, useLocale } from 'next-intl';
 
 // SSR hatalarını önlemek için Canvas içeriğini dinamik yükle
@@ -21,6 +22,7 @@ function HomeContent() {
   return (
     <div className={styles.homecontentcontainer} >
       <div className={styles.homebanner}>
+        <Model />
         <div className={styles.bannercontentcontainer}>
           <div className={styles.homecardright} >
             <div className={styles.homecardtexts} >
@@ -28,10 +30,9 @@ function HomeContent() {
                 {t('title')}
               </span>
               <TextSlider />
-              <Link href={`/${locale}/packages`} className={` ${styles.cardlink} ${styles.linecardlink}`}>{t('packages')}</Link>
-            </div>
-            <div className={styles.bannerlistview} >
-              <Model />
+              <Button asChild size="lg" className="mt-6">
+                <Link href={`/${locale}/packages`}>{t('packages')}</Link>
+              </Button>
             </div>
           </div>
         </div>

@@ -26,18 +26,12 @@
   justify-content: space-between;
 }
 
-/* Sol model alanı */
-.bannerlistview,
-.homecardtexts {
-  width: 50%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 /* Metin alanı */
 .homecardtexts {
+  width: 58%;
+  max-width: 680px;
+  height: 100%;
+  display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
@@ -132,7 +126,6 @@
     font-size: 1.5rem; /* 24px */
   }
 
-  .bannerlistview,
   .homecardtexts {
     width: 100%;
     height: auto;

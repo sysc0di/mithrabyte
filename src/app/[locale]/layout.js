@@ -103,7 +103,7 @@ export default async function LocaleLayout({ children, params }) {
   const messages = await getMessages({ locale });
 
   return (
-    <NextIntlClientProvider messages={messages}>
+    <NextIntlClientProvider locale={locale} messages={messages}>
       <Script
         id="set-lang-attribute"
         strategy="afterInteractive"

@@ -1,21 +1,10 @@
 import "./globals.css";
-import { Kode_Mono, Space_Mono } from "next/font/google";
 import Script from "next/script";
+import { BoilFilter } from "@oreo-design/doodle-icons";
 
-const spaceGrotesk = Kode_Mono({
-  variable: "--font-space-grotesk-sans",
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
-
-const spaceMono = Space_Mono({
-  variable: "--font-space-mono",
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
 export default function RootLayout({ children }) {
   return (
-    <html suppressHydrationWarning>
+    <html lang="en" data-theme="dark" suppressHydrationWarning>
       <head>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-LP24PHV0M0"
@@ -51,7 +40,8 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body className={`${spaceGrotesk.variable} ${spaceMono.variable}`} suppressHydrationWarning>
+      <body suppressHydrationWarning>
+        <BoilFilter id="boil" />
         {children}
       </body>
     </html>

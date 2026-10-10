@@ -1,51 +1,29 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
-import styles from "./whyus.module.css";
 import Link from "next/link";
-import { useTranslations } from 'next-intl';
+import { useTranslations } from "next-intl";
+import { DoodleIcon } from "@oreo-design/doodle-icons";
+import { Button } from "@/components/ui/button";
 
 function WhyUs() {
-  const t = useTranslations('home.whyUs');
-  const contentRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    if (window.innerWidth > 768) return; // sadece mobilde tetikle
-
-    if (!contentRef.current) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.3 }
-    );
-
-    observer.observe(contentRef.current);
-
-    return () => observer.disconnect();
-  }, []);
+  const t = useTranslations("home.whyUs");
 
   return (
-    <div className={styles.whyuscontainer}>
-      <div
-        ref={contentRef}
-        className={`${styles.whyuscontent} ${isVisible ? styles.active : ""}`}
-      >
-        <div
-          className={`${styles.whyustexts} ${isVisible ? styles.whyustextsopacityactive : ""}`}
-        >
-          <h1>{t('title')}</h1>
-          <p>
-            {t('description')}
-          </p>
-        <Link className="cardlink" target="_blank" href="https://bionluk.com/coderingewer">{t('cta')}</Link>
-        </div>
+    <section className="w-full px-6 py-16">
+      <div className="mx-auto flex w-full max-w-4xl flex-col gap-5">
+        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+          {t("title")}
+        </h2>
+        <p className="leading-relaxed text-muted-foreground">
+          {t("description")}
+        </p>
+        <Button asChild className="w-fit gap-2">
+          <Link target="_blank" href="https://bionluk.com/coderingewer">
+            {t("cta")}
+            <DoodleIcon name="arrow-up-right" boilId="boil" size={16} />
+          </Link>
+        </Button>
       </div>
-    </div>
+    </section>
   );
 }
 

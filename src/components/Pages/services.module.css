@@ -3,7 +3,7 @@
   min-height: 90vh;
   background: var(--background);
   color: var(--foreground);
-  font-family: "Turret Road", sans-serif;
+  font-family: inherit;
   display: flex;
   flex-direction: column;
   align-items: center;
