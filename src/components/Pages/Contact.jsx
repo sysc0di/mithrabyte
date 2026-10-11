@@ -37,7 +37,7 @@ export default function Contact() {
   };
 
   return (
-    <section className="w-full bg-background px-6 py-16 sm:py-20">
+    <section className="w-full px-6 py-16 sm:py-20">
       <div className="mx-auto grid w-full max-w-5xl items-stretch gap-6 lg:grid-cols-2">
         <Card className="h-full">
           <CardHeader>

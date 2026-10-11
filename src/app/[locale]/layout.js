@@ -3,6 +3,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { setRequestLocale } from 'next-intl/server';
+import SiteBackground from '@/components/SiteBackground';
 
 const locales = ['tr', 'en'];
 
@@ -104,6 +105,7 @@ export default async function LocaleLayout({ children, params }) {
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
+      <SiteBackground />
       <Script
         id="set-lang-attribute"
         strategy="afterInteractive"

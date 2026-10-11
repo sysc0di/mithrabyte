@@ -31,7 +31,7 @@ export default function PackageDetail({ slug }) {
   const steps = t.raw("detail.steps");
 
   return (
-    <main className="w-full bg-background">
+    <main className="w-full">
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-border px-6 py-20 sm:py-24">
         <div

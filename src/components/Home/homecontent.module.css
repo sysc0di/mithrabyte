@@ -11,7 +11,7 @@
   height: fit-content;
   align-items: center;
   justify-content: center;
-  background: var(--background);
+  background: transparent;
 }
 
 /* Sağ taraf (3D / küre alanı) */

@@ -15,7 +15,7 @@ export default function Services() {
   const icons = ["chip", "code", "globe"];
 
   return (
-    <section className="w-full bg-background px-6 py-16 sm:py-20">
+    <section className="w-full px-6 py-16 sm:py-20">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-10">
         <header className="flex flex-col items-center gap-3 text-center">
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
