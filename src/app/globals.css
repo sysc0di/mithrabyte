@@ -97,10 +97,10 @@
   /* === Dark Tema Renkleri (tek tema) === */
   color-scheme: dark;
   --color-white: #D3D5FD;
-  --background: #06091A;
-  --background-2: #0B1024;
-  --background25op: rgba(6, 9, 26, 0.25);
-  --background50op: rgba(6, 9, 26, 0.5);
+  --background: #000000;
+  --background-2: #0A0B0F;
+  --background25op: rgba(0, 0, 0, 0.25);
+  --background50op: rgba(0, 0, 0, 0.5);
   --foreground: #D3D5FD;
   --main-color: #927FBF;
   --second-color: #D3D5FD;
@@ -122,17 +122,17 @@
   --popover: var(--background-2);
   --popover-foreground: var(--foreground);
   --primary: #D3D5FD;
-  --primary-foreground: #06091A;
+  --primary-foreground: #000000;
   --secondary: #927FBF;
-  --secondary-foreground: #06091A;
-  --muted: #0D1330;
+  --secondary-foreground: #000000;
+  --muted: #0E1016;
   --muted-foreground: #748B9C;
-  --accent: #151B40;
+  --accent: #15171E;
   --accent-foreground: #D3D5FD;
   --destructive: #DD5B82;
   --success: #748B9C;
-  --border: rgba(211, 213, 253, 0.12);
-  --input: rgba(211, 213, 253, 0.16);
+  --border: rgba(211, 213, 253, 0.14);
+  --input: rgba(211, 213, 253, 0.18);
   --ring: #927FBF;
 }
 

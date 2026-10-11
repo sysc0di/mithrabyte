@@ -14,33 +14,76 @@
   background: transparent;
 }
 
-/* Sağ taraf (3D / küre alanı) */
-.homecardright {
+/* Koyu vinyet: içeriğin okunabilirliği için */
+.herotint {
   position: absolute;
-  z-index: 0;
-  width: 80%;
-  height: calc(100vh - 5rem);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 72% 58% at 50% 52%, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.28) 60%, rgba(0, 0, 0, 0) 82%),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 28%, rgba(0, 0, 0, 0) 72%, rgba(0, 0, 0, 0.5));
 }
 
-/* Metin alanı */
-.homecardtexts {
-  width: 58%;
-  max-width: 680px;
-  height: 100%;
+/* Banner */
+.homebanner {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Banner üstü içerik */
+.bannercontentcontainer {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
+  gap: 1rem;
+  padding: 1.5rem 1rem;
+}
+
+/* TechText kelime işareti (ortalı) */
+.techword {
+  flex: none;
+  width: 100%;
+  max-width: 1100px;
+  height: 20vh;
+  min-height: 100px;
+}
+
+/* Metin alanı (ortalanmış) */
+.homecardtexts {
+  flex: none;
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  text-align: center;
+}
+
+/* TextType slogan */
+.slogan {
+  font-size: clamp(1.05rem, 2vw, 1.5rem);
+  font-weight: 500;
+  color: var(--foreground);
+  letter-spacing: 0.01em;
 }
 
 /* Buton grid */
 .buttongridcard {
   width: 100%;
   display: flex;
+  justify-content: center;
   gap: .75rem;
   flex-wrap: wrap;
   padding: 1.5rem 0;
@@ -78,78 +121,39 @@
   clip-path: var(--clip-bottom-right);
 }
 
-/* Banner */
-.homebanner {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Banner üstü içerik */
-.bannercontentcontainer {
-  position: absolute;
-  inset: 0;
-  padding: 2.5rem 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
-}
-
-/* Başlık */
-.homebannertitle {
-  font-size: 4rem;
-  font-weight: 700;
-}
-
 /* ────────────────────────────────
    MOBILE
 ────────────────────────────────── */
 @media (max-width: 768px) {
 
-  .homecardright {
-    position: relative;
-    flex-direction: column-reverse;
-    width: 80%;
+  .techword {
+    height: 15vh;
+    min-height: 70px;
+    max-width: 100%;
+    padding: 0 0.5rem;
+  }
+
+  .homecardtexts {
+    width: 100%;
     height: auto;
     gap: 1rem;
-  }
-
-  .homebannertitle {
-    width: 100%;
-    line-height: 36px;
-    padding: 0.5rem;
-    font-size: 1.5rem; /* 24px */
-  }
-
-  .homecardtexts {
-    width: 100%;
-    height: auto;
-    padding: 0rem 0;
     align-items: center;
-    text-align: left;
+    text-align: center;
+    padding: 0.25rem 1rem;
   }
 
-  .homecardtexts {
-    gap: 12px;
-    align-items: flex-start;
-    justify-content: flex-end;
-    padding: 0rem 0.25rem 0;
+  .slogan {
+    font-size: 1rem;
   }
 
   .buttongridcard {
     justify-content: center;
-    padding: 2rem 0;
+    padding: 1.5rem 0;
   }
 
   .cardlink {
     font-size: 0.875rem; /* 14px */
     padding: 0.6rem 1.2rem;
-    margin-left: 12px;
   }
 
   .homebanner {

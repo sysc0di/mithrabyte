@@ -112,7 +112,7 @@ const l = {
     title: "Particle Drift",
     source: Z,
     supportsMode: !0,
-    background: (e) => e === "light" ? d : "#06091A",
+    background: (e) => e === "light" ? d : "#000000",
     targets: [{ selector: "#particle-canvas", role: "background" }],
     patch(e, { size: t, length: r, density: o, mode: i }) {
       const a = Math.round(120 * r), n = i === "light" ? 0.22 : 0.15;
@@ -222,7 +222,7 @@ const l = {
     title: "Signal Particles",
     source: ie,
     supportsMode: !0,
-    background: (e) => e === "light" ? d : "#0a0a0a",
+    background: (e) => e === "light" ? d : "#000000",
     targets: [{ selector: "#particle-canvas", role: "background" }],
     patch(e, { size: t, length: r, mode: o }) {
       let i = e.replace("const spacing = 16;", `const spacing = ${Math.max(6, Math.round(16 / Math.max(0.35, r)))};`).replace("const dotRadius = 1.5;", `const dotRadius = ${Number((1.5 * t).toFixed(2))};`).replace("time += 0.02;", "time += 0.02 * ((window.__SF_CONTROLS&&window.__SF_CONTROLS.speed)||1);");

@@ -130,10 +130,138 @@
           ]
         }
       ]
-    }
+    },
+    "solutions": {
+      "eyebrow": "Solutions",
+      "title": "Solutions that move your business forward",
+      "subtitle": "We start from the problem, not the framework — then ship the software that removes it.",
+      "problemLabel": "The problem",
+      "items": [
+        {
+          "icon": "code",
+          "problem": "Repetitive, manual work is eating your team's time.",
+          "title": "Automation & internal tools",
+          "description": "CLIs, scripts and dashboards that move the busywork into a pipeline your team never has to touch."
+        },
+        {
+          "icon": "table",
+          "problem": "You collect data but you're still guessing.",
+          "title": "Real-time analytics",
+          "description": "Live dashboards and machine-learning insight that turn raw events into decisions you can act on today."
+        },
+        {
+          "icon": "bulb",
+          "problem": "Your product feels the same as everyone else's.",
+          "title": "AI personalization",
+          "description": "Assistants, recommendations and smart flows that make the product feel built for each individual user."
+        },
+        {
+          "icon": "globe",
+          "problem": "You need to move fast without cutting corners.",
+          "title": "End-to-end delivery",
+          "description": "Discovery, design, build and launch from one small senior team — with support long after release."
+        }
+      ]
+    },
+    "terminal": {
+      "eyebrow": "Developer-first",
+      "title": "A terminal your engineers will actually enjoy",
+      "subtitle": "We build CLIs, SDKs and automation with the polish production demands — typed, documented and tested. Explore the platform right here.",
+      "windowTitle": "mithrabyte — cli",
+      "prompt": "mithrabyte",
+      "placeholder": "Type a command…",
+      "hint": "Click a command below, or type your own and press Enter.",
+      "unknownPrefix": "command not found:",
+      "boot": [
+        "mithrabyte init --interactive",
+        "? Stack › Next.js · Node · Postgres · AI",
+        "✓ Workspace scaffolded in 0.8s",
+        "✓ Dependencies installed (312 packages)",
+        "➜ Ready. Type 'help' to explore the platform."
+      ],
+      "suggestions": [
+        "help",
+        "products",
+        "solutions",
+        "stack",
+        "contact"
+      ],
+      "help": {
+        "header": "available commands",
+        "lines": [
+          "products      list our product lines",
+          "solutions     problems we solve",
+          "stack         technologies we build with",
+          "contact       how to reach us",
+          "clear         clear the screen"
+        ]
+      },
+      "outputs": {
+        "products": [
+          "ai-mobile-app        AI-powered mobile apps (iOS · Android)",
+          "ai-web-platforms     AI web & SaaS platforms (Next.js)",
+          "data-analytics       real-time dashboards & ML insight",
+          "cli-developer-tools  CLIs, SDKs & automation",
+          "✓ run 'solutions' to see the problems each one solves"
+        ],
+        "solutions": [
+          "manual work          →  automation & internal tools",
+          "data, no decisions   →  real-time analytics",
+          "generic product      →  AI personalization",
+          "slow delivery        →  end-to-end product team",
+          "✓ run 'stack' to see how we build"
+        ],
+        "stack": [
+          "frontend   Next.js · React · TypeScript · Tailwind",
+          "mobile     Swift · Kotlin · React Native",
+          "backend    Node · Go · Rust · Postgres · Redis",
+          "ai         OpenAI · LLaMA · Replicate · custom models",
+          "cloud      Vercel · AWS · Docker · CI/CD",
+          "✓ run 'contact' to start a project"
+        ],
+        "contact": [
+          "email      contact@mithrabyte.com",
+          "phone      +90 505 804 4818",
+          "location   Hakkari, Türkiye",
+          "hours      Mon-Fri 09:00 - 18:00",
+          "✓ we usually reply within one business day"
+        ]
+      }
+    },
+    "stats": {
+      "title": "Built on the numbers that matter",
+      "items": [
+        {
+          "value": 4,
+          "suffix": "",
+          "label": "Product lines"
+        },
+        {
+          "value": 3,
+          "suffix": "",
+          "label": "Platforms we ship"
+        },
+        {
+          "value": 24,
+          "suffix": "h",
+          "label": "Average reply time"
+        },
+        {
+          "value": 100,
+          "suffix": "%",
+          "label": "Tailored, never templated"
+        }
+      ]
+    },
+    "slogan": "It's your intelligence. And your data, too."
   },
   "aboutus": {
+    "eyebrow": "About us",
     "title": "About Mithrabyte",
+    "subtitle": "A small, senior team building AI-powered products end to end — from the first idea to systems running in production.",
+    "heroCta": "Start a project",
+    "heroCta2": "See packages",
+    "storyTitle": "Our story",
     "description": "We are a team that sees technology not just as a tool, but as an experience that adds value to people's lives. We develop modern, user-focused solutions with innovative ideas, prioritizing simplicity, accessibility, and performance in every project. We are a small but passionate team of developers, designers, and idea generators from different fields. Whether we're coding or designing, we have one goal: to make a real impact. We approach each brand according to its own story and goals, making them more visible, stronger, and more unique in the digital world. For us, every project is a journey of learning and growing together. 🚀 In short, we don't just create projects, we dream alongside brands. ✨",
     "values": {
       "title": "Our Values",
@@ -149,10 +277,115 @@
         "title": "Focus",
         "description": "We center the customer experience and work with result-oriented precision."
       }
+    },
+    "highlights": {
+      "title": "Why teams work with us",
+      "subtitle": "The things clients say they notice — not just deliverable quality, but how it feels to work with us.",
+      "items": [
+        {
+          "title": "Senior, small and fast",
+          "description": "A lean team of experienced builders. Decisions are quick, communication is direct, and you always know who's working on your product."
+        },
+        {
+          "title": "Ownership, not hand-offs",
+          "description": "The people you talk to build your product. Design, code, infrastructure and launch are owned by one accountable team."
+        },
+        {
+          "title": "Outcomes over output",
+          "description": "We measure success by the result your users feel — speed, conversions, retention — not by lines of code or delivered tickets."
+        },
+        {
+          "title": "Long-term partnership",
+          "description": "We stay after launch. Monitoring, iteration and support mean your product keeps improving long after the initial release."
+        }
+      ]
+    },
+    "stats": {
+      "title": "Mithrabyte by the numbers",
+      "items": [
+        {
+          "value": 4,
+          "suffix": "",
+          "label": "Product lines"
+        },
+        {
+          "value": 3,
+          "suffix": "",
+          "label": "Platforms covered"
+        },
+        {
+          "value": 24,
+          "suffix": "h",
+          "label": "Average reply time"
+        },
+        {
+          "value": 100,
+          "suffix": "%",
+          "label": "In-house, no outsourcing"
+        }
+      ]
+    },
+    "process": {
+      "title": "How we bring a product to life",
+      "subtitle": "A clear, collaborative path from first conversation to launch.",
+      "steps": [
+        {
+          "title": "Listen",
+          "description": "We start by understanding your goals, users and constraints before any code is written."
+        },
+        {
+          "title": "Design",
+          "description": "Interface and architecture come together in a prototype you can react to early."
+        },
+        {
+          "title": "Build",
+          "description": "Iterative development with regular demos, continuous integration and AI wired in."
+        },
+        {
+          "title": "Evolve",
+          "description": "After launch we monitor, improve and plan the next round with you."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "subtitle": "A few things people usually ask before working with us.",
+      "items": [
+        {
+          "q": "How big is your team?",
+          "a": "We're a small, senior team on purpose. It keeps communication fast, decisions direct and quality high on every project."
+        },
+        {
+          "q": "Where are you based?",
+          "a": "We're based in Hakkari, Turkiye, and work with clients worldwide. Everything happens remotely and async-friendly."
+        },
+        {
+          "q": "What does end to end mean here?",
+          "a": "Product thinking, interface design, frontend, backend, mobile, AI integrations, infrastructure and launch — one team owns the whole journey."
+        },
+        {
+          "q": "Do you only work on new products?",
+          "a": "No. We also join existing projects, audit current systems and improve them without forcing rewrites."
+        },
+        {
+          "q": "Can you start immediately?",
+          "a": "Usually, yes. Send us your goal and timeline and we'll reply within one business day with next steps."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Let's build something together",
+      "text": "Tell us about your product and we'll reply within one business day.",
+      "button": "Get in touch"
     }
   },
   "contact": {
     "title": "Contact Information",
+    "eyebrow": "Contact",
+    "heroTitle": "Let's talk about your project",
+    "subtitle": "Tell us what you're building and we'll get back to you within one business day — no sales scripts, just a straight answer.",
+    "heroCta": "Email us",
+    "heroCta2": "See packages",
     "address": "Hakkari, Türkiye",
     "phone": "+90 505 804 4818",
     "email": "contact@mithrabyte.com",
@@ -167,24 +400,220 @@
     "namePlaceholder": "Your name",
     "messageLabel": "Message",
     "messagePlaceholder": "How can we help?",
-    "send": "Send message"
+    "send": "Send message",
+    "stats": {
+      "title": "How we reply",
+      "items": [
+        {
+          "value": 1,
+          "suffix": "",
+          "label": "Business day reply"
+        },
+        {
+          "value": 24,
+          "suffix": "h",
+          "label": "Email availability"
+        },
+        {
+          "value": 100,
+          "suffix": "%",
+          "label": "Straight answers"
+        },
+        {
+          "value": 0,
+          "suffix": "",
+          "label": "Sales scripts"
+        }
+      ]
+    },
+    "response": {
+      "title": "What happens after you write to us",
+      "subtitle": "A short, predictable path from your message to a running project.",
+      "steps": [
+        {
+          "title": "We reply",
+          "description": "Within one business day, from a real engineer — not a salesperson."
+        },
+        {
+          "title": "We scope",
+          "description": "A few questions to understand your goal, and a clear, prioritized plan."
+        },
+        {
+          "title": "You get a quote",
+          "description": "A fixed price and a realistic timeline before any commitment."
+        },
+        {
+          "title": "We build",
+          "description": "Iterative development with regular demos until launch and beyond."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "subtitle": "Quick answers about contacting and working with us.",
+      "items": [
+        {
+          "q": "How quickly will you reply?",
+          "a": "Within one business day — usually much faster during working hours."
+        },
+        {
+          "q": "What information should I include?",
+          "a": "A sentence about your goal, the platforms you need and an approximate timeline. That's enough to start."
+        },
+        {
+          "q": "Do you give free advice?",
+          "a": "We're happy to answer genuine questions and point you in the right direction, even before you're a client."
+        },
+        {
+          "q": "Can we have a call?",
+          "a": "Yes. After your first message we can arrange a short call or continue over email, whichever suits you."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Prefer to see what you'd get first?",
+      "text": "Browse our packages to understand scope, price and what's included.",
+      "button": "View packages"
+    }
   },
   "services": {
+    "eyebrow": "Services",
     "title": "Our Services",
+    "subtitle": "From performance and custom software to international growth — we cover the full path from idea to launch and beyond.",
+    "heroCta": "Start a project",
+    "heroCta2": "See packages",
     "services": [
       {
         "title": "Performance Optimization",
-        "description": "We maximize your website's speed and efficiency."
+        "description": "We maximize your website's speed and efficiency.",
+        "features": [
+          "Core Web Vitals and Lighthouse audits",
+          "Image, font and bundle optimization",
+          "Caching, CDN and edge delivery",
+          "Continuous performance monitoring"
+        ]
       },
       {
         "title": "Custom Software Development",
-        "description": "We provide fully tailored solutions for your specific needs."
+        "description": "We provide fully tailored solutions for your specific needs.",
+        "features": [
+          "Discovery, scoping and architecture",
+          "Web, mobile and CLI tooling",
+          "API design and third-party integrations",
+          "Automated testing and CI/CD"
+        ]
       },
       {
         "title": "International SEO and Marketing",
-        "description": "We boost your digital visibility on a global scale."
+        "description": "We boost your digital visibility on a global scale.",
+        "features": [
+          "Technical SEO and site structure",
+          "Multi-language and multi-region setup",
+          "Content strategy and on-page optimization",
+          "Analytics, tracking and reporting"
+        ]
       }
-    ]
+    ],
+    "capabilities": {
+      "title": "What we bring to every engagement",
+      "subtitle": "A senior, cross-functional toolkit — no hand-offs, no juniors learning on your budget.",
+      "items": [
+        {
+          "title": "Product thinking",
+          "description": "We start from the outcome you need, not the framework we like — and design the smallest thing that gets you there."
+        },
+        {
+          "title": "Full-stack delivery",
+          "description": "Design, frontend, backend, mobile and infrastructure handled by one team that owns the result end to end."
+        },
+        {
+          "title": "AI, applied",
+          "description": "Models wired into real product flows — assistants, search, recommendations and automation that actually ship."
+        },
+        {
+          "title": "Built to last",
+          "description": "Typed code, tests, observability and documentation so the product stays fast and maintainable after launch."
+        }
+      ]
+    },
+    "stats": {
+      "title": "How we work, in numbers",
+      "items": [
+        {
+          "value": 3,
+          "suffix": "",
+          "label": "Platforms we ship"
+        },
+        {
+          "value": 24,
+          "suffix": "h",
+          "label": "Average reply time"
+        },
+        {
+          "value": 100,
+          "suffix": "%",
+          "label": "Tailored, never templated"
+        },
+        {
+          "value": 4,
+          "suffix": "",
+          "label": "Service areas"
+        }
+      ]
+    },
+    "process": {
+      "title": "How we work",
+      "subtitle": "A clear, collaborative path from first conversation to launch.",
+      "steps": [
+        {
+          "title": "Discover",
+          "description": "We map your goals, users and constraints into a prioritized, honest scope."
+        },
+        {
+          "title": "Design",
+          "description": "Interface and architecture come together in a prototype you can react to early."
+        },
+        {
+          "title": "Build",
+          "description": "Iterative development with regular demos, continuous integration and AI wired in."
+        },
+        {
+          "title": "Launch and support",
+          "description": "We ship, monitor and support — then plan the next round of improvements with you."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "subtitle": "Everything you might want to know before we start.",
+      "items": [
+        {
+          "q": "How do we get started?",
+          "a": "Send us a short message about your goal and timeline. We reply within one business day with next steps and, if it's a fit, a scoped proposal."
+        },
+        {
+          "q": "How is pricing structured?",
+          "a": "Most projects are a fixed-scope quote based on the packages, with optional ongoing support. We're happy to work in milestones for larger builds."
+        },
+        {
+          "q": "Who will work on my product?",
+          "a": "A small senior team — the people you talk to are the people building. No outsourcing your work to juniors."
+        },
+        {
+          "q": "Do you work with existing codebases?",
+          "a": "Yes. We regularly join in-progress projects, audit the current setup and improve it without forcing a rewrite."
+        },
+        {
+          "q": "What happens after launch?",
+          "a": "We monitor, fix and iterate. You can keep us on a support plan or take the fully documented handover — your call."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Have a project in mind?",
+      "text": "Tell us what you're building and we'll reply within one business day.",
+      "button": "Get in touch"
+    }
   },
   "packages": {
     "title": "Our Packages",
@@ -192,6 +621,19 @@
     "badge": "Pricing",
     "popular": "Most Popular",
     "button": "Purchase",
+    "eyebrow": "Pricing",
+    "included": {
+      "title": "Every package includes",
+      "subtitle": "The things we never charge extra for — they're just how we build.",
+      "items": [
+        "Senior team, no outsourcing",
+        "Responsive, accessible interface",
+        "Automated tests and CI/CD",
+        "Documentation and typed SDKs",
+        "Performance and SEO optimization",
+        "Post-launch support window"
+      ]
+    },
     "packages": [
       {
         "title": "AI-Powered Mobile Application",
@@ -347,6 +789,84 @@
           "description": "We ship, monitor, and support — then plan the next round of improvements with you."
         }
       ]
+    },
+    "stats": {
+      "title": "Why teams pick these packages",
+      "items": [
+        {
+          "value": 4,
+          "suffix": "",
+          "label": "Product lines"
+        },
+        {
+          "value": 3,
+          "suffix": "",
+          "label": "Platforms covered"
+        },
+        {
+          "value": 24,
+          "suffix": "h",
+          "label": "Average reply time"
+        },
+        {
+          "value": 100,
+          "suffix": "%",
+          "label": "Custom, no templates"
+        }
+      ]
+    },
+    "process": {
+      "title": "How we work",
+      "subtitle": "A clear, collaborative path from idea to launch.",
+      "steps": [
+        {
+          "title": "Discovery and scope",
+          "description": "We map your goals, users and constraints into a clear, prioritized scope."
+        },
+        {
+          "title": "Design and prototype",
+          "description": "Interface and architecture come together in a clickable prototype you can react to early."
+        },
+        {
+          "title": "Build and integrate",
+          "description": "Iterative development with regular demos, continuous integration and AI wired in."
+        },
+        {
+          "title": "Launch and support",
+          "description": "We ship, monitor and support — then plan the next round of improvements with you."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "subtitle": "Common questions about our packages, pricing and process.",
+      "items": [
+        {
+          "q": "Are the listed prices final?",
+          "a": "They're starting points. The final quote depends on scope, integrations and timeline — you'll get a fixed price before we start."
+        },
+        {
+          "q": "Which package should I choose?",
+          "a": "If you're unsure, message us with your goal. We'll recommend the smallest package that gets you there — or a blend of two."
+        },
+        {
+          "q": "Can I combine packages?",
+          "a": "Yes. Many clients start with a web platform and add mobile or analytics later. We scope them together so they share one backend."
+        },
+        {
+          "q": "Do you offer ongoing support?",
+          "a": "Every package includes a post-launch support window, and you can continue on a monthly plan after that."
+        },
+        {
+          "q": "How long does a project take?",
+          "a": "A focused build is typically 4-10 weeks depending on scope. We'll give you a realistic timeline with the quote."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Not sure which package fits?",
+      "text": "Tell us about your product and we'll recommend the right one — within one business day.",
+      "button": "Talk to us"
     }
   },
   "footer": {

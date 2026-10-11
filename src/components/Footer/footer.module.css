@@ -21,8 +21,8 @@
 }
 
 .foot {
-  --ink: #06091A;
-  --ink-2: #0B1024;
+  --ink: #000000;
+  --ink-2: #0A0B0F;
   --bone: #D3D5FD;
   --bone-dim: #A7ABE0;
   --muted: #748B9C;
@@ -34,10 +34,10 @@
   --foreground: #D3D5FD;
   --foreground-2: #748B9C;
   --foreground-2-alpha: rgba(116, 139, 156, 0.5);
-  --background: #06091A;
-  --background-2: #0B1024;
-  --background25op: rgba(6, 9, 26, 0.25);
-  --background50op: rgba(6, 9, 26, 0.5);
+  --background: #000000;
+  --background-2: #0A0B0F;
+  --background25op: rgba(0, 0, 0, 0.25);
+  --background50op: rgba(0, 0, 0, 0.5);
   --main-color: #927FBF;
   --second-color: #D3D5FD;
   --hover-foreground-color: #927FBF;
@@ -66,9 +66,9 @@
   z-index: -1;
   pointer-events: none;
   background: linear-gradient(
-    rgba(6, 9, 26, 0.3),
-    rgba(6, 9, 26, 0.62) 45%,
-    rgba(6, 9, 26, 0.86)
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.62) 45%,
+    rgba(0, 0, 0, 0.86)
   );
 }
 

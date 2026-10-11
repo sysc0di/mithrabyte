@@ -7,32 +7,47 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
+import StatsStrip from "@/components/Shared/StatsStrip";
+import ProcessSteps from "@/components/Shared/ProcessSteps";
+import FaqSection from "@/components/Shared/FaqSection";
+import CtaBanner from "@/components/Shared/CtaBanner";
 
 export default function Packages() {
   const t = useTranslations("packages");
   const locale = useLocale();
   const packages = t.raw("packages");
+  const included = t.raw("included.items");
 
   return (
-    <section className="w-full px-6 py-16 sm:py-20">
-      <div className="mx-auto flex w-full max-w-6xl flex-col gap-10">
-        <header className="flex flex-col items-center gap-3 text-center">
+    <main className="w-full">
+      {/* Hero */}
+      <section className="relative overflow-hidden border-b border-border px-6 py-20 sm:py-24">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 top-0 h-full bg-[radial-gradient(60%_60%_at_15%_0%,rgba(146,127,191,0.18),transparent_70%)]"
+        />
+        <div className="relative mx-auto flex w-full max-w-5xl flex-col items-start gap-5">
           <Badge
             variant="outline"
             className="gap-1.5 border-primary/40 text-primary"
           >
             <DoodleIcon name="star" boilId="boil" size={14} />
-            {t("badge")}
+            {t("eyebrow")}
           </Badge>
-          <h1 className="max-w-3xl text-3xl font-bold tracking-tight text-balance sm:text-4xl">
+
+          <h1 className="max-w-3xl text-4xl font-bold tracking-tight text-balance sm:text-5xl">
             {t("title")}
           </h1>
-          <p className="max-w-xl text-sm text-pretty text-muted-foreground sm:text-base">
+
+          <p className="max-w-2xl text-base text-pretty text-muted-foreground sm:text-lg">
             {t("subtitle")}
           </p>
-        </header>
+        </div>
+      </section>
 
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+      {/* Packages */}
+      <section className="px-6 py-20">
+        <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-5 md:grid-cols-2">
           {packages.map((pkg, i) => {
             const isPopular = i === 1;
             const href = `/${locale}/packages/${pkg.slug}`;
@@ -101,7 +116,39 @@ export default function Packages() {
             );
           })}
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Included in every package */}
+      <section className="border-y border-border bg-card/40 px-6 py-20">
+        <div className="mx-auto w-full max-w-5xl">
+          <div className="mb-10 max-w-2xl">
+            <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
+              {t("included.title")}
+            </h2>
+            <p className="mt-2 text-muted-foreground">
+              {t("included.subtitle")}
+            </p>
+          </div>
+          <ul className="grid gap-x-8 gap-y-4 sm:grid-cols-2 lg:grid-cols-3">
+            {included.map((item, i) => (
+              <li
+                key={i}
+                className="flex items-start gap-3 border-b border-border pb-4"
+              >
+                <span className="mt-0.5 grid size-6 shrink-0 place-items-center rounded-full bg-primary/10 text-primary">
+                  <DoodleIcon name="check" boilId="boil" size={13} />
+                </span>
+                <span className="text-sm leading-relaxed">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <StatsStrip namespace="packages.stats" />
+      <ProcessSteps namespace="packages.process" />
+      <FaqSection namespace="packages.faq" />
+      <CtaBanner namespace="packages.cta" />
+    </main>
   );
 }

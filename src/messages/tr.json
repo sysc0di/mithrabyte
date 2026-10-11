@@ -130,10 +130,138 @@
           ]
         }
       ]
-    }
+    },
+    "solutions": {
+      "eyebrow": "Çözümler",
+      "title": "İşinizi ileri taşıyan çözümler",
+      "subtitle": "Framework'ten değil, sorundan başlarız — sonra o sorunu ortadan kaldıran yazılımı geliştiririz.",
+      "problemLabel": "Sorun",
+      "items": [
+        {
+          "icon": "code",
+          "problem": "Tekrarlayan, manuel işler ekibinizin zamanını yiyor.",
+          "title": "Otomasyon ve kurum içi araçlar",
+          "description": "Angaryayı ekibinizin hiç dokunmasına gerek kalmayan bir hatta taşıyan CLI'lar, scriptler ve paneller."
+        },
+        {
+          "icon": "table",
+          "problem": "Veri topluyorsunuz ama hâlâ tahminle ilerliyorsunuz.",
+          "title": "Gerçek zamanlı analitik",
+          "description": "Ham olayları bugün harekete geçebileceğiniz kararlara çeviren canlı paneller ve makine öğrenimi içgörüleri."
+        },
+        {
+          "icon": "bulb",
+          "problem": "Ürününüz herkesinkiyle aynı hissettiriyor.",
+          "title": "Yapay zeka kişiselleştirme",
+          "description": "Ürünü her kullanıcıya özel inşa edilmiş gibi hissettiren asistanlar, öneriler ve akıllı akışlar."
+        },
+        {
+          "icon": "globe",
+          "problem": "Ödün vermeden hızlı ilerlemek istiyorsunuz.",
+          "title": "Uçtan uca teslim",
+          "description": "Keşif, tasarım, geliştirme ve yayını tek bir küçük kıdemli ekipten — yayın sonrası destekle birlikte."
+        }
+      ]
+    },
+    "terminal": {
+      "eyebrow": "Geliştirici odaklı",
+      "title": "Mühendislerinizin severek kullanacağı bir terminal",
+      "subtitle": "CLI'lar, SDK'lar ve otomasyonu üretimin gerektirdiği özenle geliştiriyoruz — tipli, dokümante edilmiş ve test edilmiş. Platformu buradan keşfedin.",
+      "windowTitle": "mithrabyte — cli",
+      "prompt": "mithrabyte",
+      "placeholder": "Bir komut yazın…",
+      "hint": "Aşağıdaki komutlardan birine tıklayın ya da kendi komutunuzu yazıp Enter'a basın.",
+      "unknownPrefix": "komut bulunamadı:",
+      "boot": [
+        "mithrabyte init --interactive",
+        "? Stack › Next.js · Node · Postgres · AI",
+        "✓ Çalışma alanı 0.8s'de oluşturuldu",
+        "✓ Bağımlılıklar kuruldu (312 paket)",
+        "➜ Hazır. Platformu keşfetmek için 'help' yazın."
+      ],
+      "suggestions": [
+        "help",
+        "products",
+        "solutions",
+        "stack",
+        "contact"
+      ],
+      "help": {
+        "header": "kullanılabilir komutlar",
+        "lines": [
+          "products      ürün hatlarımızı listeler",
+          "solutions     çözdüğümüz sorunlar",
+          "stack         kullandığımız teknolojiler",
+          "contact       bize nasıl ulaşacağınız",
+          "clear         ekranı temizler"
+        ]
+      },
+      "outputs": {
+        "products": [
+          "ai-mobile-app        AI destekli mobil uygulamalar (iOS · Android)",
+          "ai-web-platforms     AI web & SaaS platformları (Next.js)",
+          "data-analytics       gerçek zamanlı paneller & ML içgörüsü",
+          "cli-developer-tools  CLI'lar, SDK'lar & otomasyon",
+          "✓ her birinin çözdüğü sorunu görmek için 'solutions' yazın"
+        ],
+        "solutions": [
+          "manuel iş             →  otomasyon & kurum içi araçlar",
+          "veri var, karar yok   →  gerçek zamanlı analitik",
+          "sıradan ürün          →  AI kişiselleştirme",
+          "yavaş teslim          →  uçtan uca ürün ekibi",
+          "✓ nasıl geliştirdiğimizi görmek için 'stack' yazın"
+        ],
+        "stack": [
+          "frontend   Next.js · React · TypeScript · Tailwind",
+          "mobile     Swift · Kotlin · React Native",
+          "backend    Node · Go · Rust · Postgres · Redis",
+          "ai         OpenAI · LLaMA · Replicate · özel modeller",
+          "cloud      Vercel · AWS · Docker · CI/CD",
+          "✓ projeye başlamak için 'contact' yazın"
+        ],
+        "contact": [
+          "email      contact@mithrabyte.com",
+          "phone      +90 505 804 4818",
+          "location   Hakkari, Türkiye",
+          "hours      Pzt-Cum 09:00 - 18:00",
+          "✓ genellikle bir iş günü içinde yanıt veririz"
+        ]
+      }
+    },
+    "stats": {
+      "title": "Önemli olan sayılar üzerine kurulu",
+      "items": [
+        {
+          "value": 4,
+          "suffix": "",
+          "label": "Ürün hattı"
+        },
+        {
+          "value": 3,
+          "suffix": "",
+          "label": "Yayınladığımız platform"
+        },
+        {
+          "value": 24,
+          "suffix": "sa",
+          "label": "Ortalama yanıt süresi"
+        },
+        {
+          "value": 100,
+          "suffix": "%",
+          "label": "Şablonsuz, tamamen size özel"
+        }
+      ]
+    },
+    "slogan": "Zeka sizin. Verileriniz de."
   },
   "aboutus": {
+    "eyebrow": "Biz kimiz",
     "title": "Hakkımızda",
+    "subtitle": "İlk fikirden üretimde çalışan sistemlere kadar, yapay zeka destekli ürünleri uçtan uca geliştiren küçük ve kıdemli bir ekip.",
+    "heroCta": "Projeye başla",
+    "heroCta2": "Paketleri gör",
+    "storyTitle": "Hikayemiz",
     "description": "Biz, teknolojiyi sadece bir araç değil, insanlara değer katan bir deneyim olarak gören bir ekibiz. Yenilikçi fikirlerle, modern ve kullanıcı odaklı çözümler geliştiriyor; her projede sadelik, erişilebilirlik ve performansı ön planda tutuyoruz. Farklı alanlardan gelen geliştiriciler, tasarımcılar ve fikir üreticilerinden oluşan küçük ama tutkulu bir ekibiz. Kod yazarken de tasarım yaparken de tek bir hedefimiz var: gerçek bir etki yaratmak. Her markayı, kendi hikâyesine ve hedeflerine göre ele alıyor; onları dijital dünyada daha görünür, daha güçlü ve daha kendine özgü hâle getiriyoruz. Bizim için her proje, birlikte öğrenilen ve birlikte büyünülen bir yolculuk. 🚀 Kısacası; biz sadece projeler yapmıyoruz, markalarla birlikte hayal kuruyoruz. ✨",
     "values": {
       "title": "Değerlerimiz",
@@ -149,10 +277,115 @@
         "title": "Odak",
         "description": "Müşteri deneyimini merkeze alır, sonuç odaklı çalışırız."
       }
+    },
+    "highlights": {
+      "title": "Ekipler neden bizimle çalışıyor",
+      "subtitle": "Müşterilerimizin fark ettiği şeyler — yalnızca teslim kalitesi değil, bizimle çalışmanın nasıl hissettirdiği.",
+      "items": [
+        {
+          "title": "Kıdemli, küçük ve hızlı",
+          "description": "Deneyimli geliştiricilerden oluşan yalın bir ekip. Kararlar hızlı, iletişim doğrudan ve ürününüz üzerinde kimin çalıştığını her zaman bilirsiniz."
+        },
+        {
+          "title": "Devir yok, sahiplik var",
+          "description": "Konuştuğunuz kişiler ürününüzü geliştirir. Tasarım, kod, altyapı ve yayın tek bir sorumlu ekiptedir."
+        },
+        {
+          "title": "Çıktıdan çok sonuç",
+          "description": "Başarıyı kullanıcılarınızın hissettiği sonuçla ölçeriz — hız, dönüşüm, elde tutma — satır sayısıyla ya da tamamlanan görevle değil."
+        },
+        {
+          "title": "Uzun vadeli ortaklık",
+          "description": "Yayın sonrasında da yanınızdayız. İzleme, iyileştirme ve destek sayesinde ürününüz ilk sürümden çok sonra da gelişmeye devam eder."
+        }
+      ]
+    },
+    "stats": {
+      "title": "Rakamlarla Mithrabyte",
+      "items": [
+        {
+          "value": 4,
+          "suffix": "",
+          "label": "Ürün hattı"
+        },
+        {
+          "value": 3,
+          "suffix": "",
+          "label": "Kapsanan platform"
+        },
+        {
+          "value": 24,
+          "suffix": "sa",
+          "label": "Ortalama yanıt süresi"
+        },
+        {
+          "value": 100,
+          "suffix": "%",
+          "label": "Kendi içimizde, dış kaynak yok"
+        }
+      ]
+    },
+    "process": {
+      "title": "Bir ürünü nasıl hayata geçiriyoruz",
+      "subtitle": "İlk görüşmeden yayına net ve işbirlikçi bir yol.",
+      "steps": [
+        {
+          "title": "Dinle",
+          "description": "Tek bir satır kod yazmadan önce hedeflerinizi, kullanıcılarınızı ve kısıtlarınızı anlayarak başlarız."
+        },
+        {
+          "title": "Tasarla",
+          "description": "Arayüz ve mimari, erken tepki verebileceğiniz bir prototipte bir araya gelir."
+        },
+        {
+          "title": "Geliştir",
+          "description": "Düzenli demolarla, sürekli entegrasyonla ve yapay zeka entegrasyonuyla yinelemeli geliştirme."
+        },
+        {
+          "title": "Büyüt",
+          "description": "Yayın sonrasında izliyor, iyileştiriyor ve bir sonraki adımı sizinle planlıyoruz."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Sıkça sorulan sorular",
+      "subtitle": "Bizimle çalışmadan önce genellikle sorulan birkaç şey.",
+      "items": [
+        {
+          "q": "Ekibiniz ne kadar büyük?",
+          "a": "Bilerek küçük ve kıdemli bir ekibiz. Böylece her projede iletişim hızlı, kararlar doğrudan ve kalite yüksek kalır."
+        },
+        {
+          "q": "Nerede bulunuyorsunuz?",
+          "a": "Hakkari, Türkiye'deyiz ve dünyanın her yerinden müşterilerle çalışıyoruz. Her şey uzaktan ve asenkron dostu yürür."
+        },
+        {
+          "q": "Burada 'uçtan uca' ne anlama geliyor?",
+          "a": "Ürün düşüncesi, arayüz tasarımı, frontend, backend, mobil, yapay zeka entegrasyonları, altyapı ve yayın — tüm yolculuğun sahibi tek bir ekiptir."
+        },
+        {
+          "q": "Sadece yeni ürünlerle mi çalışıyorsunuz?",
+          "a": "Hayır. Mevcut projelere de katılır, mevcut sistemleri denetler ve baştan yazmaya zorlamadan iyileştiririz."
+        },
+        {
+          "q": "Hemen başlayabilir misiniz?",
+          "a": "Genellikle evet. Hedefinizi ve takviminizi gönderin, bir iş günü içinde sonraki adımlarla dönüş yapalım."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Birlikte bir şeyler inşa edelim",
+      "text": "Ürününüzden bahsedin, bir iş günü içinde size dönüş yapalım.",
+      "button": "İletişime geçin"
     }
   },
   "contact": {
     "title": "İletişim Bilgileri",
+    "eyebrow": "İletişim",
+    "heroTitle": "Projeniz hakkında konuşalım",
+    "subtitle": "Ne geliştirdiğinizi anlatın, bir iş günü içinde size dönüş yapalım — satış replikleri yok, sadece net bir cevap.",
+    "heroCta": "E-posta gönderin",
+    "heroCta2": "Paketleri gör",
     "address": "Hakkari, Türkiye",
     "phone": "+90 505 804 4818",
     "email": "contact@mithrabyte.com",
@@ -167,24 +400,220 @@
     "namePlaceholder": "Adınız",
     "messageLabel": "Mesaj",
     "messagePlaceholder": "Size nasıl yardımcı olabiliriz?",
-    "send": "Mesaj gönder"
+    "send": "Mesaj gönder",
+    "stats": {
+      "title": "Nasıl dönüş yapıyoruz",
+      "items": [
+        {
+          "value": 1,
+          "suffix": "",
+          "label": "İş gününde yanıt"
+        },
+        {
+          "value": 24,
+          "suffix": "sa",
+          "label": "E-posta erişilebilirliği"
+        },
+        {
+          "value": 100,
+          "suffix": "%",
+          "label": "Net cevaplar"
+        },
+        {
+          "value": 0,
+          "suffix": "",
+          "label": "Satış repliği"
+        }
+      ]
+    },
+    "response": {
+      "title": "Bize yazdıktan sonra ne olur",
+      "subtitle": "Mesajınızdan çalışan bir projeye kısa ve öngörülebilir bir yol.",
+      "steps": [
+        {
+          "title": "Dönüş yaparız",
+          "description": "Bir iş günü içinde, satış elemanından değil gerçek bir mühendisten."
+        },
+        {
+          "title": "Kapsam çıkarırız",
+          "description": "Hedefinizi anlamak için birkaç soru ve net, önceliklendirilmiş bir plan."
+        },
+        {
+          "title": "Teklif alırsınız",
+          "description": "Herhangi bir taahhütten önce sabit bir fiyat ve gerçekçi bir takvim."
+        },
+        {
+          "title": "İnşa ederiz",
+          "description": "Yayına kadar ve sonrasında düzenli demolarla yinelemeli geliştirme."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Sıkça sorulan sorular",
+      "subtitle": "Bizimle iletişime geçmek ve çalışmak hakkında kısa cevaplar.",
+      "items": [
+        {
+          "q": "Ne kadar hızlı dönüş yaparsınız?",
+          "a": "Bir iş günü içinde — çalışma saatlerinde genellikle çok daha hızlı."
+        },
+        {
+          "q": "Hangi bilgileri eklemeliyim?",
+          "a": "Hedefiniz hakkında bir cümle, ihtiyacınız olan platformlar ve yaklaşık bir takvim. Başlamak için bu yeterli."
+        },
+        {
+          "q": "Ücretsiz öneri veriyor musunuz?",
+          "a": "Gerçek soruları yanıtlamaktan ve sizi doğru yöne yönlendirmekten memnuniyet duyarız — müşteri olmadan önce bile."
+        },
+        {
+          "q": "Görüşme ayarlayabilir miyiz?",
+          "a": "Evet. İlk mesajınızdan sonra kısa bir görüşme ayarlayabilir ya da size uygunsa e-posta üzerinden devam edebiliriz."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Önce ne alacağınızı görmek ister misiniz?",
+      "text": "Kapsam, fiyat ve nelerin dahil olduğunu anlamak için paketlerimize göz atın.",
+      "button": "Paketleri görüntüle"
+    }
   },
   "services": {
+    "eyebrow": "Hizmetler",
     "title": "Hizmetlerimiz",
+    "subtitle": "Performans ve özel yazılımdan uluslararası büyümeye kadar — fikirden yayına ve sonrasına uzanan tüm yolu kapsıyoruz.",
+    "heroCta": "Projeyi başlat",
+    "heroCta2": "Paketleri gör",
     "services": [
       {
         "title": "Performans Optimizasyonu",
-        "description": "Web sitenizin hızını ve verimliliğini maksimuma çıkarıyoruz."
+        "description": "Web sitenizin hızını ve verimliliğini maksimuma çıkarıyoruz.",
+        "features": [
+          "Core Web Vitals ve Lighthouse denetimleri",
+          "Görsel, yazı tipi ve paket optimizasyonu",
+          "Önbellekleme, CDN ve edge dağıtımı",
+          "Sürekli performans izleme"
+        ]
       },
       {
         "title": "Özel Yazılım Geliştirme",
-        "description": "İhtiyacınıza göre tamamen size özel çözümler sunuyoruz."
+        "description": "İhtiyacınıza göre tamamen size özel çözümler sunuyoruz.",
+        "features": [
+          "Keşif, kapsam ve mimari",
+          "Web, mobil ve CLI araçları",
+          "API tasarımı ve üçüncü taraf entegrasyonları",
+          "Otomatik test ve CI/CD"
+        ]
       },
       {
         "title": "Uluslararası SEO ve Pazarlama",
-        "description": "Dijital görünürlüğünüzü global ölçekte artırıyoruz."
+        "description": "Dijital görünürlüğünüzü global ölçekte artırıyoruz.",
+        "features": [
+          "Teknik SEO ve site yapısı",
+          "Çok dilli ve çok bölgeli kurulum",
+          "İçerik stratejisi ve sayfa içi optimizasyon",
+          "Analitik, izleme ve raporlama"
+        ]
       }
-    ]
+    ],
+    "capabilities": {
+      "title": "Her projeye kattıklarımız",
+      "subtitle": "Kıdemli, çok disiplinli bir araç seti — devredilen iş yok, bütçenizde öğrenen junior yok.",
+      "items": [
+        {
+          "title": "Ürün odaklı düşünme",
+          "description": "Sevdiğimiz framework'ten değil, ihtiyacınız olan sonuçtan başlarız — ve sizi oraya götüren en küçük şeyi tasarlarız."
+        },
+        {
+          "title": "Uçtan uca geliştirme",
+          "description": "Tasarım, frontend, backend, mobil ve altyapı; sonucun sahibi olan tek bir ekip tarafından uçtan uca yürütülür."
+        },
+        {
+          "title": "Uygulanan yapay zeka",
+          "description": "Gerçek ürün akışlarına bağlanan modeller — asistanlar, arama, öneriler ve gerçekten yayına giren otomasyon."
+        },
+        {
+          "title": "Uzun ömürlü yapı",
+          "description": "Tipli kod, testler, gözlemlenebilirlik ve dokümantasyon sayesinde ürün yayın sonrasında da hızlı ve bakımı kolay kalır."
+        }
+      ]
+    },
+    "stats": {
+      "title": "Rakamlarla çalışma biçimimiz",
+      "items": [
+        {
+          "value": 3,
+          "suffix": "",
+          "label": "Yayınladığımız platform"
+        },
+        {
+          "value": 24,
+          "suffix": "sa",
+          "label": "Ortalama yanıt süresi"
+        },
+        {
+          "value": 100,
+          "suffix": "%",
+          "label": "Şablonsuz, tamamen size özel"
+        },
+        {
+          "value": 4,
+          "suffix": "",
+          "label": "Hizmet alanı"
+        }
+      ]
+    },
+    "process": {
+      "title": "Nasıl çalışıyoruz",
+      "subtitle": "İlk görüşmeden yayına net ve işbirlikçi bir yol.",
+      "steps": [
+        {
+          "title": "Keşfet",
+          "description": "Hedeflerinizi, kullanıcılarınızı ve kısıtlarınızı önceliklendirilmiş, dürüst bir kapsama dönüştürüyoruz."
+        },
+        {
+          "title": "Tasarla",
+          "description": "Arayüz ve mimari, erken tepki verebileceğiniz bir prototipte bir araya gelir."
+        },
+        {
+          "title": "Geliştir",
+          "description": "Düzenli demolarla, sürekli entegrasyonla ve yapay zeka entegrasyonuyla yinelemeli geliştirme."
+        },
+        {
+          "title": "Yayınla ve destekle",
+          "description": "Yayınlıyor, izliyor ve destekliyoruz — ardından sonraki iyileştirmeleri sizinle planlıyoruz."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Sıkça sorulan sorular",
+      "subtitle": "Başlamadan önce bilmek isteyebileceğiniz her şey.",
+      "items": [
+        {
+          "q": "Nasıl başlıyoruz?",
+          "a": "Hedefinizi ve zaman planınızı kısaca anlatın. Bir iş günü içinde sonraki adımlarla ve uygun olması halinde kapsamlı bir teklifle dönüş yaparız."
+        },
+        {
+          "q": "Fiyatlandırma nasıl işliyor?",
+          "a": "Çoğu proje, paketlere dayalı sabit kapsamlı bir tekliftir; isteğe bağlı olarak devam eden destek eklenebilir. Büyük projelerde kilometre taşlarıyla çalışmaktan memnuniyet duyarız."
+        },
+        {
+          "q": "Ürünümde kim çalışacak?",
+          "a": "Küçük ve kıdemli bir ekip — konuştuğunuz kişiler, işi yapan kişilerdir. İşiniz junior'lara devredilmez."
+        },
+        {
+          "q": "Mevcut kod tabanlarıyla çalışıyor musunuz?",
+          "a": "Evet. Devam eden projelere sık sık katılır, mevcut yapıyı denetler ve baştan yazmaya zorlamadan iyileştiririz."
+        },
+        {
+          "q": "Yayın sonrasında ne oluyor?",
+          "a": "İzliyor, düzeltiyor ve geliştiriyoruz. Bizi bir destek planında tutabilir ya da tamamen dokümante edilmiş devri alabilirsiniz — tercih sizin."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Aklınızda bir proje mi var?",
+      "text": "Ne geliştirdiğinizi anlatın, bir iş günü içinde size dönüş yapalım.",
+      "button": "İletişime geçin"
+    }
   },
   "packages": {
     "title": "Paketlerimiz",
@@ -192,6 +621,19 @@
     "badge": "Fiyatlandırma",
     "popular": "En Çok Tercih Edilen",
     "button": "Satın Al",
+    "eyebrow": "Fiyatlandırma",
+    "included": {
+      "title": "Her pakete dahil",
+      "subtitle": "Ekstra ücret almadığımız şeyler — bunlar bizim çalışma biçimimiz.",
+      "items": [
+        "Kıdemli ekip, dış kaynak kullanımı yok",
+        "Responsive ve erişilebilir arayüz",
+        "Otomatik testler ve CI/CD",
+        "Dokümantasyon ve tipli SDK'lar",
+        "Performans ve SEO optimizasyonu",
+        "Yayın sonrası destek dönemi"
+      ]
+    },
     "packages": [
       {
         "title": "Yapay Zeka Destekli Mobil Uygulama",
@@ -347,6 +789,84 @@
           "description": "Yayınlıyor, izliyor ve destekliyoruz — ardından sonraki iyileştirmeleri sizinle planlıyoruz."
         }
       ]
+    },
+    "stats": {
+      "title": "Ekipler bu paketleri neden seçiyor",
+      "items": [
+        {
+          "value": 4,
+          "suffix": "",
+          "label": "Ürün hattı"
+        },
+        {
+          "value": 3,
+          "suffix": "",
+          "label": "Kapsanan platform"
+        },
+        {
+          "value": 24,
+          "suffix": "sa",
+          "label": "Ortalama yanıt süresi"
+        },
+        {
+          "value": 100,
+          "suffix": "%",
+          "label": "Şablon değil, size özel"
+        }
+      ]
+    },
+    "process": {
+      "title": "Nasıl çalışıyoruz",
+      "subtitle": "Fikirden yayına net ve işbirlikçi bir yol.",
+      "steps": [
+        {
+          "title": "Keşif ve kapsam",
+          "description": "Hedeflerinizi, kullanıcılarınızı ve kısıtlarınızı net, önceliklendirilmiş bir kapsama dönüştürüyoruz."
+        },
+        {
+          "title": "Tasarım ve prototip",
+          "description": "Arayüz ve mimari, erken tepki verebileceğiniz tıklanabilir bir prototipte bir araya gelir."
+        },
+        {
+          "title": "Geliştirme ve entegrasyon",
+          "description": "Düzenli demolarla, sürekli entegrasyonla ve yapay zeka entegrasyonuyla yinelemeli geliştirme."
+        },
+        {
+          "title": "Yayın ve destek",
+          "description": "Yayınlıyor, izliyor ve destekliyoruz — ardından sonraki iyileştirmeleri sizinle planlıyoruz."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Sıkça sorulan sorular",
+      "subtitle": "Paketlerimiz, fiyatlandırma ve süreç hakkında sık sorulanlar.",
+      "items": [
+        {
+          "q": "Listelenen fiyatlar kesin mi?",
+          "a": "Bunlar başlangıç noktalarıdır. Kesin teklif kapsama, entegrasyonlara ve takvime bağlıdır — başlamadan önce sabit bir fiyat alırsınız."
+        },
+        {
+          "q": "Hangi paketi seçmeliyim?",
+          "a": "Emin değilseniz hedefinizle birlikte bize yazın. Sizi oraya götüren en küçük paketi — ya da ikisinin bir karışımını — öneririz."
+        },
+        {
+          "q": "Paketleri birleştirebilir miyim?",
+          "a": "Evet. Birçok müşteri bir web platformuyla başlar, sonra mobil veya analitik ekler. Tek bir backend'i paylaşmaları için birlikte kapsamlandırırız."
+        },
+        {
+          "q": "Sürekli destek sunuyor musunuz?",
+          "a": "Her paket bir yayın sonrası destek dönemi içerir; sonrasında aylık bir planla devam edebilirsiniz."
+        },
+        {
+          "q": "Bir proje ne kadar sürüyor?",
+          "a": "Odaklı bir geliştirme, kapsama bağlı olarak genellikle 4-10 hafta sürer. Teklifle birlikte gerçekçi bir takvim veririz."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Hangi paketin uyduğundan emin değil misiniz?",
+      "text": "Ürününüzden bahsedin, bir iş günü içinde size en uygununu önerelim.",
+      "button": "Bize ulaşın"
     }
   },
   "footer": {

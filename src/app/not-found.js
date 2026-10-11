@@ -7,7 +7,7 @@ export default function NotFound() {
     <div className="nf-wrap">
       <style>{`
         body {
-          background: #06091A;
+          background: #000000;
         }
         .nf-wrap {
           min-height: 100vh;

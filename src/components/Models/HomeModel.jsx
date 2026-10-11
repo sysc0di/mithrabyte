@@ -1,18 +1,21 @@
 "use client";
-import { ConstellationField } from "@/effects/constellation-field/ConstellationField";
-import "@/effects/constellation-field/styles.css";
+import PixelBlastBackground from "@/effects/pixel-blast/PixelBlastBackground";
+import "@/effects/pixel-blast/styles.css";
 
 export default function HomeModel() {
   return (
-    <div className="effect-frame" aria-hidden="true">
-      <ConstellationField variant="particle-drift" mode="dark"  speed={1}
-             size={2}
-             length={0.70}
-             density={2.04}
-             opacity={1.00}
-             hue={5}
-             saturation={1.00}
-             brightness={1.00} />
+    <div className="pixel-blast-frame" aria-hidden="true">
+      <PixelBlastBackground
+        color="#D3D5FD"
+        variant="square"
+        pixelSize={3}
+        patternScale={2}
+        patternDensity={1}
+        pixelSizeJitter={0}
+        speed={0.5}
+        edgeFade={0.5}
+        enableRipples={false}
+      />
     </div>
   );
 }
