@@ -13,20 +13,17 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
-  const isTurkish = locale === 'tr';
+  const copy = locale === 'tr'
+    ? { title: "MithraByte | Gizlilik Odaklı Yerel Yapay Zeka", description: "Veri kontrolünü işletmenizde tutan yerel yapay zeka, özel otomasyon ve e-ticaret altyapısı." }
+    : { title: "MithraByte | Private, Local AI Systems", description: "Local AI, private assistants, business automation, and e-commerce infrastructure built around your control of data." };
 
   return {
-    title: isTurkish 
-      ? "Mithrabyte | Yapay Zeka Destekli Çözümler"
-      : "Mithrabyte | AI-Powered Solutions",
-    description: isTurkish
-      ? "Yapay zeka destekli mobil ve web uygulamalarıyla işinizi büyütün."
-      : "Grow your business with AI-powered mobile and web applications.",
+    title: copy.title,
+    description: copy.description,
     keywords: [
       "yapay zeka",
-      "mobil uygulama",
-      "web geliştirme",
-      "yönetim panelleri",
+      "yerel yapay zeka", "self-hosted AI", "private AI", "business automation",
+      "e-commerce infrastructure", "özel yazılım geliştirme",
       "AI",
       "Next.js",
       "veri analizi",
@@ -45,7 +42,8 @@ export async function generateMetadata({ params }) {
       },
     },
     alternates: {
-      canonical: "https://mithrabyte.com/",
+      canonical: `https://mithrabyte.com/${locale}`,
+      languages: { tr: "/tr", en: "/en", "x-default": "/tr" },
     },
     icons: {
       icon: [
@@ -56,22 +54,14 @@ export async function generateMetadata({ params }) {
     },
     manifest: "/manifest.webmanifest",
     openGraph: {
-      title: isTurkish
-        ? "Mithrabyte | Yapay Zeka Destekli Çözümler"
-        : "Mithrabyte | AI-Powered Solutions",
-      description: isTurkish
-        ? "Yapay zeka destekli mobil ve web uygulamalarıyla işinizi büyütün."
-        : "Grow your business with AI-powered mobile and web applications.",
-      url: "https://mithrabyte.com/",
+      title: copy.title, description: copy.description, url: `https://mithrabyte.com/${locale}`,
       siteName: "Mithrabyte",
       images: [
         {
           url: "https://mithrabyte.com/og-image.png",
           width: 1200,
           height: 630,
-          alt: isTurkish
-            ? "Mithrabyte - Yapay Zeka Destekli Çözümler"
-            : "Mithrabyte - AI-Powered Solutions",
+          alt: copy.title,
         },
       ],
       locale: locale === 'tr' ? "tr_TR" : "en_US",
@@ -79,12 +69,7 @@ export async function generateMetadata({ params }) {
     },
     twitter: {
       card: "summary_large_image",
-      title: isTurkish
-        ? "Mithrabyte | Yapay Zeka Destekli Çözümler"
-        : "Mithrabyte | AI-Powered Solutions",
-      description: isTurkish
-        ? "Yapay zeka destekli mobil ve web uygulamalarıyla işinizi büyütün."
-        : "Grow your business with AI-powered mobile and web applications.",
+      title: copy.title, description: copy.description,
       images: ["https://mithrabyte.com/og-image.jpg"],
     },
   };

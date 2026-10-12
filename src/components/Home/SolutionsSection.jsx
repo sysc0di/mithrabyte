@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { DoodleIcon } from "@oreo-design/doodle-icons";
+import { resolveIcon } from "@/lib/icons";
 
 function SolutionsSection() {
   const t = useTranslations("home.solutions");
@@ -23,13 +23,15 @@ function SolutionsSection() {
         </div>
 
         <div className="mt-10 grid gap-5 sm:grid-cols-2">
-          {items.map((item) => (
+          {items.map((item) => {
+            const Icon = resolveIcon(item.icon);
+            return (
             <div
               key={item.title}
               className="flex flex-col gap-4 rounded-2xl border border-border bg-card/60 p-6 transition-colors hover:border-primary/40"
             >
               <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-border bg-accent/40 text-primary">
-                <DoodleIcon name={item.icon} boilId="boil" size={22} />
+                <Icon className="size-[22px]" />
               </div>
 
               <p className="text-sm leading-relaxed text-muted-foreground">
@@ -46,7 +48,8 @@ function SolutionsSection() {
                 </p>
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

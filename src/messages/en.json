@@ -8,31 +8,11 @@
   "home": {
     "title": "Get Ahead of Your Competitors with Smarter Applications",
     "packages": "Packages",
-    "textSlider": {
-      "text1": "Shape the future of your organization with artificial intelligence",
-      "text2": "Powerful, dynamic, and team-friendly AI applications"
-    },
     "products": {
-      "socialMedia": {
-        "title": "Social Media Panels",
-        "description": "Control all your accounts from one place, schedule your posts, and track your engagement. Spend your time growing your brand, not on reports. We've made the panel simple — you just be creative!",
-        "cta": "Get Quote"
-      },
-      "mobile": {
-        "title": "Mobile Applications",
-        "description": "We boost brands' digital power with our iOS and Android-compatible solutions. With personalized experiences, solid infrastructure, and a modern design approach, we take user expectations one step further.",
-        "cta": "Get Quote"
-      },
-      "web": {
-        "title": "Web Applications",
-        "description": "We make your brand stand out in the digital world with our SEO-friendly, fast, and accessible infrastructure. With scalable architecture, we fuel your business growth and advance your digital transformation.",
-        "cta": "Get Quote"
-      }
-    },
-    "whyUs": {
-      "title": "Why Us?",
-      "description": "We approach every project as if it were our own business, producing simple yet powerful solutions. From mobile applications to AI-powered systems, we build high-performance software. With our small but agile team, we deliver fast, flexible, and tailored solutions while establishing long-term business partnerships through post-delivery support.",
-      "cta": "Learn More"
+      "title": "Our Products",
+      "subtitle": "Solutions that run on your infrastructure",
+      "cta": "Details",
+      "upcoming": "Upcoming"
     },
     "jobs": {
       "title": "Career Opportunities",
@@ -86,50 +66,7 @@
       "title": "Our Packages",
       "cta": "Apply",
       "subtitle": "Choose the best solution for your business",
-      "packages": [
-        {
-          "title": "Web Platforms",
-          "price": "$5000+",
-          "url": "mailto:contact@mithrabyte.com",
-          "description": "High-speed, AI-powered, SEO-focused modern web platforms.",
-          "features": [
-            "Next.js architecture",
-            "OpenAI or custom AI integration",
-            "Intelligent recommendation systems",
-            "Corporate interface design",
-            "Mobile compatibility and accessibility",
-            "Lighthouse score optimization",
-            "Advanced admin panel and API infrastructure"
-          ]
-        },
-        {
-          "title": "Social Media Management Panel",
-          "price": "Coming Soon!",
-          "url": "mailto:contact@mithrabyte.com",
-          "description": "Automate your social media posts and manage everything from one place.",
-          "features": [
-            "Modern user experience",
-            "AI (GPT, LLaMA) integration",
-            "Business-specific content suggestions",
-            "Data security as a priority"
-          ]
-        },
-        {
-          "title": "Real-Time Analytics Dashboard",
-          "price": "Coming Soon",
-          "url": "mailto:contact@mithrabyte.com",
-          "description": "Real-time data tracking, AI insights, and custom dashboards in one platform.",
-          "features": [
-            "Live data visualization",
-            "Machine learning-based predictions and analysis",
-            "Custom metric and KPI tracking",
-            "Role-based user access",
-            "Plotly.js / Grafana-supported charts",
-            "PDF / Excel reporting",
-            "Filtering and segmentation tools"
-          ]
-        }
-      ]
+      "quote": "Quote-based"
     },
     "solutions": {
       "eyebrow": "Solutions",
@@ -162,71 +99,6 @@
           "description": "Discovery, design, build and launch from one small senior team — with support long after release."
         }
       ]
-    },
-    "terminal": {
-      "eyebrow": "Developer-first",
-      "title": "A terminal your engineers will actually enjoy",
-      "subtitle": "We build CLIs, SDKs and automation with the polish production demands — typed, documented and tested. Explore the platform right here.",
-      "windowTitle": "mithrabyte — cli",
-      "prompt": "mithrabyte",
-      "placeholder": "Type a command…",
-      "hint": "Click a command below, or type your own and press Enter.",
-      "unknownPrefix": "command not found:",
-      "boot": [
-        "mithrabyte init --interactive",
-        "? Stack › Next.js · Node · Postgres · AI",
-        "✓ Workspace scaffolded in 0.8s",
-        "✓ Dependencies installed (312 packages)",
-        "➜ Ready. Type 'help' to explore the platform."
-      ],
-      "suggestions": [
-        "help",
-        "products",
-        "solutions",
-        "stack",
-        "contact"
-      ],
-      "help": {
-        "header": "available commands",
-        "lines": [
-          "products      list our product lines",
-          "solutions     problems we solve",
-          "stack         technologies we build with",
-          "contact       how to reach us",
-          "clear         clear the screen"
-        ]
-      },
-      "outputs": {
-        "products": [
-          "ai-mobile-app        AI-powered mobile apps (iOS · Android)",
-          "ai-web-platforms     AI web & SaaS platforms (Next.js)",
-          "data-analytics       real-time dashboards & ML insight",
-          "cli-developer-tools  CLIs, SDKs & automation",
-          "✓ run 'solutions' to see the problems each one solves"
-        ],
-        "solutions": [
-          "manual work          →  automation & internal tools",
-          "data, no decisions   →  real-time analytics",
-          "generic product      →  AI personalization",
-          "slow delivery        →  end-to-end product team",
-          "✓ run 'stack' to see how we build"
-        ],
-        "stack": [
-          "frontend   Next.js · React · TypeScript · Tailwind",
-          "mobile     Swift · Kotlin · React Native",
-          "backend    Node · Go · Rust · Postgres · Redis",
-          "ai         OpenAI · LLaMA · Replicate · custom models",
-          "cloud      Vercel · AWS · Docker · CI/CD",
-          "✓ run 'contact' to start a project"
-        ],
-        "contact": [
-          "email      contact@mithrabyte.com",
-          "phone      +90 505 804 4818",
-          "location   Hakkari, Türkiye",
-          "hours      Mon-Fri 09:00 - 18:00",
-          "✓ we usually reply within one business day"
-        ]
-      }
     },
     "stats": {
       "title": "Built on the numbers that matter",
@@ -398,6 +270,13 @@
     "formSubtitle": "We'll get back to you as soon as possible.",
     "nameLabel": "Name",
     "namePlaceholder": "Your name",
+    "subjectLabel": "Subject",
+    "subjectPlaceholder": "Select a subject",
+    "subjects": {
+      "support": "Support",
+      "order": "Order",
+      "question": "Question"
+    },
     "messageLabel": "Message",
     "messagePlaceholder": "How can we help?",
     "send": "Send message",
@@ -474,6 +353,11 @@
       "title": "Prefer to see what you'd get first?",
       "text": "Browse our packages to understand scope, price and what's included.",
       "button": "View packages"
+    },
+    "form": {
+      "sending": "Sending…",
+      "success": "Your message was received. We'll get back to you within one business day.",
+      "error": "Message could not be sent. Please try again or email us directly."
     }
   },
   "services": {
@@ -634,128 +518,6 @@
         "Post-launch support window"
       ]
     },
-    "packages": [
-      {
-        "title": "AI-Powered Mobile Application",
-        "price": "₺3000+",
-        "features": [
-          "Modern and intuitive user experience",
-          "Integrated with GPT, LLaMA, or custom AI models",
-          "Personalized based on user behavior",
-          "Offline mode and data synchronization",
-          "Cross-platform support for iOS & Android",
-          "Data security and privacy as a priority",
-          "Full compatibility with Firebase, Supabase, or custom backends"
-        ],
-        "slug": "ai-mobile-app",
-        "tagline": "Intelligent mobile experiences, from first sketch to store launch.",
-        "description": "A production-ready iOS and Android application with AI woven into the product — personalization, assistants, and smart automation. We handle the full lifecycle: architecture, design, development, and release.",
-        "useCases": [
-          {
-            "title": "Consumer apps",
-            "description": "Engagement-driven products that need personalization, recommendations, and a frictionless onboarding flow."
-          },
-          {
-            "title": "Internal tools",
-            "description": "Field, sales, and operations apps that put AI assistance and offline-first workflows in your team's pocket."
-          },
-          {
-            "title": "MVP & startups",
-            "description": "A focused first release that validates your idea quickly and scales cleanly as your user base grows."
-          }
-        ]
-      },
-      {
-        "title": "AI-Based Web Platforms",
-        "price": "₺5000+",
-        "features": [
-          "High performance with Next.js architecture",
-          "Integration with OpenAI, Replicate, or your own models",
-          "AI-powered recommendation engines and chatbot systems",
-          "Enterprise-grade UI/UX focused interfaces",
-          "Fully responsive and accessible design",
-          "Top SEO, speed, and Lighthouse performance",
-          "Admin panel, user management, and API infrastructure"
-        ],
-        "slug": "ai-web-platforms",
-        "tagline": "High-performance web platforms with AI at the core.",
-        "description": "A modern Next.js platform engineered for speed, SEO, and scale. We integrate the AI models your product needs — search, recommendations, chatbots, and content generation — behind a polished, accessible interface.",
-        "useCases": [
-          {
-            "title": "SaaS products",
-            "description": "Multi-tenant platforms with accounts, billing, dashboards, and AI features customers pay for."
-          },
-          {
-            "title": "Marketing sites",
-            "description": "Fast, SEO-optimized sites that convert, with CMS, analytics, and AI-assisted content workflows."
-          },
-          {
-            "title": "Marketplaces",
-            "description": "Two-sided platforms with search, matching, and recommendation engines powered by real usage data."
-          }
-        ]
-      },
-      {
-        "title": "Custom Data Analytics Dashboards",
-        "price": "Coming Soon",
-        "features": [
-          "Real-time data processing and visualization",
-          "Machine learning-based insights (forecasting, anomaly detection)",
-          "Custom KPIs and company-specific metrics",
-          "Comprehensive user roles and access control",
-          "Interactive charts powered by Grafana/Plotly.js",
-          "Reporting, PDF export, and data exporting options",
-          "Advanced filtering and segmentation"
-        ],
-        "slug": "data-analytics-dashboards",
-        "tagline": "Turn raw data into decisions your team can act on.",
-        "description": "Real-time dashboards that surface the metrics that matter, with machine-learning insight layered on top. Built around your data sources, your KPIs, and the way your team actually works.",
-        "useCases": [
-          {
-            "title": "Operations",
-            "description": "Live monitoring of pipelines, inventory, and performance with alerting before problems escalate."
-          },
-          {
-            "title": "Finance & sales",
-            "description": "Revenue, cohort, and forecasting views with anomaly detection on the numbers you report on."
-          },
-          {
-            "title": "Product analytics",
-            "description": "Funnels, retention, and behavior analysis connected directly to your product's event stream."
-          }
-        ]
-      },
-      {
-        "title": "CLI & Terminal Developer Tools",
-        "price": "Project-Based",
-        "features": [
-          "High-performance CLI tools (Rust, Go, Node.js)",
-          "API integrations and data processing capabilities",
-          "Advanced error handling and logging system",
-          "Easy setup (npm, brew, or curl scripts)",
-          "Interactive terminal interfaces (Inquirer, Blessed)",
-          "Detailed documentation and TypeScript SDKs",
-          "Continuous integration and automated testing"
-        ],
-        "slug": "cli-developer-tools",
-        "tagline": "Fast, reliable command-line tools your team will actually enjoy.",
-        "description": "Purpose-built CLIs and terminal utilities that automate the repetitive parts of your workflow. Shipped with clean documentation, typed SDKs, and the error handling production demands.",
-        "useCases": [
-          {
-            "title": "Developer experience",
-            "description": "Internal CLIs that scaffold projects, run tasks, and standardize how your team ships code."
-          },
-          {
-            "title": "Automation",
-            "description": "Scriptable tooling for data processing, deployments, and CI pipelines that removes manual steps."
-          },
-          {
-            "title": "Public tooling",
-            "description": "Distribution-ready tools with install scripts, versioning, and SDKs your users can build on."
-          }
-        ]
-      }
-    ],
     "detail": {
       "eyebrow": "Package",
       "startingAt": "Starting at",
@@ -788,7 +550,8 @@
           "title": "Launch & support",
           "description": "We ship, monitor, and support — then plan the next round of improvements with you."
         }
-      ]
+      ],
+      "recurring": "Recurring"
     },
     "stats": {
       "title": "Why teams pick these packages",
@@ -867,7 +630,11 @@
       "title": "Not sure which package fits?",
       "text": "Tell us about your product and we'll recommend the right one — within one business day.",
       "button": "Talk to us"
-    }
+    },
+    "oneTime": "One-time",
+    "maintenance": "Maintenance/Subscription",
+    "partOfProduct": "This package belongs to the related product",
+    "empty": "No packages available at the moment."
   },
   "footer": {
     "home": "Home",
@@ -879,6 +646,11 @@
     "tagline": "AI-powered products, designed and engineered end to end — from the first prototype to the systems running in production.",
     "explore": "Explore",
     "company": "Company",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "kvkk": "KVKK Notice",
+    "cookies": "Cookie Policy",
+    "terms": "Terms of Use",
     "elsewhere": "Elsewhere",
     "baseline": "AI · Mobile · Web"
   },
@@ -886,5 +658,21 @@
     "learnMore": "Learn More",
     "getStarted": "Get Started",
     "contactUs": "Contact Us"
+  },
+  "productsPage": {
+    "eyebrow": "Products",
+    "title": "Our Products",
+    "subtitle": "Scalable, secure solutions that run on your own infrastructure.",
+    "empty": "No products available at the moment.",
+    "upcoming": "Upcoming",
+    "details": "Details",
+    "included": "Key Features",
+    "useCases": "Use Cases",
+    "whoFor": "Who is it for?",
+    "packagesTitle": "Related Packages",
+    "packagesSubtitle": "Suitable packages for this product",
+    "seePackages": "See Packages",
+    "contactCta": "Get a Quote",
+    "quote": "Quote-based"
   }
 }

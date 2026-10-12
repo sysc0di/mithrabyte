@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import { DoodleIcon } from "@oreo-design/doodle-icons";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -11,6 +10,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { ArrowRight } from "lucide-react";
 
 function JobsCards() {
   const t = useTranslations("home.jobs");
@@ -38,7 +38,7 @@ function JobsCards() {
                 <Button asChild variant="outline" size="sm" className="gap-2">
                   <Link href="mailto:yatli5645@gmail.com" target="_blank">
                     {t(`card${n}.cta`)}
-                    <DoodleIcon name="arrow-right" boilId="boil" size={16} />
+                    <ArrowRight className="size-[16px]" />
                   </Link>
                 </Button>
               </CardFooter>

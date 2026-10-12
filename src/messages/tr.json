@@ -8,31 +8,11 @@
   "home": {
     "title": "Daha Akıllı Uygulamalarla Rakiplerinizin Önüne Geçin",
     "packages": "Paketler",
-    "textSlider": {
-      "text1": "Kurumlarınızın geleceğine yapay zeka ile şekil verin",
-      "text2": "Güçlü dinamik ve ekibinize uygun YZ uygulamaları"
-    },
     "products": {
-      "socialMedia": {
-        "title": "Sosyal Medya Panelleri",
-        "description": "Tüm hesaplarını tek yerden kontrol et, paylaşımlarını planla, etkileşimini takip et. Zamanını raporlarla değil, markanı büyütmekle harca. Biz paneli kolaylaştırdık, sen sadece yaratıcı ol!",
-        "cta": "Teklif Al"
-      },
-      "mobile": {
-        "title": "Mobil Uygulamalar",
-        "description": "iOS ve Android uyumlu çözümlerimizle markaların dijital gücünü artırıyoruz. Kişiselleştirilmiş deneyim, güçlü altyapı ve modern tasarım anlayışıyla kullanıcıların beklentilerini bir adım öteye taşıyoruz.",
-        "cta": "Teklif Al"
-      },
-      "web": {
-        "title": "Web Uygulamaları",
-        "description": "SEO dostu, hızlı ve erişilebilir altyapımızla markanızı dijital dünyada öne çıkarıyoruz. Ölçeklenebilir mimarimizle işletmenizin büyümesine güç katıyor, dijital dönüşümünüzü bir adım öteye taşıyoruz.",
-        "cta": "Teklif Al"
-      }
-    },
-    "whyUs": {
-      "title": "Neden Biz?",
-      "description": "Her projeye kendi işimiz gibi yaklaşır, sade ve güçlü çözümler üretiriz. Mobil uygulamalardan yapay zeka destekli sistemlere kadar, yüksek performanslı yazılımlar geliştiririz. Küçük ama çevik ekibimizle hızlı, esnek ve size özel çözümler sunar, teslim sonrası destekle uzun vadeli iş ortaklıkları kurarız.",
-      "cta": "Detaylı Bilgi"
+      "title": "Ürünlerimiz",
+      "subtitle": "Kendi altyapınızda çalışan çözümler",
+      "cta": "Detaylar",
+      "upcoming": "Yakında"
     },
     "jobs": {
       "title": "Kariyer Fırsatları",
@@ -86,50 +66,7 @@
       "title": "Paketlerimiz",
       "cta": "Teklif Al",
       "subtitle": "İşletmenize en uygun çözümü seçin",
-      "packages": [
-        {
-          "title": "Web Platformları",
-          "price": "₺5000+",
-          "url": "mailto:contact@mithrabyte.com",
-          "description": "Yüksek hızlı, yapay zeka destekli, SEO odaklı modern web platformları.",
-          "features": [
-            "Next.js mimarisi",
-            "OpenAI veya özel yapay zeka entegrasyonu",
-            "Akıllı öneri sistemleri",
-            "Kurumsal arayüz tasarımı",
-            "Mobil uyum ve erişilebilirlik",
-            "Lighthouse skoru optimizasyonu",
-            "Gelişmiş yönetim paneli ve API altyapısı"
-          ]
-        },
-        {
-          "title": "Sosyal Medya Yönetim Paneli",
-          "price": "Yakında!",
-          "url": "mailto:contact@mithrabyte.com",
-          "description": "Sosyal medya hesaplarınızda otomatik paylaşım yapın ve her şeyi tek bir yerden yönetin.",
-          "features": [
-            "Modern kullanıcı deneyimi",
-            "Yapay zeka (GPT, LLaMA) entegrasyonu",
-            "İşletmenize özel içerik önerileri",
-            "Veri güvenliği önceliği"
-          ]
-        },
-        {
-          "title": "Gerçek Zamanlı Analiz Paneli",
-          "price": "Yakında",
-          "url": "mailto:contact@mithrabyte.com",
-          "description": "Gerçek zamanlı veri takibi, yapay zeka öngörüleri ve özel paneller tek platformda.",
-          "features": [
-            "Canlı veri görselleştirme",
-            "Makine öğrenimi tabanlı tahmin ve analiz",
-            "Özel metrik ve KPI izleme",
-            "Yetki bazlı kullanıcı erişimi",
-            "Plotly.js / Grafana destekli grafikler",
-            "PDF / Excel raporlama",
-            "Filtreleme ve segmentasyon özellikleri"
-          ]
-        }
-      ]
+      "quote": "Teklif bazlı"
     },
     "solutions": {
       "eyebrow": "Çözümler",
@@ -162,71 +99,6 @@
           "description": "Keşif, tasarım, geliştirme ve yayını tek bir küçük kıdemli ekipten — yayın sonrası destekle birlikte."
         }
       ]
-    },
-    "terminal": {
-      "eyebrow": "Geliştirici odaklı",
-      "title": "Mühendislerinizin severek kullanacağı bir terminal",
-      "subtitle": "CLI'lar, SDK'lar ve otomasyonu üretimin gerektirdiği özenle geliştiriyoruz — tipli, dokümante edilmiş ve test edilmiş. Platformu buradan keşfedin.",
-      "windowTitle": "mithrabyte — cli",
-      "prompt": "mithrabyte",
-      "placeholder": "Bir komut yazın…",
-      "hint": "Aşağıdaki komutlardan birine tıklayın ya da kendi komutunuzu yazıp Enter'a basın.",
-      "unknownPrefix": "komut bulunamadı:",
-      "boot": [
-        "mithrabyte init --interactive",
-        "? Stack › Next.js · Node · Postgres · AI",
-        "✓ Çalışma alanı 0.8s'de oluşturuldu",
-        "✓ Bağımlılıklar kuruldu (312 paket)",
-        "➜ Hazır. Platformu keşfetmek için 'help' yazın."
-      ],
-      "suggestions": [
-        "help",
-        "products",
-        "solutions",
-        "stack",
-        "contact"
-      ],
-      "help": {
-        "header": "kullanılabilir komutlar",
-        "lines": [
-          "products      ürün hatlarımızı listeler",
-          "solutions     çözdüğümüz sorunlar",
-          "stack         kullandığımız teknolojiler",
-          "contact       bize nasıl ulaşacağınız",
-          "clear         ekranı temizler"
-        ]
-      },
-      "outputs": {
-        "products": [
-          "ai-mobile-app        AI destekli mobil uygulamalar (iOS · Android)",
-          "ai-web-platforms     AI web & SaaS platformları (Next.js)",
-          "data-analytics       gerçek zamanlı paneller & ML içgörüsü",
-          "cli-developer-tools  CLI'lar, SDK'lar & otomasyon",
-          "✓ her birinin çözdüğü sorunu görmek için 'solutions' yazın"
-        ],
-        "solutions": [
-          "manuel iş             →  otomasyon & kurum içi araçlar",
-          "veri var, karar yok   →  gerçek zamanlı analitik",
-          "sıradan ürün          →  AI kişiselleştirme",
-          "yavaş teslim          →  uçtan uca ürün ekibi",
-          "✓ nasıl geliştirdiğimizi görmek için 'stack' yazın"
-        ],
-        "stack": [
-          "frontend   Next.js · React · TypeScript · Tailwind",
-          "mobile     Swift · Kotlin · React Native",
-          "backend    Node · Go · Rust · Postgres · Redis",
-          "ai         OpenAI · LLaMA · Replicate · özel modeller",
-          "cloud      Vercel · AWS · Docker · CI/CD",
-          "✓ projeye başlamak için 'contact' yazın"
-        ],
-        "contact": [
-          "email      contact@mithrabyte.com",
-          "phone      +90 505 804 4818",
-          "location   Hakkari, Türkiye",
-          "hours      Pzt-Cum 09:00 - 18:00",
-          "✓ genellikle bir iş günü içinde yanıt veririz"
-        ]
-      }
     },
     "stats": {
       "title": "Önemli olan sayılar üzerine kurulu",
@@ -398,6 +270,13 @@
     "formSubtitle": "En kısa sürede size dönüş yapacağız.",
     "nameLabel": "İsim",
     "namePlaceholder": "Adınız",
+    "subjectLabel": "Konu",
+    "subjectPlaceholder": "Konu seçin",
+    "subjects": {
+      "support": "Destek",
+      "order": "Sipariş",
+      "question": "Soru"
+    },
     "messageLabel": "Mesaj",
     "messagePlaceholder": "Size nasıl yardımcı olabiliriz?",
     "send": "Mesaj gönder",
@@ -474,6 +353,11 @@
       "title": "Önce ne alacağınızı görmek ister misiniz?",
       "text": "Kapsam, fiyat ve nelerin dahil olduğunu anlamak için paketlerimize göz atın.",
       "button": "Paketleri görüntüle"
+    },
+    "form": {
+      "sending": "Gönderiliyor…",
+      "success": "Mesajınız alındı. Bir iş günü içinde size dönüş yapacağız.",
+      "error": "Mesaj gönderilemedi. Lütfen tekrar deneyin veya bize doğrudan e-posta gönderin."
     }
   },
   "services": {
@@ -634,128 +518,6 @@
         "Yayın sonrası destek dönemi"
       ]
     },
-    "packages": [
-      {
-        "title": "Yapay Zeka Destekli Mobil Uygulama",
-        "price": "₺3000+",
-        "features": [
-          "Modern ve sezgisel kullanıcı deneyimi",
-          "GPT, LLaMA veya özel AI modelleri ile entegre",
-          "Kullanıcı davranışına göre kişiselleştirme",
-          "Offline mod ve veri senkronizasyonu",
-          "iOS & Android uyumlu çapraz platform yapı",
-          "Veri güvenliği ve gizlilik önceliği",
-          "Firebase, Supabase veya özel backend ile tam uyum"
-        ],
-        "slug": "ai-mobile-app",
-        "tagline": "İlk taslaktan mağaza yayınına kadar akıllı mobil deneyimler.",
-        "description": "Ürünün içine yapay zekâ işlenmiş, yayına hazır bir iOS ve Android uygulaması — kişiselleştirme, asistanlar ve akıllı otomasyon. Mimari, tasarım, geliştirme ve yayın sürecinin tamamını üstleniyoruz.",
-        "useCases": [
-          {
-            "title": "Tüketici uygulamaları",
-            "description": "Kişiselleştirme, öneriler ve sorunsuz bir ilk kullanım akışı gerektiren etkileşim odaklı ürünler."
-          },
-          {
-            "title": "Kurum içi araçlar",
-            "description": "Saha, satış ve operasyon ekiplerinizin cebine yapay zekâ desteğini ve çevrimdışı çalışan akışları koyan uygulamalar."
-          },
-          {
-            "title": "MVP ve girişimler",
-            "description": "Fikrinizi hızlıca doğrulayan, kullanıcı kitleniz büyüdükçe temiz biçimde ölçeklenen odaklı bir ilk sürüm."
-          }
-        ]
-      },
-      {
-        "title": "AI Tabanlı Web Platformları",
-        "price": "₺5000+",
-        "features": [
-          "Next.js mimarisi ile yüksek performans",
-          "OpenAI, Replicate veya kendi modelinizle entegrasyon",
-          "AI destekli öneri motorları ve chatbot sistemleri",
-          "Kurumsal UI/UX odaklı arayüzler",
-          "Tam responsive yapı ve erişilebilirlik",
-          "SEO, hız ve Lighthouse skorlarında maksimum optimizasyon",
-          "Panel, kullanıcı yönetimi ve API altyapısı"
-        ],
-        "slug": "ai-web-platforms",
-        "tagline": "Merkezinde yapay zekâ olan yüksek performanslı web platformları.",
-        "description": "Hız, SEO ve ölçeklenebilirlik için tasarlanmış modern bir Next.js platformu. Ürününüzün ihtiyaç duyduğu arama, öneri, chatbot ve içerik üretimi gibi yapay zekâ modellerini şık ve erişilebilir bir arayüzün arkasına entegre ediyoruz.",
-        "useCases": [
-          {
-            "title": "SaaS ürünleri",
-            "description": "Hesaplar, faturalandırma, paneller ve müşterilerinizin ödediği yapay zekâ özellikleriyle çok kiracılı platformlar."
-          },
-          {
-            "title": "Tanıtım siteleri",
-            "description": "Dönüşüm odaklı, hızlı ve SEO uyumlu siteler; CMS, analitik ve yapay zekâ destekli içerik akışlarıyla birlikte."
-          },
-          {
-            "title": "Pazaryerleri",
-            "description": "Gerçek kullanım verisiyle çalışan arama, eşleştirme ve öneri motorlarına sahip iki taraflı platformlar."
-          }
-        ]
-      },
-      {
-        "title": "İşletmelere Özel Veri Analizi Panelleri",
-        "price": "Yakında",
-        "features": [
-          "Gerçek zamanlı veri işleme ve görselleştirme",
-          "Makine öğrenimi tabanlı öngörüler (forecast, anomaly detection)",
-          "Şirketinize özel metrikler & KPI izleme",
-          "Kapsamlı kullanıcı rolleri ve erişim kontrolü",
-          "Grafana/Plotly.js destekli interaktif grafikler",
-          "Raporlama, PDF çıktılar, dışa aktarma seçenekleri",
-          "Gelişmiş filtreleme ve segmentasyon"
-        ],
-        "slug": "data-analytics-dashboards",
-        "tagline": "Ham veriyi ekibinizin harekete geçebileceği kararlara dönüştürün.",
-        "description": "Önemli metrikleri öne çıkaran, üzerine makine öğrenimi içgörüsü eklenmiş gerçek zamanlı paneller. Veri kaynaklarınıza, KPI'larınıza ve ekibinizin çalışma biçimine göre kurulur.",
-        "useCases": [
-          {
-            "title": "Operasyon",
-            "description": "Süreçlerin, envanterin ve performansın canlı takibi; sorunlar büyümeden uyarılar."
-          },
-          {
-            "title": "Finans ve satış",
-            "description": "Raporladığınız rakamlarda anomali tespitiyle gelir, kohort ve tahmin görünümleri."
-          },
-          {
-            "title": "Ürün analitiği",
-            "description": "Ürününüzün olay akışına doğrudan bağlı huni, elde tutma ve davranış analizleri."
-          }
-        ]
-      },
-      {
-        "title": "CLI & Terminal Tabanlı Geliştirici Araçları",
-        "price": "Proje Bazlı",
-        "features": [
-          "Yüksek performanslı CLI araçları (Rust, Go, Node.js)",
-          "API entegrasyonları ve veri işleme yetenekleri",
-          "İleri düzey hata yönetimi ve logging altyapısı",
-          "Kolay kurulum (npm, brew, curl scriptleri)",
-          "İnteraktif terminal arayüzleri (Inquirer, Blessed)",
-          "Detaylı dokümantasyon ve TypeScript destekli SDK'lar",
-          "Sürekli entegrasyon ve test otomasyonu"
-        ],
-        "slug": "cli-developer-tools",
-        "tagline": "Ekibinizin severek kullanacağı hızlı ve güvenilir komut satırı araçları.",
-        "description": "İş akışınızın tekrar eden kısımlarını otomatikleştiren, amaca özel CLI'lar ve terminal araçları. Temiz dokümantasyon, tipli SDK'lar ve üretimin gerektirdiği hata yönetimiyle birlikte.",
-        "useCases": [
-          {
-            "title": "Geliştirici deneyimi",
-            "description": "Proje oluşturan, görev çalıştıran ve ekibinizin kod yayınlama biçimini standartlaştıran kurum içi CLI'lar."
-          },
-          {
-            "title": "Otomasyon",
-            "description": "Veri işleme, dağıtım ve CI süreçleri için manuel adımları ortadan kaldıran betiklenebilir araçlar."
-          },
-          {
-            "title": "Herkese açık araçlar",
-            "description": "Kurulum betikleri, sürümleme ve kullanıcılarınızın üzerine geliştirebileceği SDK'larla dağıtıma hazır araçlar."
-          }
-        ]
-      }
-    ],
     "detail": {
       "eyebrow": "Paket",
       "startingAt": "Başlangıç",
@@ -788,7 +550,8 @@
           "title": "Yayın ve destek",
           "description": "Yayınlıyor, izliyor ve destekliyoruz — ardından sonraki iyileştirmeleri sizinle planlıyoruz."
         }
-      ]
+      ],
+      "recurring": "Aylık/Fiyatlandırma"
     },
     "stats": {
       "title": "Ekipler bu paketleri neden seçiyor",
@@ -867,7 +630,11 @@
       "title": "Hangi paketin uyduğundan emin değil misiniz?",
       "text": "Ürününüzden bahsedin, bir iş günü içinde size en uygununu önerelim.",
       "button": "Bize ulaşın"
-    }
+    },
+    "oneTime": "Tek seferlik",
+    "maintenance": "Bakım/Abonelik",
+    "partOfProduct": "Bu paket, ilgili ürüne aittir",
+    "empty": "Şu anda gösterilecek paket bulunmuyor."
   },
   "footer": {
     "home": "Ana Sayfa",
@@ -879,6 +646,11 @@
     "tagline": "İlk prototipten üretimdeki sistemlere kadar uçtan uca tasarlanan ve geliştirilen yapay zeka destekli ürünler.",
     "explore": "Keşfet",
     "company": "Kurumsal",
+    "legal": "Yasal",
+    "privacy": "Gizlilik Politikası",
+    "kvkk": "KVKK Aydınlatma",
+    "cookies": "Çerez Politikası",
+    "terms": "Kullanım Koşulları",
     "elsewhere": "Bizi Takip Et",
     "baseline": "YZ · Mobil · Web"
   },
@@ -886,5 +658,21 @@
     "learnMore": "Daha Fazla Bilgi",
     "getStarted": "Başlayın",
     "contactUs": "İletişime Geçin"
+  },
+  "productsPage": {
+    "eyebrow": "Ürünler",
+    "title": "Ürünlerimiz",
+    "subtitle": "Ölçeklenebilir, güvenli ve kendi altyapınızda çalışacak çözümler.",
+    "empty": "Gösterilecek ürün bulunmuyor.",
+    "upcoming": "Yakında",
+    "details": "Detaylar",
+    "included": "Öne çıkan özellikler",
+    "useCases": "Kullanım Alanları",
+    "whoFor": "Kime yönelik?",
+    "packagesTitle": "İlgili Paketler",
+    "packagesSubtitle": "Bu ürün için uygun paketler",
+    "seePackages": "Paketleri Gör",
+    "contactCta": "Teklif Al",
+    "quote": "Teklif bazlı"
   }
 }

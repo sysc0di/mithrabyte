@@ -7,10 +7,11 @@ const defaultLocale = 'tr';
 export function proxy(req) {
   const { pathname } = req.nextUrl;
 
-  // Statik dosyaları ve API isteklerini atla
+  // Statik dosyaları, API isteklerini ve admin panelini atla
   if (
     pathname.startsWith('/_next') ||
     pathname.startsWith('/api') ||
+    pathname.startsWith('/admin') ||
     pathname.match(/\.(.*)$/)
   ) {
     return;

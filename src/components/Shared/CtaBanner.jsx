@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
-import { DoodleIcon } from "@oreo-design/doodle-icons";
 import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 function CtaBanner({ namespace, href }) {
   const t = useTranslations(namespace);
@@ -20,7 +20,7 @@ function CtaBanner({ namespace, href }) {
         <Button asChild size="lg" className="mt-2">
           <Link href={target}>
             {t("button")}
-            <DoodleIcon name="arrow-right" boilId="boil" size={16} />
+            <ArrowRight className="size-[16px]" />
           </Link>
         </Button>
       </div>

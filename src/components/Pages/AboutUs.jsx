@@ -1,15 +1,15 @@
 "use client";
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
-import { DoodleIcon } from "@oreo-design/doodle-icons";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardTitle } from "@/components/ui/card";
-import StatsStrip from "@/components/Shared/StatsStrip";
 import ProcessSteps from "@/components/Shared/ProcessSteps";
 import FaqSection from "@/components/Shared/FaqSection";
 import CtaBanner from "@/components/Shared/CtaBanner";
+import { ArrowRight, Sparkles, Users } from "lucide-react";
+import { resolveIcon } from "@/lib/icons";
 
 const VALUE_ICONS = ["users", "bulb", "circle"];
 const HIGHLIGHT_ICONS = ["users", "bulb", "table", "code"];
@@ -50,7 +50,7 @@ export default function AboutUs() {
             variant="outline"
             className="gap-1.5 border-primary/40 text-primary"
           >
-            <DoodleIcon name="bulb" boilId="boil" size={14} />
+            <Sparkles className="size-[14px]" />
             {t("eyebrow")}
           </Badge>
 
@@ -66,7 +66,7 @@ export default function AboutUs() {
             <Button asChild size="lg">
               <Link href={`/${locale}/contact`}>
                 {t("heroCta")}
-                <DoodleIcon name="arrow-right" boilId="boil" size={16} />
+                <ArrowRight className="size-[16px]" />
               </Link>
             </Button>
             <Button asChild size="lg" variant="outline">
@@ -97,17 +97,20 @@ export default function AboutUs() {
             </h2>
           </div>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {values.map(({ icon, title, description }, i) => (
+            {values.map(({ icon, title, description }, i) => {
+              const ValueIcon = resolveIcon(VALUE_ICONS[i] ?? icon);
+              return (
               <Card key={title} className="gap-4 p-6">
                 <span className="grid size-11 place-items-center rounded-xl bg-primary/10 text-primary">
-                  <DoodleIcon name={VALUE_ICONS[i] ?? icon} boilId="boil" size={22} />
+                  <ValueIcon className="size-[22px]" />
                 </span>
                 <CardTitle className="text-lg font-bold">{title}</CardTitle>
                 <p className="text-sm leading-relaxed text-muted-foreground">
                   {description}
                 </p>
               </Card>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -124,26 +127,24 @@ export default function AboutUs() {
             </p>
           </div>
           <div className="grid gap-5 sm:grid-cols-2">
-            {highlights.map((item, i) => (
+            {highlights.map((item, i) => {
+              const HighlightIcon = resolveIcon(HIGHLIGHT_ICONS[i] ?? "users", Users);
+              return (
               <Card key={item.title} className="gap-3 p-6">
                 <span className="h-9 w-9 grid place-items-center rounded-full bg-primary/10 text-primary">
-                  <DoodleIcon
-                    name={HIGHLIGHT_ICONS[i] ?? "users"}
-                    boilId="boil"
-                    size={18}
-                  />
+                  <HighlightIcon className="size-[18px]" />
                 </span>
                 <CardTitle className="text-base font-bold">{item.title}</CardTitle>
                 <p className="text-sm leading-relaxed text-muted-foreground">
                   {item.description}
                 </p>
               </Card>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
 
-      <StatsStrip namespace="aboutus.stats" />
       <ProcessSteps namespace="aboutus.process" />
       <FaqSection namespace="aboutus.faq" />
       <CtaBanner namespace="aboutus.cta" />

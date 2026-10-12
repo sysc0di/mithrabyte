@@ -1,9 +1,9 @@
 "use client";
 import { useTranslations } from "next-intl";
-import { DoodleIcon } from "@oreo-design/doodle-icons";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Cpu, Code2, Globe, Users } from "lucide-react";
 
-const icons = ["chip", "code", "globe", "users"];
+const icons = [Cpu, Code2, Globe, Users];
 
 function CompanyCards() {
   const t = useTranslations("home.company");
@@ -19,11 +19,11 @@ function CompanyCards() {
         </header>
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {icons.map((icon, index) => (
+          {icons.map((Icon, index) => (
             <Card key={index} className="h-full">
               <CardHeader>
                 <span className="mb-2 grid size-11 place-items-center rounded-xl bg-primary/10 text-primary">
-                  <DoodleIcon name={icon} boilId="boil" size={22} />
+                  <Icon className="size-[22px]" />
                 </span>
                 <CardTitle>{t(`card${index + 1}.title`)}</CardTitle>
               </CardHeader>

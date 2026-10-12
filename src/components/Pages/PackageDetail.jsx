@@ -1,34 +1,30 @@
 "use client";
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
-import { DoodleIcon } from "@oreo-design/doodle-icons";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardTitle } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
-
-const MAIL = "mailto:yatli5645@gmail.com";
-
-const heroIcons = {
-  "ai-mobile-app": "phone",
-  "ai-web-platforms": "globe",
-  "data-analytics-dashboards": "table",
-  "cli-developer-tools": "code",
-};
+import { ArrowRight, Check, Star, Table } from "lucide-react";
+import { resolveIcon } from "@/lib/icons";
 
 const useCaseIcons = ["circle", "users", "flame"];
 
-export default function PackageDetail({ slug }) {
+const PACKAGE_ICONS = {
+  PACKAGE: Star,
+  MAINTENANCE: Table,
+};
+
+export default function PackageDetail({ pkg }) {
   const t = useTranslations("packages");
   const locale = useLocale();
-  const packages = t.raw("packages");
-  const pkg = packages.find((p) => p.slug === slug);
 
   if (!pkg) return null;
 
-  const heroIcon = heroIcons[slug] ?? "star";
+  const HeroIcon = PACKAGE_ICONS[pkg.kind] ?? Star;
   const steps = t.raw("detail.steps");
+  const recurring = pkg.billingPeriod && pkg.billingPeriod !== "ONE_TIME";
+  const cta = pkg.ctaText || t("detail.getQuote");
 
   return (
     <main className="w-full">
@@ -54,7 +50,7 @@ export default function PackageDetail({ slug }) {
             variant="outline"
             className="gap-1.5 border-primary/40 text-primary"
           >
-            <DoodleIcon name={heroIcon} boilId="boil" size={14} />
+            <HeroIcon className="size-[14px]" />
             {t("detail.eyebrow")}
           </Badge>
 
@@ -63,29 +59,38 @@ export default function PackageDetail({ slug }) {
           </h1>
 
           <p className="max-w-2xl text-base text-pretty text-muted-foreground sm:text-lg">
-            {pkg.description}
+            {pkg.description || pkg.tagline}
           </p>
 
           <div className="flex flex-col gap-1 pt-2">
             <span className="text-xs tracking-wider text-muted-foreground uppercase">
-              {t("detail.startingAt")}
+              {recurring ? t("detail.recurring") : t("detail.startingAt")}
             </span>
             <span className="text-3xl font-extrabold tracking-tight">
-              {pkg.price}
+              {pkg.priceLabel || t("quote")}
             </span>
           </div>
 
           <div className="flex flex-wrap items-center gap-3 pt-2">
             <Button asChild size="lg">
-              <a href={MAIL}>
-                {t("detail.getQuote")}
-                <DoodleIcon name="arrow-right" boilId="boil" size={16} />
-              </a>
+              <Link href={`/${locale}/contact`}>
+                {cta}
+                <ArrowRight className="size-[16px]" />
+              </Link>
             </Button>
             <Button asChild size="lg" variant="outline">
               <Link href={`/${locale}/packages`}>{t("detail.allPackages")}</Link>
             </Button>
           </div>
+
+          {pkg.productSlug && (
+            <Link
+              href={`/${locale}/products/${pkg.productSlug}`}
+              className="text-sm text-muted-foreground transition-colors hover:text-primary"
+            >
+              {t("partOfProduct")}
+            </Link>
+          )}
         </div>
       </section>
 
@@ -107,7 +112,7 @@ export default function PackageDetail({ slug }) {
                 className="flex items-start gap-3 border-b border-border pb-4"
               >
                 <span className="mt-0.5 grid size-6 shrink-0 place-items-center rounded-full bg-primary/10 text-primary">
-                  <DoodleIcon name="check" boilId="boil" size={13} />
+                  <Check className="size-[13px]" />
                 </span>
                 <span className="text-sm leading-relaxed">{feature}</span>
               </li>
@@ -117,36 +122,38 @@ export default function PackageDetail({ slug }) {
       </section>
 
       {/* Who it's for */}
-      <section className="border-y border-border bg-card/40 px-6 py-20">
-        <div className="mx-auto w-full max-w-5xl">
-          <div className="mb-10 max-w-2xl">
-            <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
-              {t("detail.useCases")}
-            </h2>
-            <p className="mt-2 text-muted-foreground">
-              {t("detail.useCasesSub")}
-            </p>
+      {pkg.useCases.length > 0 && (
+        <section className="border-y border-border bg-card/40 px-6 py-20">
+          <div className="mx-auto w-full max-w-5xl">
+            <div className="mb-10 max-w-2xl">
+              <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
+                {t("detail.useCases")}
+              </h2>
+              <p className="mt-2 text-muted-foreground">
+                {t("detail.useCasesSub")}
+              </p>
+            </div>
+            <div className="grid gap-5 sm:grid-cols-3">
+              {pkg.useCases.map((useCase, i) => {
+                const UseCaseIcon = resolveIcon(useCaseIcons[i] ?? "circle");
+                return (
+                  <Card key={i} className="gap-3 p-6">
+                    <span className="grid size-10 place-items-center rounded-full bg-primary/10 text-primary">
+                      <UseCaseIcon className="size-[20px]" />
+                    </span>
+                    <CardTitle className="text-lg font-bold">
+                      {useCase.title}
+                    </CardTitle>
+                    <p className="text-sm leading-relaxed text-muted-foreground">
+                      {useCase.description}
+                    </p>
+                  </Card>
+                );
+              })}
+            </div>
           </div>
-          <div className="grid gap-5 sm:grid-cols-3">
-            {pkg.useCases.map((useCase, i) => {
-              const icon = useCaseIcons[i] ?? "circle";
-              return (
-                <Card key={i} className="gap-3 p-6">
-                  <span className="grid size-10 place-items-center rounded-full bg-primary/10 text-primary">
-                    <DoodleIcon name={icon} boilId="boil" size={20} />
-                  </span>
-                  <CardTitle className="text-lg font-bold">
-                    {useCase.title}
-                  </CardTitle>
-                  <p className="text-sm leading-relaxed text-muted-foreground">
-                    {useCase.description}
-                  </p>
-                </Card>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* How we work */}
       <section className="px-6 py-20">
@@ -181,10 +188,10 @@ export default function PackageDetail({ slug }) {
           </h2>
           <p className="max-w-xl text-muted-foreground">{t("detail.ctaText")}</p>
           <Button asChild size="lg" className="mt-2">
-            <a href={MAIL}>
+            <Link href={`/${locale}/contact`}>
               {t("detail.ctaButton")}
-              <DoodleIcon name="arrow-right" boilId="boil" size={16} />
-            </a>
+              <ArrowRight className="size-[16px]" />
+            </Link>
           </Button>
         </div>
       </section>

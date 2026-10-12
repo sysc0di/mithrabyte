@@ -1,7 +1,6 @@
 "use client";
 import { useRouter, usePathname } from "next/navigation";
 import { useLocale } from "next-intl";
-import { DoodleIcon } from "@oreo-design/doodle-icons";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -10,6 +9,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
+import { Check, ChevronDown, Globe } from "lucide-react";
 
 const LOCALES = [
   { code: "tr", label: "Türkçe" },
@@ -28,7 +28,7 @@ export default function LanguageSwitcher({ className }) {
     document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=${365 * 24 * 60 * 60}`;
 
     const segments = pathname.split("/").filter(Boolean);
-    if (segments[0] === "tr" || segments[0] === "en") {
+    if (["tr", "en"].includes(segments[0])) {
       segments.shift();
     }
 
@@ -42,14 +42,9 @@ export default function LanguageSwitcher({ className }) {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" size="sm" className={cn("gap-2", className)}>
-          <DoodleIcon name="globe" boilId="boil" size={16} />
+          <Globe className="size-[16px]" />
           <span className="font-semibold uppercase">{active}</span>
-          <DoodleIcon
-            name="chevron-down"
-            boilId="boil"
-            size={16}
-            className="opacity-60"
-          />
+          <ChevronDown className="size-[16px] opacity-60" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="min-w-40">
@@ -59,12 +54,9 @@ export default function LanguageSwitcher({ className }) {
             onClick={() => switchLocale(code)}
             className="gap-2"
           >
-            <DoodleIcon
-              name="check"
-              boilId="boil"
-              size={16}
+            <Check
               className={cn(
-                "text-primary",
+                "size-[16px] text-primary",
                 active === code ? "opacity-100" : "opacity-0"
               )}
             />

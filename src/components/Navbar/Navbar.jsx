@@ -2,10 +2,10 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
-import { DoodleIcon } from "@oreo-design/doodle-icons";
 import { Button } from "@/components/ui/button";
 import SidebarMenu from "./SidebarMenu";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { Sparkles } from "lucide-react";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -43,7 +43,7 @@ function Navbar() {
             aria-label="Open menu"
             onClick={() => setMenuOpen(true)}
           >
-            <DoodleIcon name="menu" boilId="boil" size={20} />
+            <Sparkles className="size-[20px]" />
           </Button>
         </div>
       </div>

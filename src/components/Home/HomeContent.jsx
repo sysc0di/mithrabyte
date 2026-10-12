@@ -2,12 +2,8 @@
 import styles from "./homecontent.module.css"
 import Link from 'next/link'
 import dynamic from "next/dynamic";
-import React, { useEffect, useState } from "react";
 import ProductsOnHomeCards from "./ProductsOnHomeCards";
 import SolutionsSection from "./SolutionsSection";
-import TerminalSection from "./TerminalSection";
-import StatsSection from "./StatsSection";
-import WhyUs from "./WhyUs";
 import PricingListAthome from "./PricingListAthome";
 import JobsCards from "./JobsCards";
 import CompanyCards from "./CompanyCards";
@@ -19,7 +15,7 @@ const Model = dynamic(() => import("../Models/HomeModel"), { ssr: false });
 const BrandWordmark = dynamic(() => import("../../effects/tech-text/TechText"), { ssr: false });
 const BrandSlogan = dynamic(() => import("../../effects/text-type/TextType"), { ssr: false });
 
-function HomeContent() {
+function HomeContent({ products = [], packages = [] }) {
   const t = useTranslations('home');
   const locale = useLocale();
 
@@ -61,13 +57,11 @@ function HomeContent() {
           </div>
         </div>
       </div>
-      <ProductsOnHomeCards />
+      <ProductsOnHomeCards products={products} />
       <SolutionsSection />
-      <TerminalSection />
-      <StatsSection />
       <JobsCards />
       <CompanyCards />
-      <PricingListAthome/>
+      <PricingListAthome packages={packages} />
     </div>
   )
 }

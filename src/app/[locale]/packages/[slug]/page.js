@@ -1,34 +1,33 @@
 import { notFound } from "next/navigation";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 
 import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navbar";
 import PackageDetail from "@/components/Pages/PackageDetail";
+import { getPublishedPackageBySlug, listPublishedPackages } from "@/lib/services/catalog";
+import { SUPPORTED_LOCALES } from "@/lib/constants";
 
-const locales = ["tr", "en"];
-const slugs = [
-  "ai-mobile-app",
-  "ai-web-platforms",
-  "data-analytics-dashboards",
-  "cli-developer-tools",
-];
+export const revalidate = 300;
+export const dynamicParams = true;
 
-export function generateStaticParams() {
-  return locales.flatMap((locale) => slugs.map((slug) => ({ locale, slug })));
+export async function generateStaticParams() {
+  try {
+    const packages = await listPublishedPackages({});
+    return SUPPORTED_LOCALES.flatMap((locale) =>
+      packages.map((pkg) => ({ locale, slug: pkg.slug }))
+    );
+  } catch {
+    return [];
+  }
 }
-
-export const dynamicParams = false;
 
 export async function generateMetadata({ params }) {
   const { locale, slug } = await params;
-  const t = await getTranslations({ locale, namespace: "packages" });
-  const pkg = t.raw("packages").find((p) => p.slug === slug);
-
+  const pkg = await getPublishedPackageBySlug(slug, { locale }).catch(() => null);
   if (!pkg) return {};
-
   return {
-    title: `${pkg.title} | Mithrabyte`,
-    description: pkg.description,
+    title: pkg.seoTitle || `${pkg.title} | Mithrabyte`,
+    description: pkg.seoDescription || pkg.tagline || pkg.description,
   };
 }
 
@@ -36,14 +35,15 @@ export default async function PackageDetailPage({ params }) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
 
-  if (!slugs.includes(slug)) {
+  const pkg = await getPublishedPackageBySlug(slug, { locale }).catch(() => null);
+  if (!pkg) {
     notFound();
   }
 
   return (
     <div className="pagewrapped">
       <Navbar />
-      <PackageDetail slug={slug} />
+      <PackageDetail pkg={pkg} />
       <Footer />
     </div>
   );

@@ -19,7 +19,7 @@ export default function Footer() {
   const t = useTranslations("footer");
   const pathname = usePathname() || "";
   const firstSegment = pathname.split("/")[1];
-  const locale = firstSegment === "tr" || firstSegment === "en" ? firstSegment : "en";
+  const locale = ["tr", "en"].includes(firstSegment) ? firstSegment : "en";
 
   const columns = [
     {
@@ -35,6 +35,15 @@ export default function Footer() {
       links: [
         { href: `/${locale}/aboutus`, label: t("about") },
         { href: `/${locale}/contact`, label: t("contact") },
+      ],
+    },
+    {
+      title: t("legal"),
+      links: [
+        { href: `/${locale}/legal/privacy-policy`, label: t("privacy") },
+        { href: `/${locale}/legal/kvkk-information-notice`, label: t("kvkk") },
+        { href: `/${locale}/legal/cookie-policy`, label: t("cookies") },
+        { href: `/${locale}/legal/terms-of-use`, label: t("terms") },
       ],
     },
     {

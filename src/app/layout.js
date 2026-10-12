@@ -1,6 +1,6 @@
 import "./globals.css";
 import Script from "next/script";
-import { BoilFilter } from "@oreo-design/doodle-icons";
+import { LenisProvider } from "@/components/lenis-provider";
 
 export default function RootLayout({ children }) {
   return (
@@ -41,8 +41,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body suppressHydrationWarning>
-        <BoilFilter id="boil" />
-        {children}
+        <LenisProvider>{children}</LenisProvider>
       </body>
     </html>
   );

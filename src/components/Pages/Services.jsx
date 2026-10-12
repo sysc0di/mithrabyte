@@ -1,15 +1,15 @@
 "use client";
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
-import { DoodleIcon } from "@oreo-design/doodle-icons";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardTitle } from "@/components/ui/card";
-import StatsStrip from "@/components/Shared/StatsStrip";
 import ProcessSteps from "@/components/Shared/ProcessSteps";
 import FaqSection from "@/components/Shared/FaqSection";
 import CtaBanner from "@/components/Shared/CtaBanner";
+import { ArrowRight, Check, Cpu } from "lucide-react";
+import { resolveIcon } from "@/lib/icons";
 
 const icons = ["chip", "code", "globe"];
 
@@ -32,7 +32,7 @@ export default function Services() {
             variant="outline"
             className="gap-1.5 border-primary/40 text-primary"
           >
-            <DoodleIcon name="chip" boilId="boil" size={14} />
+            <Cpu className="size-[14px]" />
             {t("eyebrow")}
           </Badge>
 
@@ -48,7 +48,7 @@ export default function Services() {
             <Button asChild size="lg">
               <Link href={`/${locale}/contact`}>
                 {t("heroCta")}
-                <DoodleIcon name="arrow-right" boilId="boil" size={16} />
+                <ArrowRight className="size-[16px]" />
               </Link>
             </Button>
             <Button asChild size="lg" variant="outline">
@@ -62,11 +62,11 @@ export default function Services() {
       <section className="px-6 py-20">
         <div className="mx-auto grid w-full max-w-5xl gap-5 lg:grid-cols-3">
           {services.map((service, i) => {
-            const icon = icons[i] ?? "chip";
+            const Icon = resolveIcon(icons[i] ?? "chip");
             return (
               <Card key={i} className="gap-4 p-6">
                 <span className="grid size-11 place-items-center rounded-xl bg-primary/10 text-primary">
-                  <DoodleIcon name={icon} boilId="boil" size={22} />
+                  <Icon className="size-[22px]" />
                 </span>
                 <div>
                   <CardTitle className="text-lg font-bold">
@@ -82,12 +82,7 @@ export default function Services() {
                       key={j}
                       className="flex items-start gap-2 text-sm leading-snug"
                     >
-                      <DoodleIcon
-                        name="check"
-                        boilId="boil"
-                        size={14}
-                        className="mt-0.5 shrink-0 text-primary"
-                      />
+                      <Check className="mt-0.5 size-[14px] shrink-0 text-primary" />
                       <span className="text-muted-foreground">{feature}</span>
                     </li>
                   ))}
@@ -124,7 +119,6 @@ export default function Services() {
         </div>
       </section>
 
-      <StatsStrip namespace="services.stats" />
       <ProcessSteps namespace="services.process" />
       <FaqSection namespace="services.faq" />
       <CtaBanner namespace="services.cta" />
