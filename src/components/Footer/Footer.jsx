@@ -49,10 +49,8 @@ export default function Footer() {
     {
       title: t("elsewhere"),
       links: [
-        { href: "https://instagram.com/mithrabyte", label: "Instagram", external: true },
-        { href: "https://github.com/sysc0di", label: "GitHub", external: true },
-        { href: "https://www.linkedin.com/company/mithrabyte", label: "LinkedIn", external: true },
-        { href: "https://twitter.com/mithrabyte", label: "X / Twitter", external: true },
+        { href: "https://instagram.com/mithrabyteai", label: "Instagram", external: true },
+        { href: "mailto:contact@mithrabyte.com", label: "e-mail", external: true },
       ],
     },
   ];
