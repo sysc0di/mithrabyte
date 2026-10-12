@@ -1,25 +1,18 @@
 "use client";
+
 import styles from "./footer.module.css";
-import Image from "next/image";
 import Link from "next/link";
-import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
 import LanguageSwitcher from "../Navbar/LanguageSwitcher";
-
-const SignalParticles = dynamic(
-  () =>
-    import("@/effects/neuform-isolated/NeuformBatchEffects").then(
-      (mod) => mod.SignalParticles
-    ),
-  { ssr: false }
-);
+import { useIsMobile } from "@/lib/hooks/useReducedMotion";
 
 export default function Footer() {
   const t = useTranslations("footer");
   const pathname = usePathname() || "";
   const firstSegment = pathname.split("/")[1];
   const locale = ["tr", "en"].includes(firstSegment) ? firstSegment : "en";
+  const isMobile = useIsMobile();
 
   const columns = [
     {
@@ -57,55 +50,85 @@ export default function Footer() {
 
   return (
     <footer className={styles.foot} data-kage-footer="">
-      <div className={styles.fg} aria-hidden="true">
-        <span className={`${styles.fgEl} ${styles.fgBush}`}>
-        </span>
-        <span className={`${styles.fgEl} ${styles.fgGrass}`}>
-        </span>
-        <span className={`${styles.fgEl} ${styles.fgStones}`}>
-        </span>
-      </div>
+      <div className={styles.overlay} aria-hidden="true" />
 
-      <div className={styles.grid}>
-        <div className={styles.brand}>
-          <span className={styles.logo}>
-            <Image src="/logo.svg" alt="Mithrabyte" width={512} height={512} />
-          </span>
-          <p>{t("tagline")}</p>
+      <div className={styles.content}>
+        {/* Logo + wordmark */}
+        <div className={styles.footertop}>
+          <img src="/logo.svg" alt="mithrabyte" className={styles.footerlogo} />
+          <span className={styles.wordmark}>Mithrabyte</span>
         </div>
 
-        {columns.map((column) => (
-          <div className={styles.col} key={column.title}>
-            <h4>{column.title}</h4>
-            <ul>
-              {column.links.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    target={link.external ? "_blank" : undefined}
-                    rel={link.external ? "noreferrer" : undefined}
-                  >
-                    {link.label}
-                  </Link>
-                </li>
+        <hr className={styles.divider} />
+
+        {/* Two-column layout: links left, contact CTA right */}
+        <div className={styles.columnsWrap}>
+          {/* Links: tek grid, sığmayan sütunlar alt satıra geçer */}
+          <div className={styles.footerlinks}>
+            <div className={styles.linksColumn}>
+              {columns.map((col) => (
+                <div className={styles.column} key={col.title}>
+                  <h4>{col.title}</h4>
+                  <ul>
+                    {col.links.map((link) => (
+                      <li key={link.href}>
+                        <Link
+                          href={link.href}
+                          target={link.external ? "_blank" : undefined}
+                          rel={link.external ? "noreferrer" : undefined}
+                        >
+                          {link.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
-        ))}
-      </div>
 
-      <div className={styles.base}>
-        <span>
-          © {new Date().getFullYear()} {t("copyright")}
-        </span>
-        <span>{t("baseline")}</span>
-        <div className={styles.switchers}>
-          <LanguageSwitcher />
+          {/* Contact CTA - simplified on mobile */}
+          <div className={styles.ctaColumn}>
+            <div className={`${styles.ctaCard} ${isMobile ? styles.ctaCardMobile : ""}`}>
+              <h3>{t("contactCtaTitle")}</h3>
+              <p>{t("contactCtaDesc")}</p>
+
+              <Link href={`/${locale}/contact`} className={styles.ctaButton}>
+                {t("contactCtaButton")}
+              </Link>
+
+              {!isMobile && (
+                <div className={styles.ctaMeta}>
+                  <div className={styles.metaItem}>
+                    <span className={styles.metaLabel}>{t("emailLabel")}</span>
+                    <a href="mailto:contact@mithrabyte.com" className={styles.metaValue}>
+                      contact@mithrabyte.com
+                    </a>
+                  </div>
+                  <div className={styles.metaItem}>
+                    <span className={styles.metaLabel}>{t("phoneLabel")}</span>
+                    <a href="tel:+905058044818" className={styles.metaValue}>
+                      +90 505 804 4818
+                    </a>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div className={styles.bg} aria-hidden="true">
-        <SignalParticles mode="dark" />
+        <hr className={styles.divider} />
+
+        {/* Base: copyright, baseline, language switcher */}
+        <div className={styles.base}>
+          <span className={styles.copyright}>
+            © {new Date().getFullYear()} {t("copyright")}
+          </span>
+          <span className={styles.baseline}>{t("baseline")}</span>
+          <div className={styles.switchers}>
+            <LanguageSwitcher />
+          </div>
+        </div>
       </div>
     </footer>
   );

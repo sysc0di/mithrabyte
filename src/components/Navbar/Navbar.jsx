@@ -20,7 +20,7 @@ function Navbar() {
   ];
 
   return (
-    <header className="fixed inset-x-0 top-0 z-40 border-b border-border/60 bg-background/70 backdrop-blur-md">
+    <header className="fixed inset-x-0 top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-md bg-background">
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-4 px-6">
         <Link href={`/${locale}`} className="flex items-center">
           <img src="/logo.svg" alt="mithrabyte" className="h-11 w-auto" />

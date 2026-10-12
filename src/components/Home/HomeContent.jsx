@@ -7,6 +7,7 @@ import SolutionsSection from "./SolutionsSection";
 import PricingListAthome from "./PricingListAthome";
 import JobsCards from "./JobsCards";
 import CompanyCards from "./CompanyCards";
+import TerminalSection from "./TerminalSection";
 import { Button } from "@/components/ui/button";
 import { useTranslations, useLocale } from 'next-intl';
 
@@ -59,6 +60,7 @@ function HomeContent({ products = [], packages = [] }) {
       </div>
       <ProductsOnHomeCards products={products} />
       <SolutionsSection />
+      <TerminalSection />
       <JobsCards />
       <CompanyCards />
       <PricingListAthome packages={packages} />

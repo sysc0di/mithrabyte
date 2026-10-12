@@ -125,7 +125,72 @@
         }
       ]
     },
-    "slogan": "It's your intelligence. And your data, too."
+    "slogan": "It's your intelligence. And your data, too.",
+    "terminal": {
+      "eyebrow": "Developer-first",
+      "title": "A terminal your engineers will actually enjoy",
+      "subtitle": "We build CLIs, SDKs and automation with the polish production demands — typed, documented and tested. Explore the platform right here.",
+      "windowTitle": "mithrabyte — cli",
+      "prompt": "mithrabyte",
+      "placeholder": "Type a command…",
+      "hint": "Click a command below, or type your own and press Enter.",
+      "unknownPrefix": "command not found:",
+      "boot": [
+        "mithrabyte init --interactive",
+        "? Stack › Next.js · Node · Postgres · AI",
+        "✓ Workspace scaffolded in 0.8s",
+        "✓ Dependencies installed (312 packages)",
+        "➜ Ready. Type 'help' to explore the platform."
+      ],
+      "suggestions": [
+        "help",
+        "products",
+        "solutions",
+        "stack",
+        "contact"
+      ],
+      "help": {
+        "header": "available commands",
+        "lines": [
+          "products      list our product lines",
+          "solutions     problems we solve",
+          "stack         technologies we build with",
+          "contact       how to reach us",
+          "clear         clear the screen"
+        ]
+      },
+      "outputs": {
+        "products": [
+          "ai-mobile-app        AI-powered mobile apps (iOS · Android)",
+          "ai-web-platforms     AI web & SaaS platforms (Next.js)",
+          "data-analytics       real-time dashboards & ML insight",
+          "cli-developer-tools  CLIs, SDKs & automation",
+          "✓ run 'solutions' to see the problems each one solves"
+        ],
+        "solutions": [
+          "manual work          →  automation & internal tools",
+          "data, no decisions   →  real-time analytics",
+          "generic product      →  AI personalization",
+          "slow delivery        →  end-to-end product team",
+          "✓ run 'stack' to see how we build"
+        ],
+        "stack": [
+          "frontend   Next.js · React · TypeScript · Tailwind",
+          "mobile     Swift · Kotlin · React Native",
+          "backend    Node · Go · Rust · Postgres · Redis",
+          "ai         OpenAI · LLaMA · Replicate · custom models",
+          "cloud      Vercel · AWS · Docker · CI/CD",
+          "✓ run 'contact' to start a project"
+        ],
+        "contact": [
+          "email      contact@mithrabyte.com",
+          "phone      +90 505 804 4818",
+          "location   Hakkari, Türkiye",
+          "hours      Mon-Fri 09:00 - 18:00",
+          "✓ we usually reply within one business day"
+        ]
+      }
+    }
   },
   "aboutus": {
     "eyebrow": "About us",
@@ -652,7 +717,12 @@
     "cookies": "Cookie Policy",
     "terms": "Terms of Use",
     "elsewhere": "Elsewhere",
-    "baseline": "AI · Mobile · Web"
+    "baseline": "AI · Mobile · Web",
+    "contactCtaTitle": "Start a project",
+    "contactCtaDesc": "Tell us what you're building. We'll reply within one business day — no sales scripts, just a straight answer.",
+    "contactCtaButton": "Get in touch",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone"
   },
   "common": {
     "learnMore": "Learn More",
