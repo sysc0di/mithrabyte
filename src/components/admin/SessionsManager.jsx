@@ -6,7 +6,7 @@ import { Card } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { api, apiDelete } from "@/components/admin/api";
 import { useToast } from "@/components/admin/toast";
-import { ConfirmDialog } from "@/components/admin/list";
+import { useList, PaginationBar } from "@/components/admin/list";
 import { formatDate, fromNow } from "@/lib/format";
 import { Loader2, MonitorSmartphone, ShieldX, Trash2 } from "lucide-react";
 
