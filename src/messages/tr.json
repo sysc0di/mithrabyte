@@ -161,9 +161,8 @@
       },
       "outputs": {
         "products": [
-          "ai-mobile-app        AI destekli mobil uygulamalar (iOS · Android)",
+          "local-ai-knowledge-assistant    AI destekli yerel veri analisti",
           "ai-web-platforms     AI web & SaaS platformları (Next.js)",
-          "data-analytics       gerçek zamanlı paneller & ML içgörüsü",
           "cli-developer-tools  CLI'lar, SDK'lar & otomasyon",
           "✓ her birinin çözdüğü sorunu görmek için 'solutions' yazın"
         ],

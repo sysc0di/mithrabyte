@@ -161,9 +161,8 @@
       },
       "outputs": {
         "products": [
-          "ai-mobile-app        AI-powered mobile apps (iOS · Android)",
+          "local-ai-knowledge-assistant        AI-powered local data analyst",
           "ai-web-platforms     AI web & SaaS platforms (Next.js)",
-          "data-analytics       real-time dashboards & ML insight",
           "cli-developer-tools  CLIs, SDKs & automation",
           "✓ run 'solutions' to see the problems each one solves"
         ],

@@ -57,12 +57,15 @@ export async function getReport({ from, to } = {}) {
       orderBy: { _count: { referrer: "desc" } },
       take: 10,
     }),
-    prisma.analyticsEvent.groupBy({
-      by: ["createdAt"],
-      _count: { _all: true },
-      where,
-      take: 60,
-    }),
+    // Day buckets can't be expressed with Prisma groupBy, so aggregate in SQL.
+    prisma.$queryRaw`
+      SELECT to_char(date_trunc('day', "createdAt"), 'YYYY-MM-DD') AS day,
+             COUNT(*)::int AS count
+      FROM "analytics_events"
+      WHERE "createdAt" >= ${fromDate} AND "createdAt" <= ${toDate}
+      GROUP BY 1
+      ORDER BY 1
+    `,
     prisma.analyticsEvent.findMany({
       where,
       orderBy: { createdAt: "desc" },
@@ -79,11 +82,7 @@ export async function getReport({ from, to } = {}) {
   ]);
 
   // Shape the daily series across the full requested range.
-  const byDay = new Map();
-  for (const row of daily) {
-    const day = row.createdAt.toISOString().slice(0, 10);
-    byDay.set(day, (byDay.get(day) || 0) + row._count._all);
-  }
+  const byDay = new Map(daily.map((row) => [row.day, row.count]));
   const series = [];
   for (let t = fromDate.getTime(); t <= toDate.getTime(); t += DAY_MS) {
     const day = new Date(Math.min(t, toDate.getTime())).toISOString().slice(0, 10);

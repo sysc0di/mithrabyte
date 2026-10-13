@@ -12,7 +12,9 @@ export function LenisProvider({ children, options = {} }) {
     const instance = new Lenis({
       lerp: 0.1,
       smoothWheel: true,
-      syncTouch: true,
+      // Keep native touch scrolling on phones/tablets; syncTouch drives every
+      // frame through JS and freezes the page on Android while scrolling.
+      syncTouch: false,
       ...options,
     });
 
