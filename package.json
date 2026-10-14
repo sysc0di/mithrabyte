@@ -13,6 +13,7 @@
     "db:migrate": "prisma migrate dev",
     "db:deploy": "prisma migrate deploy",
     "db:seed": "prisma db seed",
+    "db:seed:analytics": "tsx scripts/seed-analytics.js",
     "admin:create": "tsx scripts/create-admin.js",
     "db:studio": "prisma studio",
     "db:reset": "prisma migrate reset"

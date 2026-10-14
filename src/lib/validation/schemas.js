@@ -232,6 +232,7 @@ export const analyticsSchema = z
     referrer: z.string().trim().max(500).optional().or(z.literal("")),
     locale: localeSchema.optional(),
     device: z.enum(["mobile", "tablet", "desktop", "other"]).optional(),
+    sessionId: z.string().trim().max(64).optional(),
     props: z
       .record(z.string(), z.union([z.string(), z.number(), z.boolean()]))
       .refine((obj) => Object.keys(obj).length <= 20, "At most 20 event properties.")
