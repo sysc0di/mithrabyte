@@ -14,6 +14,27 @@ export function formatDate(value) {
   return TR_LONG.format(date);
 }
 
+/**
+ * Splits a stored analytics path/URL into a display pathname and the
+ * trailing query/hash. Never mutates or drops the original value.
+ */
+export function splitPathQuery(fullPath) {
+  const value = fullPath || "/";
+  try {
+    if (value.includes("?")) {
+      const u = new URL(value, "http://example.invalid");
+      return { pathname: u.pathname + (u.hash || ""), query: u.search };
+    }
+  } catch {
+    /* fall through to plain string split */
+  }
+  const idx = value.indexOf("?");
+  if (idx > -1) {
+    return { pathname: value.slice(0, idx), query: value.slice(idx) };
+  }
+  return { pathname: value, query: "" };
+}
+
 const RTF = new Intl.RelativeTimeFormat("tr", { numeric: "auto" });
 
 export function fromNow(value, now = Date.now()) {

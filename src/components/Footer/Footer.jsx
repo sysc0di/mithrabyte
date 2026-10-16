@@ -4,11 +4,13 @@ import styles from "./footer.module.css";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
+import { useConsent } from "@/components/consent/consent-context";
 import LanguageSwitcher from "../Navbar/LanguageSwitcher";
 import { useIsMobile } from "@/lib/hooks/useReducedMotion";
 
 export default function Footer() {
   const t = useTranslations("footer");
+  const { openSettings } = useConsent();
   const pathname = usePathname() || "";
   const firstSegment = pathname.split("/")[1];
   const locale = ["tr", "en"].includes(firstSegment) ? firstSegment : "en";
@@ -125,6 +127,9 @@ export default function Footer() {
             © {new Date().getFullYear()} {t("copyright")}
           </span>
           <span className={styles.baseline}>{t("baseline")}</span>
+          <button type="button" className={styles.cookieSettings} onClick={openSettings}>
+            {t("cookieSettings")}
+          </button>
           <div className={styles.switchers}>
             <LanguageSwitcher />
           </div>

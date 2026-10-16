@@ -349,6 +349,29 @@
   justify-content: flex-end;
 }
 
+.cookieSettings {
+  flex: 0 0 auto;
+  padding: 0;
+  background: none;
+  border: 0;
+  color: var(--muted-dim);
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.cookieSettings:hover,
+.cookieSettings:focus-visible {
+  color: var(--primary, #d3d5fd);
+}
+
+.cookieSettings:focus-visible {
+  outline: none;
+  text-decoration: underline;
+}
+
 /* --- responsive ----------------------------------------------------------- */
 @media (max-width: 1024px) {
   .columnsWrap {

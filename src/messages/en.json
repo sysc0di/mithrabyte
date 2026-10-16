@@ -721,7 +721,8 @@
     "contactCtaDesc": "Tell us what you're building. We'll reply within one business day — no sales scripts, just a straight answer.",
     "contactCtaButton": "Get in touch",
     "emailLabel": "Email",
-    "phoneLabel": "Phone"
+    "phoneLabel": "Phone",
+    "cookieSettings": "Cookie Settings"
   },
   "common": {
     "learnMore": "Learn More",
@@ -743,5 +744,20 @@
     "seePackages": "See Packages",
     "contactCta": "Get a Quote",
     "quote": "Quote-based"
+  },
+  "cookieConsent": {
+    "title": "We use cookies",
+    "description": "We only use strictly necessary and optional cookies to provide core functionality and respectful analytics. You can choose your preferences.",
+    "necessary": "Strictly Necessary",
+    "necessaryDesc": "Required for the website to function without consent.",
+    "analytics": "Analytics",
+    "analyticsDesc": "Helps us understand site usage to improve the experience (only with consent).",
+    "acceptAll": "Accept All",
+    "rejectOptional": "Reject Optional",
+    "customize": "Customize Preferences",
+    "savePreferences": "Save Preferences",
+    "close": "Close",
+    "privacyLink": "Privacy Policy",
+    "cookieLink": "Cookie Policy"
   }
 }

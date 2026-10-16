@@ -721,7 +721,8 @@
     "contactCtaDesc": "Ne inşa etmek istediğinizi anlatın. Bir iş günü içinde yanıtlarız — satış senaryosu yok, sadece net cevaplar.",
     "contactCtaButton": "İletişime geçin",
     "emailLabel": "E-posta",
-    "phoneLabel": "Telefon"
+    "phoneLabel": "Telefon",
+    "cookieSettings": "Çerez Ayarları"
   },
   "common": {
     "learnMore": "Daha Fazla Bilgi",
@@ -743,5 +744,20 @@
     "seePackages": "Paketleri Gör",
     "contactCta": "Teklif Al",
     "quote": "Teklif bazlı"
+  },
+  "cookieConsent": {
+    "title": "Çerez kullanıyoruz",
+    "description": "Temel işlevsellik ve ölçülü analiz için yalnızca zorunlu ve isteğe bağlı çerezleri kullanıyoruz. Tercihlerinizi seçebilirsiniz.",
+    "necessary": "Zorunlu",
+    "necessaryDesc": "Sitenin onay olmadan çalışması için gereklidir.",
+    "analytics": "Analitik",
+    "analyticsDesc": "Sitenin kullanımını anlamamıza yardımcı olur (yalnızca onayla).",
+    "acceptAll": "Tümünü Kabul Et",
+    "rejectOptional": "İsteğe Bağlıları Reddet",
+    "customize": "Tercihleri Özelleştir",
+    "savePreferences": "Tercihleri Kaydet",
+    "close": "Kapat",
+    "privacyLink": "Gizlilik Politikası",
+    "cookieLink": "Çerez Politikası"
   }
 }

@@ -1,6 +1,6 @@
 "use client";
 import { useCallback, useEffect, useState } from "react";
-import { ExternalLink, Loader2 } from "lucide-react";
+import { ExternalLink, Loader2, Copy, Check, Maximize2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -9,7 +9,7 @@ import { api } from "@/components/admin/api";
 import { ReloadButton } from "@/components/admin/list";
 import { CardStat } from "@/components/admin/blocks";
 import { useToast } from "@/components/admin/toast";
-import { formatDate } from "@/lib/format";
+import { formatDate, splitPathQuery } from "@/lib/format";
 
 function lastNDays(n) {
   const from = new Date();
@@ -122,7 +122,7 @@ export default function AnalyticsManager() {
                 <ul className="divide-y divide-border">
                   {data.topPages.map((p) => (
                     <li key={p.path} className="flex items-center justify-between gap-2 py-2">
-                      <span className="font-mono text-xs">{p.path}</span>
+                      <PathDisplay fullPath={p.path} />
                       <span className="text-xs text-muted-foreground">{p.count}</span>
                     </li>
                   ))}
@@ -140,7 +140,7 @@ export default function AnalyticsManager() {
                     <li key={r.referrer} className="flex items-center justify-between gap-2 py-2">
                       <span className="flex min-w-0 items-center gap-1.5 font-mono text-xs">
                         <ExternalLink className="size-3 shrink-0 text-muted-foreground" />
-                        <span className="truncate">{r.referrer}</span>
+                        <span className="truncate" title={r.referrer}>{r.referrer}</span>
                       </span>
                       <span className="text-xs text-muted-foreground">{r.count}</span>
                     </li>
@@ -168,6 +168,34 @@ export default function AnalyticsManager() {
   );
 }
 
+function PathDisplay({ fullPath }) {
+  const [copied, setCopied] = useState(false);
+  const { pathname, query } = splitPathQuery(fullPath);
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(fullPath || "/");
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1000);
+    } catch {
+      /* clipboard unavailable; title still shows full value */
+    }
+  };
+  return (
+    <div className="flex min-w-0 items-center gap-1">
+      <span className="block max-w-[10rem] truncate font-mono text-xs sm:max-w-[16rem]" title={fullPath}>
+        {pathname}
+        {query && <span className="text-muted-foreground">…</span>}
+      </span>
+      <Button variant="ghost" size="icon" className="size-6" onClick={copy} title="Kopyala">
+        {copied ? <Check className="size-3" /> : <Copy className="size-3" />}
+      </Button>
+      <Button variant="ghost" size="icon" className="size-6" onClick={() => window.alert(fullPath || "/")} title="Tamamını göster">
+        <Maximize2 className="size-3" />
+      </Button>
+    </div>
+  );
+}
+
 function TableRecent({ rows }) {
   return (
     <div className="relative w-full overflow-x-auto">
@@ -185,7 +213,9 @@ function TableRecent({ rows }) {
           {rows.map((ev) => (
             <tr key={ev.id} className="border-b last:border-0">
               <td className="p-3 font-mono text-xs">{ev.name}</td>
-              <td className="p-3 font-mono text-xs text-muted-foreground">{ev.path}</td>
+              <td className="p-3 font-mono text-xs text-muted-foreground">
+                <PathDisplay fullPath={ev.path} />
+              </td>
               <td className="p-3 text-xs text-muted-foreground">{ev.device ?? "—"}</td>
               <td className="p-3 text-xs text-muted-foreground">{ev.locale ?? "—"}</td>
               <td className="p-3 text-xs text-muted-foreground">{formatDate(ev.createdAt)}</td>

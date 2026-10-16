@@ -7,22 +7,6 @@ export default function RootLayout({ children }) {
     <html lang="en" data-theme="dark" suppressHydrationWarning>
       <head>
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-LP24PHV0M0"
-          strategy="afterInteractive"
-        />
-        <Script
-          id="gtag-init"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-LP24PHV0M0');
-            `,
-          }}
-        />
-        <Script
           id="structured-data"
           type="application/ld+json"
           dangerouslySetInnerHTML={{

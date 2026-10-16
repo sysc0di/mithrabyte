@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { prisma } from "@/lib/db";
 import { POST } from "@/app/api/analytics/route";
 import { getReport } from "@/lib/services/analytics";
+import { splitPathQuery } from "@/lib/format";
 
 function makeRequest(body, { ip = "203.0.113.9" } = {}) {
   return new Request("http://localhost/api/analytics", {
@@ -80,5 +81,23 @@ describe("POST /api/analytics", () => {
       locale: "en",
       device: "desktop",
     });
+  });
+
+  it("stores a very long tracked URL verbatim and it stays displayable", async () => {
+    const longPath =
+      "/tr?utm_source=instagram&utm_medium=social&utm_campaign=spring_launch_2026&utm_content=very_long_carousel_caption_identifier&fbclid=IwAR2xK9vQ7mNpL3sT8uV0wX1yZ4aB5cD6eF7gH8iJ9kL0mN1oP2qR3sT4uV5wX6yZ7aB8cD9eF0gH1iJ2kL3mN4oP5qR";
+    await POST(makeRequest({ ...validBody, path: longPath, locale: "tr" }));
+
+    const stored = await prisma.analyticsEvent.findFirst();
+    expect(stored.path).toBe(longPath);
+
+    const report = await getReport({});
+    expect(report.topPages).toContainEqual({ path: longPath, count: 1 });
+
+    const { pathname, query } = splitPathQuery(longPath);
+    expect(pathname).toBe("/tr");
+    expect(query).toContain("utm_source=instagram");
+    expect(query).toContain("fbclid=IwAR2xK9vQ7mNpL3sT8uV0wX1yZ4aB5cD6eF7gH8iJ9kL0mN1oP2qR3sT4uV5wX6yZ7aB8cD9eF0gH1iJ2kL3mN4oP5qR");
+    expect(pathname + query).toBe(longPath);
   });
 });

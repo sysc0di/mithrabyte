@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import { setRequestLocale } from 'next-intl/server';
 import SiteBackground from '@/components/SiteBackground';
 import AnalyticsTracker from '@/components/AnalyticsTracker';
+import ConsentProvider from '@/components/consent/ConsentProvider';
 
 const locales = ['tr', 'en'];
 
@@ -91,16 +92,18 @@ export default async function LocaleLayout({ children, params }) {
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
-      <SiteBackground />
-      <AnalyticsTracker />
-      <Script
-        id="set-lang-attribute"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `document.documentElement.lang = '${locale}';`,
-        }}
-      />
-      {children}
+      <ConsentProvider>
+        <SiteBackground />
+        <AnalyticsTracker />
+        <Script
+          id="set-lang-attribute"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `document.documentElement.lang = '${locale}';`,
+          }}
+        />
+        {children}
+      </ConsentProvider>
     </NextIntlClientProvider>
   );
 }

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
+import { useConsent } from "@/components/consent/consent-context";
 
 /**
  * First-party pageview tracking. Sends one event per client-side navigation to
@@ -49,9 +50,12 @@ function send(payload) {
 
 export default function AnalyticsTracker() {
   const pathname = usePathname();
+  const { analytics } = useConsent();
   const lastPath = useRef(null);
 
   useEffect(() => {
+    // Only track after the visitor has granted analytics consent.
+    if (!analytics) return;
     if (!pathname || pathname === lastPath.current) return;
     lastPath.current = pathname;
 
@@ -75,7 +79,7 @@ export default function AnalyticsTracker() {
       device: getDevice(),
       sessionId: getSessionId(),
     });
-  }, [pathname]);
+  }, [pathname, analytics]);
 
   return null;
 }
