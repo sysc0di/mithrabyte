@@ -86,6 +86,18 @@ export async function updateInquiry(id, patch) {
 }
 
 /**
+ * Permanently removes an inquiry. Stored replies cascade via the schema
+ * (InquiryReply.inquiry onDelete: Cascade).
+ */
+export async function deleteInquiry(id) {
+  const item = await prisma.inquiry.findUnique({ where: { id } });
+  if (!item) throw new ApiError(404, "NOT_FOUND", "Inquiry not found.");
+
+  await prisma.inquiry.delete({ where: { id } });
+  return item;
+}
+
+/**
  * Records an admin reply. Delivery (email) is implemented in Phase 3; the
  * reply is persisted and the inquiry is moved out of NEW automatically.
  */

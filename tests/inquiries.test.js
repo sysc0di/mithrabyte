@@ -3,6 +3,7 @@ import { prisma } from "@/lib/db";
 import {
   INQUIRY_STATUSES,
   createInquiry,
+  deleteInquiry,
   getInquiry,
   inboxStats,
   isSpamSubmission,
@@ -154,5 +155,20 @@ describe("inquiry workflow (form -> database -> admin)", () => {
     });
     expect(result.sent).toBe(false);
     expect(result.skipped).toBe(true);
+  });
+
+  it("permanently deletes an inquiry and its replies", async () => {
+    const inquiry = await createInquiry(makeInquiry());
+    await replyToInquiry(inquiry.id, { subject: "Re: Website project", body: "Hi" });
+    expect(await prisma.inquiryReply.count({ where: { inquiryId: inquiry.id } })).toBe(1);
+
+    await deleteInquiry(inquiry.id);
+
+    expect(await prisma.inquiry.findUnique({ where: { id: inquiry.id } })).toBeNull();
+    expect(await prisma.inquiryReply.count({ where: { inquiryId: inquiry.id } })).toBe(0);
+  });
+
+  it("refuses to delete an unknown inquiry", async () => {
+    await expect(deleteInquiry("missing-id")).rejects.toThrow();
   });
 });

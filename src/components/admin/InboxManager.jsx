@@ -14,12 +14,12 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { api, apiPatch, apiPost } from "@/components/admin/api";
+import { api, apiPatch, apiPost, apiDelete } from "@/components/admin/api";
 import { useToast } from "@/components/admin/toast";
-import { StatusBadge, PaginationBar, ReloadButton } from "@/components/admin/list";
+import { StatusBadge, PaginationBar, ReloadButton, ConfirmDialog } from "@/components/admin/list";
 import { EmptyState, LoadingRows, CardStat } from "@/components/admin/blocks";
 import { formatDate } from "@/lib/format";
-import { ArrowLeftRight, Inbox, Loader2, Mail, Search, Send } from "lucide-react";
+import { ArrowLeftRight, Inbox, Loader2, Mail, Search, Send, Trash2 } from "lucide-react";
 
 const STATUSES = ["NEW", "READ", "IN_PROGRESS", "RESOLVED", "SPAM", "ARCHIVED"];
 const PAGE_SIZE = 10;
@@ -38,6 +38,8 @@ export default function InboxManager() {
   const [note, setNote] = useState("");
   const [reply, setReply] = useState({ subject: "", body: "" });
   const [saving, setSaving] = useState(false);
+  const [confirmDelete, setConfirmDelete] = useState(false);
+  const [deleting, setDeleting] = useState(false);
 
   const load = useCallback(async () => {
     setBusy(true);
@@ -143,6 +145,24 @@ export default function InboxManager() {
       push({ type: "error", title: "Yanıt gönderilemedi", description: err.message });
     } finally {
       setSaving(false);
+    }
+  }
+
+  async function deleteInquiry() {
+    if (!detail) return;
+    setDeleting(true);
+    try {
+      await apiDelete(`/api/admin/inquiries/${detail.id}`);
+      push({ type: "success", title: "İleti kalıcı olarak silindi" });
+      setConfirmDelete(false);
+      setOpen(null);
+      setDetail(null);
+      load();
+      refreshStats();
+    } catch (err) {
+      push({ type: "error", title: "Silinemedi", description: err.message });
+    } finally {
+      setDeleting(false);
     }
   }
 
@@ -291,6 +311,16 @@ export default function InboxManager() {
                     <ArrowLeftRight className="size-4" />
                     Notu Kaydet
                   </Button>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="ml-auto text-destructive hover:text-destructive"
+                    onClick={() => setConfirmDelete(true)}
+                    disabled={saving || deleting}
+                  >
+                    <Trash2 className="size-4" />
+                    Kalıcı olarak sil
+                  </Button>
                 </div>
                 <div className="grid gap-1.5">
                   <Label>Dahili not</Label>
@@ -360,6 +390,16 @@ export default function InboxManager() {
           )}
         </DialogContent>
       </Dialog>
+
+      <ConfirmDialog
+        open={confirmDelete}
+        onOpenChange={setConfirmDelete}
+        title="İletiyi kalıcı olarak sil?"
+        description={`"${detail?.subject || "Konusuz ileti"}" ileti ve yanıtları geri alınamaz şekilde silinecek.`}
+        confirmLabel="Kalıcı olarak sil"
+        busy={deleting}
+        onConfirm={deleteInquiry}
+      />
     </div>
   );
 }
